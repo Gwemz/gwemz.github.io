@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[hexo你的博客]]></title>
+    <url>%2F2017%2F06%2F02%2Fhexo%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[如何利用Hexo搭建个人博客？ hexo简介hexo出自台湾大学生tommy351之手，是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上. 1231. 如果你对默认配置满意，只需几个命令便可秒搭一个hexo。2. 如果你跟我一样喜欢折腾下，30分钟也足够个性化。3. 如果你过于喜欢折腾，可以折腾个把星期，尽情的玩。 搭建过程你或许觉得有那么点小繁琐，但一旦搭建完成，写文章是极简单，极舒服的。 只需要几个简单命令，你就可以完成一切。 123hexo n #写文章hexo g #生成hexo d #部署 # 可与hexo g合并为 hexo d -g 环境准备安装node到Node.js官网下载相应平台的最新版本，一路安装即可。 安装gitHexo之next主题设置首页不显示全文(只显示预览)]]></content>
+      <tags>
+        <tag>hexo</tag>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+</search>
