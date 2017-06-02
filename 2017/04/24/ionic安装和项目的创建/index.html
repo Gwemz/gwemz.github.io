@@ -1,0 +1,931 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ionic," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="说来惭愧，都说隔行如隔山，没想到自己对同行的了解都微乎其微，还成天称是程序猿，直到前几天自己才听到Ionic,上度娘一问，瞬间就泪崩了，竟然在我身边有PhoneGap、cordova、AngularJS、nodejs、npm等等这么多“赫赫有名”的专有名词我以前竟然听都没听到过，可想自己是有多无知，以下是我这几天科普来的，错误之处还望指出，谢谢！ What is the Ionic？Ionic 是">
+<meta name="keywords" content="ionic">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ionic安装和项目的创建">
+<meta property="og:url" content="http://yoursite.com/2017/04/24/ionic安装和项目的创建/index.html">
+<meta property="og:site_name" content="winter blog">
+<meta property="og:description" content="说来惭愧，都说隔行如隔山，没想到自己对同行的了解都微乎其微，还成天称是程序猿，直到前几天自己才听到Ionic,上度娘一问，瞬间就泪崩了，竟然在我身边有PhoneGap、cordova、AngularJS、nodejs、npm等等这么多“赫赫有名”的专有名词我以前竟然听都没听到过，可想自己是有多无知，以下是我这几天科普来的，错误之处还望指出，谢谢！ What is the Ionic？Ionic 是">
+<meta property="og:image" content="http://yoursite.com/images/005-ebfa888c.png">
+<meta property="og:image" content="http://yoursite.com/images/005-255fc887.png">
+<meta property="og:image" content="http://yoursite.com/images/005-094b14eb.png">
+<meta property="og:image" content="http://yoursite.com/images/005-f66d6dfb.png">
+<meta property="og:image" content="http://yoursite.com/images/005-62f077ad.png">
+<meta property="og:image" content="http://yoursite.com/images/005-6ddf76d1.png">
+<meta property="og:updated_time" content="2017-06-02T17:22:42.114Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ionic安装和项目的创建">
+<meta name="twitter:description" content="说来惭愧，都说隔行如隔山，没想到自己对同行的了解都微乎其微，还成天称是程序猿，直到前几天自己才听到Ionic,上度娘一问，瞬间就泪崩了，竟然在我身边有PhoneGap、cordova、AngularJS、nodejs、npm等等这么多“赫赫有名”的专有名词我以前竟然听都没听到过，可想自己是有多无知，以下是我这几天科普来的，错误之处还望指出，谢谢！ What is the Ionic？Ionic 是">
+<meta name="twitter:image" content="http://yoursite.com/images/005-ebfa888c.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/24/ionic安装和项目的创建/"/>
+
+
+
+
+
+  <title>ionic安装和项目的创建 | winter blog</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">winter blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/24/ionic安装和项目的创建/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="winter">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/21253138?v=3&s=460">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="winter blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ionic安装和项目的创建</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-24T19:40:41+08:00">
+                2017-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/24/ionic安装和项目的创建/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/04/24/ionic安装和项目的创建/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>说来惭愧，都说隔行如隔山，没想到自己对同行的了解都微乎其微，还成天称是程序猿，直到前几天自己才听到Ionic,上度娘一问，瞬间就泪崩了，竟然在我身边有PhoneGap、cordova、AngularJS、nodejs、npm等等这么多“赫赫有名”的专有名词我以前竟然听都没听到过，可想自己是有多无知，以下是我这几天科普来的，错误之处还望指出，谢谢！</p>
+<h3 id="What-is-the-Ionic？"><a href="#What-is-the-Ionic？" class="headerlink" title="What is the Ionic？"></a>What is the Ionic？</h3><p>Ionic 是一个强大的 HTML5 应用程序开发框架，号称Advanced Html5 Hybrid Mobile AppFramework 是 AngularJS 移动端解决方案 可以帮助您使用 Web 技术，比如 HTML、 CSS 和JavaScript 构建接近原生体验的移动应用程序。 Ionic 主要关注外观和体验，以及和你的应用程序的 UI 交互，特别适合用于基于 Hybird 模式的 HTML5 移动应用程序开发..….</p>
+<h3 id="What-is-the-PhoneGap"><a href="#What-is-the-PhoneGap" class="headerlink" title="What is the PhoneGap ?"></a>What is the PhoneGap ?</h3><p>PhoneGap是一个用基于HTML，CSS和JavaScript的，创建移动跨平台移动应用程序的快速开发平台。<br>PhoneGap是一个跨平台的移动app开发框架，可以把html css js写的页面打包成跨平台的可以安装的移动app，并且可以调用原生的几乎所有的功能，比如摄像头，联系人，加速度等。</p>
+<h3 id="What-is-the-Cordova"><a href="#What-is-the-Cordova" class="headerlink" title="What is the Cordova ?"></a>What is the Cordova ?</h3><p>Cordova提供了一组设备相关的API，通过这组API，移动应用能够以JavaScript访问原生的设备功能，如摄像头、麦克风等。</p>
+<p>Cordova是PhoneGap贡献给Apache后的开源项目，是从PhoneGap中抽离出的核心代码，是驱动PhoneGap的核心引擎。有点类似Webkit和Google Chrome的关系。渊源就是：早在2011年10月，Adobe收购了Nitobi Software和它的PhoneGap产品，然后宣布这个移动Web开发框架将会继续开源，并把它提交到Apache Incubator，以便完全接受ASF的管治。当然，由于Adobe拥有了PhoneGap商标，所以开源组织的这个PhoneGap v2.0版产品就更名为Apache Cordova。</p>
+<h3 id="What-is-the-AngularJS"><a href="#What-is-the-AngularJS" class="headerlink" title="What is the AngularJS ?"></a>What is the AngularJS ?</h3><p>AngularJS 是一个JavaScript 框架。它是一个以JavaScript 编写的库。<br>AngularJS 使得开发现代的单一页面应用程序（SPAs：Single Page Applications）变得更加容易。</p>
+<ul>
+<li>AngularJS 把应用程序数据绑定到 HTML 元素。</li>
+<li>AngularJS 可以克隆和重复 HTML 元素。</li>
+<li>AngularJS 可以隐藏和显示 HTML 元素。</li>
+<li>AngularJS 可以在 HTML 元素”背后”添加代码。<br>AngularJS 支持输入验证。</li>
+</ul>
+<h3 id="What-is-the-NodeJs"><a href="#What-is-the-NodeJs" class="headerlink" title="What is the NodeJs?"></a>What is the NodeJs?</h3><p>Node.js 是一个基于Chrome JavaScript 运行时建立的一个平台。</p>
+<p>Node.js是一个事件驱动I/O服务端JavaScript环境，基于Google的V8引擎，V8引擎执行Javascript的速度非常快，性能非常好。</p>
+<p>其实吧，可以认为 Node.js 就是运行在服务端的 JavaScript。</p>
+<h3 id="What-is-the-NPM"><a href="#What-is-the-NPM" class="headerlink" title="What is the NPM ?"></a>What is the NPM ?</h3><p>NPM是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题，常见的使用场景有以下几种：</p>
+<ul>
+<li>允许用户从NPM服务器下载别人编写的第三方包到本地使用。</li>
+<li>允许用户从NPM服务器下载并安装别人编写的命令行程序到本地使用。</li>
+<li><p>允许用户将自己编写的包或命令行程序上传到NPM服务器供别人使用。</p>
+<p>新版的nodejs已经集成了npm，所以装了nodejs的话npm也一并安装好了。可以通过输入”npm -v”来测试是否成功安装。</p>
+</li>
+</ul>
+<h3 id="How-to-make-移动应用-App"><a href="#How-to-make-移动应用-App" class="headerlink" title="How to make 移动应用(App)"></a>How to make 移动应用(App)</h3><p>有三种方式可以为手机制作移动应用：</p>
+<ul>
+<li><p>原生应用（Native app）</p>
+</li>
+<li><p>手机网站（Mobile website）</p>
+</li>
+<li><p>混合应用（Hybrid app）</p>
+</li>
+</ul>
+<h4 id="原生应用（Native-app）"><a href="#原生应用（Native-app）" class="headerlink" title="原生应用（Native app）"></a>原生应用（Native app）</h4><p>如上述，你可以根据不同系统平台指定SDK制作对应系统平台下的移动应用，如果你想要为iOS系统创建一款应用，你需要：</p>
+<p>拥有一台苹果Mac电脑，当然其他方法也可以，但是我不推荐。作为初学者，一台廉价的Mac Mimi就可以了。</p>
+<p>从App store下载Xcode</p>
+<p>购买苹果开发者许可证（Apple Developer license）99刀￥一年（如果你想要在App store上发布应用）</p>
+<p>你可以利用Swift语言或者它的前辈ObjectiveC语言创建App，Swift 语言在沉重的ObjectiveC语言上做出了巨大改进，如果你决定开发原生app，相比利用ObjectiveC开发原生app，Swift更容易上手，特别是当你有Web开发的背景时。    </p>
+<p>如果你想要为Android系统创建一款原生应用，你需要：</p>
+<p>拥有一台电脑</p>
+<p>下载合适的SDKs（后面将会讲到）</p>
+<p>购买谷歌开发者许可证（Google Developer license）25刀￥（如果你想要在Google Play Store上发布应用）</p>
+<p><code>利用原生开发技术开发的应用具有速度快和直接利用原生API的优势（你不需要像开发混合应用一样【Hybrid App】作任何中间封装），缺点是，你需要为不同手机系统平台开发不同版本的移动应用。（撰写多套代码）</code></p>
+<h4 id="手机网站（Mobile-website）"><a href="#手机网站（Mobile-website）" class="headerlink" title="手机网站（Mobile website）"></a>手机网站（Mobile website）</h4><p>通过手机浏览器可以访问手机网站，手机网站可以根据手机屏幕大小自适应。由于手机网站比较难以维护，一种叫做响应式网站设计（responsive website design）的方法被使用，通过这种方法你拥有一套HTML代码库，你可以通过使用媒体查询（Media queries）根据不同设备不同分辨率（resolutions）改变他们的网站外观。jQuery mobile 是一种出色的移动框架。使用它你可以制作一款移动版本的Web应用程序。移动网站一个显著的优势就是你可以根据需要实时更新他们的内容，而不用去等待苹果Apple或者谷歌Google的审核，劣势则包括低耦合，更少的特征。</p>
+<h4 id="混合app（Hybrid-app）"><a href="#混合app（Hybrid-app）" class="headerlink" title="混合app（Hybrid app）"></a>混合app（Hybrid app）</h4><p>混合应用基本上是一款手机应用，它和撰写网站的程序语言基本相同，唯一不同的就是他们包含在一个孤立的浏览器中（WebView）， 原生应用通过WebView运行Web应用，混合应用可以调用手机摄像头、GPS等，通过利用插件，混合应用可以调用手机其它的硬件功能，你可以利用开发Web应用的技术开发混合应用。然而，WebView有速度的限制， 制作成熟的3D图像游戏可能不是最好的选择。</p>
+<h3 id="安装Ionic"><a href="#安装Ionic" class="headerlink" title="安装Ionic"></a>安装Ionic</h3><h4 id="1-需要有JDK和SDK环境，这是Android开发必有的平台（JDK在技术文章003中已经详细阐述了）"><a href="#1-需要有JDK和SDK环境，这是Android开发必有的平台（JDK在技术文章003中已经详细阐述了）" class="headerlink" title="1. 需要有JDK和SDK环境，这是Android开发必有的平台（JDK在技术文章003中已经详细阐述了）"></a>1. 需要有JDK和SDK环境，这是Android开发必有的平台（JDK在技术文章003中已经详细阐述了）</h4><p>安卓SDK下载以及环境的配置：</p>
+<p>下载地址：（可以使用包含的 sdkmanager 下载其他 SDK 软件包 需要翻墙）<a href="https://dl.google.com/android/repository/tools_r25.2.3-windows.zip" target="_blank" rel="external">立即下载</a></p>
+<p><img src="/images/005-ebfa888c.png" alt=""></p>
+<p><a href="https://developer.android.com/studio/index.html" target="_blank" rel="external">安卓开发相关资源链接 包含Android Studio</a></p>
+<p>下载后双击安装，指定Android SDK的安装目录，为了方便使用Android SDK包含的开发工具，我们在系统环境变量中的Path设置Android SDK的安装目录下的tools目录。</p>
+<p>在Android SDK的安装目录下，双击“SDK Manager.exe”，打开Android SDK Manager，Android SDK Manage负责下载或更新不同版本的SDK包，我们看到默认安装的Android SDK Manager只安装了一个版本的sdk tools。</p>
+<p>打开Android SDK Manager，(tools目录下的android.bat)它会获取可安装的sdk版本，但是国内有墙，有时候会出现获取失败的情况。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">**配置Android环境变量**</div><div class="line"></div><div class="line">- 默认路径安装后，安装完成，开始配置环境变量。</div><div class="line"></div><div class="line">- 打开计算机属性——高级系统设置——环境变量</div><div class="line"></div><div class="line">- 新建一个环境变量，变量名：ANDROID_HOME，变量值：E:\android_sdk\tools_r25.2.3-windows（以你安装目录为准,确认里面有tools和add-ons等多个文件夹），点击确认。</div><div class="line"></div><div class="line">- 在用户变量PATH后面加上变量值%ANDROID_HOME%\platform-tools;点击确认即可。 在系统变量path中添加;E:\android_sdk\tools_r25.2.3-windows\tools</div><div class="line"></div><div class="line">Android SDK配置完成，接下来验证配置是否成功。</div><div class="line"></div><div class="line">点击运行——输入cmd——回车——输入adb——回车，如果出现一堆英文，即表示配置成功，在输入Android，启动Android SDK Manager。</div></pre></td></tr></table></figure>
+<p><img src="/images/005-255fc887.png" alt=""></p>
+<p><img src="/images/005-094b14eb.png" alt=""></p>
+<p><img src="/images/005-f66d6dfb.png" alt=""></p>
+<h4 id="2-下载Node-js，安装"><a href="#2-下载Node-js，安装" class="headerlink" title="2. 下载Node.js，安装"></a>2. 下载Node.js，安装</h4><p>Node.js下载地址： <a href="https://nodejs.org/" target="_blank" rel="external">https://nodejs.org/</a></p>
+<p>安装都选默认的就行</p>
+<p>装好之后，nodejs会默认配好环境变量，你可以去path路径查看</p>
+<p>Node Pakcege Manager（NPM）会在安装Node.js时同时安装其它的包，为了检验Node.js是否在Windows上安装成功，在终端上运行下面的命令：</p>
+<p><img src="/images/005-62f077ad.png" alt=""></p>
+<p>node -v</p>
+<p>你会获得类似下面的版本信息：</p>
+<p>v0.12.7</p>
+<h4 id="3-安装Git"><a href="#3-安装Git" class="headerlink" title="3.安装Git"></a>3.安装Git</h4><p>你仅仅需要下载和运行它，根据相应的指引安装即可。为了验证你是否在Windows/Mac上安装Git成功，在终端运行下面的命令行：</p>
+<p>Git</p>
+<p>你会获得如下输出：</p>
+<p><img src="/images/005-6ddf76d1.png" alt=""></p>
+<h4 id="4-安装ionic和cordova"><a href="#4-安装ionic和cordova" class="headerlink" title="4.安装ionic和cordova"></a>4.安装ionic和cordova</h4><ul>
+<li><p>打开node.js command prompt使用npm install –g cordova ionic进行安装cordova和ionic（可以分开安装，npm install –g cordova 和 npm install –g -ionic）,很明显，在天朝使用这种方法安装有点行不通。</p>
+</li>
+<li><p>不用急，咱天朝子民有天朝子民的方法，使用淘宝镜像是网上很多人用的方式输入npm install –g cnpm –registry=https//registry.npm.taobao.org,<br>安装完成之后，以后的插件都可以使用cnpm来替代npm来安装<br>cnpm install –g ionic cordova</p>
+</li>
+<li><p>如果上面方法还不行，就看这里吧<br>1.npm config –globalset registry<a href="http://registry.cnpmjs.org" target="_blank" rel="external">http://registry.cnpmjs.org</a></p>
+<p>2.npm install –g cordova ionic</p>
+</li>
+<li><p>查看ionic和cordova是否安装</p>
+<p>ionic</p>
+<p>ionic –v   </p>
+<p>cordova –v</p>
+</li>
+</ul>
+<h4 id="5-创建项目"><a href="#5-创建项目" class="headerlink" title="5. 创建项目"></a>5. 创建项目</h4><p>如果你仅仅只运行ionic start appname 命令，Ionic CLI将会构建一个bootstrap应用（所有需要的构建都会在appname文件夹里面），伴随着空的模板，这儿有其他三个模板包括blank（空模板），sidemenu（侧边栏）和tabs（底部导航栏），除此之外，你可以使用Github repo starters和Codepen URL starters等模块，为了获得更多的starter apps模块，你可以访问 <a href="http://www.gajotres.net/a-comprehensive-list-of-ionic-starter-apps/" target="_blank" rel="external">这篇文章</a> ，在我们的例子中，我们将会使用sidemenu（侧板栏）模板，在终端运行下面的命令：</p>
+<p>ionic start g_app1 sidemenu</p>
+<ul>
+<li><p>通过cd命令进入你的项目:$ cd g_app1</p>
+</li>
+<li><p>设置项目使用Sass:ionic setup sass</p>
+</li>
+<li><p>在本地浏览器中实时开发:ionic serve</p>
+</li>
+<li><p>添加一个系统平台 (ios or Android):ionic platform add iOS [Android]</p>
+</li>
+<li><p>注意: iOS 开发需要OS X系统</p>
+</li>
+<li><p>注意2：在ionic build的时候需要使用VPN 否则它的包下载的非常慢！！！</p>
+</li>
+</ul>
+<p><a href="https://cordova.apache.org/docs/en/edge/guide_platforms_android_index.md.html" target="_blank" rel="external">详细见Android平台开发指南</a></p>
+<ul>
+<li><p>编译你的app:ionic build</p>
+</li>
+<li><p>在模拟器上运行你的app:ionic emulate</p>
+</li>
+<li><p>在真机上运行你的apps（安装应用到插入电脑的Android手机上）:ionic run</p>
+</li>
+<li><p>使用ionic打包服务打包一个app:ionic package</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">注意：npm install -g ionic cordova （此处安装很费劲，，，，如果安装不上，请直接使用国内镜像），也可以安装cnpm，这样就容易装cordova和ionic</div><div class="line"></div><div class="line">npm install -g cordova --registry https://registry.npm.taobao.org</div><div class="line"></div><div class="line">npm install -g ionic --registry https://registry.npm.taobao.org</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat.png" alt="winter WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/ali.jpg" alt="winter Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ionic/" rel="tag"># ionic</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/24/使用命令行和github交互/" rel="next" title="使用命令行和github交互">
+                <i class="fa fa-chevron-left"></i> 使用命令行和github交互
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/24/wampserver端口号被占用/" rel="prev" title="解决WampServer 80端口号被占用的问题">
+                解决WampServer 80端口号被占用的问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars1.githubusercontent.com/u/21253138?v=3&s=460"
+               alt="winter" />
+          <p class="site-author-name" itemprop="name">winter</p>
+           
+              <p class="site-description motion-element" itemprop="description">Some things are so important that they force us to overcome our fears.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Gwemz" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/gwemz" target="_blank" title="Coding">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  Coding
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-the-Ionic？"><span class="nav-number">1.</span> <span class="nav-text">What is the Ionic？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-the-PhoneGap"><span class="nav-number">2.</span> <span class="nav-text">What is the PhoneGap ?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-the-Cordova"><span class="nav-number">3.</span> <span class="nav-text">What is the Cordova ?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-the-AngularJS"><span class="nav-number">4.</span> <span class="nav-text">What is the AngularJS ?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-the-NodeJs"><span class="nav-number">5.</span> <span class="nav-text">What is the NodeJs?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-the-NPM"><span class="nav-number">6.</span> <span class="nav-text">What is the NPM ?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-make-移动应用-App"><span class="nav-number">7.</span> <span class="nav-text">How to make 移动应用(App)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原生应用（Native-app）"><span class="nav-number">7.1.</span> <span class="nav-text">原生应用（Native app）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#手机网站（Mobile-website）"><span class="nav-number">7.2.</span> <span class="nav-text">手机网站（Mobile website）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#混合app（Hybrid-app）"><span class="nav-number">7.3.</span> <span class="nav-text">混合app（Hybrid app）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Ionic"><span class="nav-number">8.</span> <span class="nav-text">安装Ionic</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-需要有JDK和SDK环境，这是Android开发必有的平台（JDK在技术文章003中已经详细阐述了）"><span class="nav-number">8.1.</span> <span class="nav-text">1. 需要有JDK和SDK环境，这是Android开发必有的平台（JDK在技术文章003中已经详细阐述了）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-下载Node-js，安装"><span class="nav-number">8.2.</span> <span class="nav-text">2. 下载Node.js，安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-安装Git"><span class="nav-number">8.3.</span> <span class="nav-text">3.安装Git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-安装ionic和cordova"><span class="nav-number">8.4.</span> <span class="nav-text">4.安装ionic和cordova</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-创建项目"><span class="nav-number">8.5.</span> <span class="nav-text">5. 创建项目</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">winter</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://winter.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/04/24/ionic安装和项目的创建/';
+          this.page.identifier = '2017/04/24/ionic安装和项目的创建/';
+          this.page.title = 'ionic安装和项目的创建';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://winter.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

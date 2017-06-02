@@ -1,0 +1,1101 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="面试题," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="HTML 行内元素关注行内置换元素，类似inline-block方式展现 input textarea img select 浏览器内核基于 Webkit:Chrome-blink 、腾讯X5、UC U3 、华为T9 基于 Gecko：Firefox 基于Trident：IE 基于 Presto：Opera 兼备Webkit&amp;amp;Trident：猎豹、360  W3C标准包括结构(xhtml、">
+<meta name="keywords" content="面试题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端开发面试题二">
+<meta property="og:url" content="http://yoursite.com/2017/04/24/前端开发面试题二/index.html">
+<meta property="og:site_name" content="winter blog">
+<meta property="og:description" content="HTML 行内元素关注行内置换元素，类似inline-block方式展现 input textarea img select 浏览器内核基于 Webkit:Chrome-blink 、腾讯X5、UC U3 、华为T9 基于 Gecko：Firefox 基于Trident：IE 基于 Presto：Opera 兼备Webkit&amp;amp;Trident：猎豹、360  W3C标准包括结构(xhtml、">
+<meta property="og:updated_time" content="2017-06-02T17:04:32.891Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端开发面试题二">
+<meta name="twitter:description" content="HTML 行内元素关注行内置换元素，类似inline-block方式展现 input textarea img select 浏览器内核基于 Webkit:Chrome-blink 、腾讯X5、UC U3 、华为T9 基于 Gecko：Firefox 基于Trident：IE 基于 Presto：Opera 兼备Webkit&amp;amp;Trident：猎豹、360  W3C标准包括结构(xhtml、">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/24/前端开发面试题二/"/>
+
+
+
+
+
+  <title>前端开发面试题二 | winter blog</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">winter blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/24/前端开发面试题二/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="winter">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/21253138?v=3&s=460">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="winter blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端开发面试题二</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-24T19:40:41+08:00">
+                2017-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/24/前端开发面试题二/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/04/24/前端开发面试题二/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><ul>
+<li><h4 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h4>关注行内置换元素，类似inline-block方式展现 input textarea img select</li>
+<li><h4 id="浏览器内核"><a href="#浏览器内核" class="headerlink" title="浏览器内核"></a>浏览器内核</h4><p>基于 Webkit:<br>Chrome-blink 、腾讯X5、UC U3 、华为T9</p>
+<p>基于 Gecko：Firefox</p>
+<p>基于Trident：IE</p>
+<p>基于 Presto：Opera</p>
+<p>兼备Webkit&amp;Trident：猎豹、360</p>
+</li>
+<li><h4 id="W3C标准"><a href="#W3C标准" class="headerlink" title="W3C标准"></a>W3C标准</h4><p>包括结构(xhtml、html)、表现(css)、行为(ecmascript、dom)的标准。更好的规范浏览器渲染页面，使得同一套网页规范尽可能在多套浏览器中表现一致。提高开发者开发效率和用户体验。</p>
+</li>
+<li><h4 id="Doctype"><a href="#Doctype" class="headerlink" title="Doctype"></a>Doctype</h4><p>用来告诉浏览器以什么文档类型解析html，没有的话，会按照向下兼容的怪异模式进行解析。</p>
+<p>h4及以下需要引用dtd声明，dtd有标准型和过渡性两种。两者区别可忽略</p>
+<p>h5不急于SGML标准，因此不需要引用dtd</p>
+</li>
+<li><h4 id="标签语义化的重要性"><a href="#标签语义化的重要性" class="headerlink" title="标签语义化的重要性"></a>标签语义化的重要性</h4><p>1.便于浏览器 搜索引擎解析</p>
+<p>2.在没CSS情况也以一种文档形式展现，便于阅读</p>
+<p>3.有利于SEO</p>
+<p>4.有利于代码的阅读和维护</p>
+</li>
+<li><h4 id="strong与em的异同"><a href="#strong与em的异同" class="headerlink" title="strong与em的异同"></a>strong与em的异同</h4><p>同：都是对文本起强调作用</p>
+<p>异：em以斜体展示文本，strong更利于SEO识别语义</p>
+</li>
+<li><h4 id="SEO-详细"><a href="#SEO-详细" class="headerlink" title="SEO 详细"></a>SEO <a href="https://segmentfault.com/a/1190000002549587" title="SEO" target="_blank" rel="external">详细</a></h4><p>可分为白帽SEO和黑冒SEO</p>
+<p>SEO的主要方面<br>1.网站标题、关键字、描述(meta)</p>
+<p>2.网站结构布局优化：目录层级不要太多，尽量让Spider跳转3次就可以到达网站的任何一个内页</p>
+<p>3.网站代码优化</p>
+<p>SEO会过滤掉display:none的元素、利用<meta description和<meta="" keywords="">、html语义化</p>
+</li>
+<li><h4 id="图片格式"><a href="#图片格式" class="headerlink" title="图片格式"></a>图片格式</h4><p>pn-8 256色、png-24、gif、apng(Chrome不支持)、svg、webp(ios不支持)</p>
+</li>
+<li><h4 id="link-vs-import"><a href="#link-vs-import" class="headerlink" title="link vs @import"></a>link vs @import</h4><p>区别：</p>
+<p>1.link无兼容性特点 @import仅兼容IE5</p>
+<p>2.link权重高于@import</p>
+<p>3.link外链的CSS与html是并行加载的，而@import需等html加载完之后才加载</p>
+</li>
+</ul>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><ul>
+<li><h4 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h4><p>包括marin、padding、border、content</p>
+<p>IE盒模型(It IE8):content包含padding和border</p>
+<p>如何改变：box-sizing</p>
+</li>
+<li><h4 id="CSS可继承属性"><a href="#CSS可继承属性" class="headerlink" title="CSS可继承属性"></a>CSS可继承属性</h4><p>与font有关的属性 如font-size、font-family、font-weight等</p>
+<p>line-height、color、text-align、text-indent</p>
+</li>
+<li><h4 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h4><p>不同的display会参照不同的环境去渲染，而block参与BFC</p>
+<p>BFC特点</p>
+<p>1.同个BFC内盒子产生margin塌陷</p>
+<p>2.计算BFC高度时，考虑BFC所包含的所有元素，连浮动元素也参与计算</p>
+<p>3.BFC就是页面上的一个隔离的独立容器，里外互相不影响</p>
+<p>产生新BFC</p>
+<p>1.float属性不为none</p>
+<p>2.position为absolute或fixed</p>
+<p>3.display为inline-block | table-cell | table-caption |flex | inline-flex</p>
+<p>4.overflow不为visible</p>
+</li>
+<li><h4 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h4><p>1.形成新的BFC</p>
+<p>2.新增div设置clear:both</p>
+<p>3.在父元素添加:after伪类，设置content:””;display:block;clear:both;zoom:1;</p>
+</li>
+<li><h4 id="position"><a href="#position" class="headerlink" title="position"></a>position</h4><p>absolute|relative|static|sticky|fixed</p>
+</li>
+</ul>
+<h3 id="HTML5"><a href="#HTML5" class="headerlink" title="HTML5"></a>HTML5</h3><h4 id="【新标签】"><a href="#【新标签】" class="headerlink" title="【新标签】"></a>【新标签】</h4><ul>
+<li><h4 id="新增的标签"><a href="#新增的标签" class="headerlink" title="新增的标签"></a>新增的标签</h4><p>1.布局，内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;header&gt;&lt;section&gt;&lt;nav&gt;&lt;article&gt;&lt;aside&gt;&lt;mark&gt;&lt;footer&gt;</div></pre></td></tr></table></figure>
+<p>2.表单</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;datalist&gt; &lt;keygen&gt; &lt;output&gt;</div></pre></td></tr></table></figure>
+<p>3.媒体</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;canvas&gt;&lt;video&gt;&lt;audio&gt;&lt;figure&gt;&lt;figcaption&gt;&lt;source&gt;</div></pre></td></tr></table></figure>
+<p>4.状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;progress&gt;&lt;meter&gt;</div></pre></td></tr></table></figure>
+<p>5.冷门</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;command&gt;&lt;datails&gt;&lt;summary&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><h4 id="表单新类型"><a href="#表单新类型" class="headerlink" title="表单新类型"></a>表单新类型</h4><p>email url number tel search color DataPicker</p>
+</li>
+<li><h4 id="表单新属性"><a href="#表单新属性" class="headerlink" title="表单新属性"></a>表单新属性</h4>autocomplete autofocus require pattern placeholder multiple</li>
+</ul>
+<h4 id="【新API】"><a href="#【新API】" class="headerlink" title="【新API】"></a>【新API】</h4><ul>
+<li><h4 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h4><p>重力感应 DeviceOrientation</p>
+<p>手机加速传感器 DeviceMotion</p>
+</li>
+<li><h4 id="history-详细"><a href="#history-详细" class="headerlink" title="history 详细"></a>history <a href="https://segmentfault.com/a/1190000002920768" title="history" target="_blank" rel="external">详细</a></h4>以Pjax方式实现SPA history.pushState history.replaceState 解决ajax不能后退前景问题</li>
+<li><h4 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h4>客户端存储：localStorage sessionStorage只存在一个会话周期内</li>
+<li><h4 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h4>postMessage</li>
+</ul>
+<h4 id="【WebAPP】"><a href="#【WebAPP】" class="headerlink" title="【WebAPP】"></a>【WebAPP】</h4><ul>
+<li><h4 id="常见dpr"><a href="#常见dpr" class="headerlink" title="常见dpr"></a>常见dpr</h4>ip6 2、ip6+ 3、nexus5 3</li>
+<li><h4 id="移动端适配"><a href="#移动端适配" class="headerlink" title="移动端适配"></a>移动端适配</h4><p>1.自适应方式</p>
+<p>2.viewport方式</p>
+<p>3.rem方式</p>
+<p>4.scale()方式缩放</p>
+</li>
+<li><h4 id="常用meta"><a href="#常用meta" class="headerlink" title="常用meta"></a>常用meta</h4><h5 id="IE相关"><a href="#IE相关" class="headerlink" title="IE相关"></a>IE相关</h5><p>避免IE使用兼容模式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;</div></pre></td></tr></table></figure>
+<p>为不支持viewport的IE Mobile 设定宽度</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;MobileOptimized&quot; content=&quot;320&quot; /&gt;</div></pre></td></tr></table></figure>
+<p>是否对手持设备友好</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;HandheldFriendly&quot; content=&quot;true&quot; /&gt;</div></pre></td></tr></table></figure>
+<h5 id="UC浏览器"><a href="#UC浏览器" class="headerlink" title="UC浏览器"></a>UC浏览器</h5><p>强制竖屏</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;screen-orientation&quot; content=&quot;portrait&quot; /&gt;</div></pre></td></tr></table></figure>
+<p>强制全屏</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;full-screen&quot; content=&quot;yes&quot; /&gt;</div></pre></td></tr></table></figure>
+<p>应用模式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;browsermode&quot; content=&quot;application&quot; /&gt;</div></pre></td></tr></table></figure>
+<h5 id="X5浏览器"><a href="#X5浏览器" class="headerlink" title="X5浏览器"></a>X5浏览器</h5><p>强制竖屏</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;x5-orientation&quot; content=&quot;portrait&quot; /&gt;</div></pre></td></tr></table></figure>
+<p>强制全屏</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;x5-fullscreen&quot; content=&quot;yes&quot; /&gt;</div></pre></td></tr></table></figure>
+<p>应用模式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;x5-page-mode&quot; content=&quot;app&quot; /&gt;</div></pre></td></tr></table></figure>
+<h5 id="360"><a href="#360" class="headerlink" title="360"></a>360</h5><p>开启极速模式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;renderer&quot; content=&quot;webkit&quot; /&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><h4 id="iphone相关"><a href="#iphone相关" class="headerlink" title="iphone相关"></a>iphone相关</h4><p>启动webapp功能 删除工具栏和菜单栏</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;</div></pre></td></tr></table></figure>
+<p>控制状态栏颜色</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black&quot; /&gt;</div></pre></td></tr></table></figure>
+<p>开启号码或邮箱检测</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot; /&gt;</div></pre></td></tr></table></figure>
+<p>添加主屏幕icon</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;touch-icon-iphone.png&quot;&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="【CSS3】"><a href="#【CSS3】" class="headerlink" title="【CSS3】"></a>【CSS3】</h3><h4 id="新属性"><a href="#新属性" class="headerlink" title="[新属性]"></a>[新属性]</h4><p>  flex、column、文本换行、媒体查询、待补充</p>
+<h4 id="开启GPU加速"><a href="#开启GPU加速" class="headerlink" title="开启GPU加速"></a>开启GPU加速</h4><p>  注意启用<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-webkit-backface-visibility:hidden;</div><div class="line">-webkit-perspective:1000;</div><div class="line">解决启用transform3d页面闪烁和抖动问题</div></pre></td></tr></table></figure></p>
+<h4 id="【动画】"><a href="#【动画】" class="headerlink" title="【动画】"></a>【动画】</h4><ul>
+<li><h4 id="CSS-动画性能"><a href="#CSS-动画性能" class="headerlink" title="CSS 动画性能"></a>CSS 动画性能</h4></li>
+</ul>
+<h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><h4 id="【原生】"><a href="#【原生】" class="headerlink" title="【原生】"></a>【原生】</h4><ul>
+<li><h4 id="js数据类型"><a href="#js数据类型" class="headerlink" title="js数据类型"></a>js数据类型</h4><p>5基本 stirng number boolean undefined null存储在栈内存中</p>
+<p>1复杂 object存储在堆内存中</p>
+</li>
+<li><h4 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h4>this总是指向函数的直接调用者，而非间接调用者</li>
+<li><h4 id="null和undefined的区别"><a href="#null和undefined的区别" class="headerlink" title="null和undefined的区别"></a>null和undefined的区别</h4><p>null表示一个无的对象</p>
+<p>undefined 表示一个无的初始值，表示此处应该有值，但是还没有定义，即缺少值</p>
+</li>
+<li><h4 id="new的具体值"><a href="#new的具体值" class="headerlink" title="new的具体值"></a>new的具体值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">如var p = new p();</div><div class="line">var p=&#123;&#125;; //创建新对象</div><div class="line">p._proto_=p.prototype; //继承构造函数的原型</div><div class="line">p.call(p); //修改this 的指向</div></pre></td></tr></table></figure>
+</li>
+<li><h4 id="创建对象方式"><a href="#创建对象方式" class="headerlink" title="创建对象方式"></a>创建对象方式</h4><p>对象字面量、工厂模式、构造函数、原型模式、构造函数+原型</p>
+</li>
+<li><h4 id="原型-原型链"><a href="#原型-原型链" class="headerlink" title="原型 原型链"></a>原型 原型链</h4>每个对象都有一个属性 prototype 当需要从对象中寻找属性，如果在当前对象上没有找到就会从原型对象开始找一直追溯到原型链的最顶端</li>
+<li><h4 id="实现继承"><a href="#实现继承" class="headerlink" title="实现继承"></a>实现继承</h4>1.构造函数继承 <a href="http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance.html" title="构造函数继承" target="_blank" rel="external">详细</a><ul>
+<li>利用call、apply修改this指向</li>
+<li>让子元素原型指向父元素实例，注意要修改子元素prototype.constructor指向</li>
+<li>将需要继承的属性写在父元素prototype,让子元素的prototype指向父元素的prototype，但在修改子元素的prototype.constructor指向是同时会修改父元素prototype.constructor</li>
+<li>同上方法，利用中介函数<br>2.非构造函数继承 <a href="http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance_continued.html" title="非构造函数继承" target="_blank" rel="external">详细</a><br>把父元素对象的属性全部拷贝给子元素</li>
+</ul>
+</li>
+<li><h4 id="浅拷贝VS深拷贝"><a href="#浅拷贝VS深拷贝" class="headerlink" title="浅拷贝VS深拷贝"></a>浅拷贝VS深拷贝</h4><p>浅拷贝</p>
+<p>深拷贝 递归调用深拷贝</p>
+</li>
+<li><h4 id="闭包-详细"><a href="#闭包-详细" class="headerlink" title="闭包 详细"></a>闭包 <a href="http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html" title="闭包" target="_blank" rel="external">详细</a></h4>用途：读取函数内部变量。变量得不到销毁，一直存储在内存中，可能造成内存泄漏</li>
+<li><h4 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h4>指分配的内存既不能使用，又得不到回收<ul>
+<li>如为某元素绑定了一个事件，而该元素又从dom中移出</li>
+<li>滥用闭包</li>
+<li>两变量互相引用</li>
+</ul>
+</li>
+<li><h4 id="原生Ajax使用过程"><a href="#原生Ajax使用过程" class="headerlink" title="原生Ajax使用过程"></a>原生Ajax使用过程</h4><p>1.获取XMLHttpRequest对象</p>
+<p>2.xhr.open(type,url,ifAsyn)</p>
+<p>3.监听xhr状态改变，xhr.onreadystatechange=function(){} xhr.readyState==4&amp;&amp;xhr.state==200说明请求成功</p>
+<p>【readyState:0 = 未初始化 1=启动 2=发送 3=接受 4=完成】</p>
+<p>4.xhr.send()</p>
+</li>
+<li><h4 id="get和post的区别"><a href="#get和post的区别" class="headerlink" title="get和post的区别"></a>get和post的区别</h4>GET安全性低 可传内容少 通过url传值</li>
+</ul>
+<p>POST 安全性高 可传内容多 通过表单传值</p>
+<ul>
+<li><h4 id="事件处理-详细"><a href="#事件处理-详细" class="headerlink" title="事件处理 详细"></a>事件处理 <a href="https://segmentfault.com/a/1190000002174034#articleHeader13" title="事件处理" target="_blank" rel="external">详细</a></h4></li>
+</ul>
+<ul>
+<li>事件委托利用事件冒泡机制 将事件绑定在父元素上 节省性能</li>
+<li>事件处理程序 DOM0 -&gt; DOM1 -&gt;DOM2(对比与0，可同时绑定多个事件)</li>
+<li>mouseover和mouseenter区别 mouseenter不冒泡</li>
+</ul>
+<ul>
+<li><h4 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h4><p>hash方式和index方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">Array.prototype.unique = function()&#123;</div><div class="line">var n = [];</div><div class="line">for(var i=0,len=this.length;i&lt;len;i++)&#123;</div><div class="line">    if(n.indexOf(this[i])==-1) &#123;</div><div class="line">        n.push(this[i])</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">return n;</div><div class="line">&#125;</div><div class="line">Array.prototype.unique2 = function()&#123;</div><div class="line">    var n = &#123;&#125;,a =[];</div><div class="line">    for(var i=0,len=this.length;i&lt;len;i++)&#123;</div><div class="line">        if(!n[this[i]]) &#123;</div><div class="line">            a.push(this[i]);</div><div class="line">            n[this[i]] = true;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return a;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><h4 id="ES5数组新方法"><a href="#ES5数组新方法" class="headerlink" title="ES5数组新方法"></a>ES5数组新方法</h4></li>
+<li><h4 id="斐波纳挈数列高效递归"><a href="#斐波纳挈数列高效递归" class="headerlink" title="斐波纳挈数列高效递归"></a>斐波纳挈数列高效递归</h4><p>附斐波纳挈数列</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function getNthFibonacci(count) &#123;</div><div class="line">    var fibonacci = [1,1];</div><div class="line">    for(var i=2;i&lt;=count;i++)&#123;</div><div class="line">        fibonacci[i] = fibonacci[i-1]+ fibonacci[i-2];</div><div class="line">    &#125;</div><div class="line">    return fibonacci[count];</div><div class="line">&#125;;</div><div class="line">var a = getNthFibonacci(5);</div><div class="line">console.log(a)</div></pre></td></tr></table></figure>
+</li>
+<li><h4 id="getComputed-Style和Style的区别"><a href="#getComputed-Style和Style的区别" class="headerlink" title="getComputed Style和Style的区别"></a>getComputed Style和Style的区别</h4><p>getC 只读 可获取未被style定义的样式</p>
+</li>
+</ul>
+<p>style读写 只可获取含style的样式</p>
+<ul>
+<li><h4 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h4><p>插入新节点</p>
+<p>document.createElemenet()、createDocumentFragment()、createTextNode()、insertBefore(new,old)</p>
+<p>获取节点</p>
+<p>childNodes、parentNodes、previousSibling、nextSibling、firstChild、lastChild、children</p>
+<p>节点操作</p>
+<p>appendChild、removeChild、replaceChild、cloneNode、normalize</p>
+<p>获取位置</p>
+<ul>
+<li>浏览器宽高 window.innerWidth、document.documentElement.clientWidth</li>
+<li>文档宽高  document.documentElement.offsetHeight、document.documentElement.scrollHeight</li>
+<li>到文档的最端处距离 offsetTop、offsetLeft</li>
+</ul>
+</li>
+<li><h4 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h4>浏览器内核 navigator.appVersion</li>
+<li><h4 id="异步编程方法"><a href="#异步编程方法" class="headerlink" title="异步编程方法"></a>异步编程方法</h4><p>1.回调函数，这是异步编程最基本的方法</p>
+<p>2.事件监听，另一种思路是采用事件驱动模式。任务的执行不取决于代码的顺序，而取决于某个事件是否发生</p>
+<p>3.发布/订阅，上一节的事件，完全可以理解成“信号”</p>
+<p>4.Promises对象，Promises对象是CommonJS工作组提出的一种规范，目的是为异步编程提供统一的接口</p>
+</li>
+</ul>
+<h3 id="【jQuery】"><a href="#【jQuery】" class="headerlink" title="【jQuery】"></a>【jQuery】</h3><ul>
+<li><h4 id="操作DOM"><a href="#操作DOM" class="headerlink" title="操作DOM"></a>操作DOM</h4></li>
+<li><h4 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h4></li>
+</ul>
+<h3 id="【模块化】"><a href="#【模块化】" class="headerlink" title="【模块化】"></a>【模块化】</h3><h3 id="【MV】-详细"><a href="#【MV】-详细" class="headerlink" title="【MV】 详细"></a>【MV】 <a href="https://segmentfault.com/a/1190000003871577" title="MV" target="_blank" rel="external">详细</a></h3><h3 id="【虚拟DOM】"><a href="#【虚拟DOM】" class="headerlink" title="【虚拟DOM】"></a>【虚拟DOM】</h3><p>  以对象树的方式存储在内存中</p>
+<h3 id="【性能优化】"><a href="#【性能优化】" class="headerlink" title="【性能优化】"></a>【性能优化】</h3><ul>
+<li><h4 id="雅虎十四条-详细"><a href="#雅虎十四条-详细" class="headerlink" title="雅虎十四条 详细"></a>雅虎十四条 <a href="http://www.cnblogs.com/silverLee/archive/2009/11/05/1596453.html" title="雅虎十四条优化规则" target="_blank" rel="external">详细</a></h4></li>
+</ul>
+<ul>
+<li>法则1.减少HTTP请求次数</li>
+<li>法则2. 使用CDN(Content Delivery Network, 内容分发网络)</li>
+<li>法则3. 增加Expires Header</li>
+<li>法则4. 压缩页面元素</li>
+<li>法则5. 把样式表放在头上</li>
+<li>法则6. 把脚本文件放在底部</li>
+<li>法则7. 避免CSS表达式</li>
+<li>法则8. 把JavaScript和CSS放到外部文件中</li>
+<li>法则9. 减少DNS查询次数</li>
+<li>法则10. 最小化JavaScript代码</li>
+<li>法则11. 避免重定向</li>
+<li>法则12. 删除重复的脚本文件</li>
+<li>法则13. 配置ETags</li>
+<li>法则14. 缓存Ajax</li>
+</ul>
+<ul>
+<li><h4 id="移动端优化"><a href="#移动端优化" class="headerlink" title="移动端优化"></a>移动端优化</h4></li>
+<li><h4 id="16毫秒的优化-详细"><a href="#16毫秒的优化-详细" class="headerlink" title="16毫秒的优化 详细"></a>16毫秒的优化 <a href="http://velocity.oreilly.com.cn/2013/ppts/16_ms_optimization--web_front-end_performance_optimization.pdf" title="16毫秒优化" target="_blank" rel="external">详细</a></h4><p>1.google提出1s完成终端首屏渲染：网络消耗+js执行与页面渲染</p>
+<p>2.浏览器渲染频率1s 60帧，确保每一帧能在16ms内执行与渲染，尽可能避免重排与重绘</p>
+<p>3.使用RAF控制渲染频率，减少重复渲染，避免事件重复执行</p>
+<p>4.让js操作读写分离</p>
+</li>
+<li><h4 id="渲染路径优化"><a href="#渲染路径优化" class="headerlink" title="渲染路径优化"></a>渲染路径优化</h4><p>1.最小化关键资源数量</p>
+<p>2.最小化关键资源字节</p>
+<p>3.最小化关键路径长度</p>
+</li>
+<li><h4 id="页面直出-详细"><a href="#页面直出-详细" class="headerlink" title="页面直出 详细"></a>页面直出 <a href="http://web.jobbole.com/86412/" title="页面直出" target="_blank" rel="external">详细</a></h4><p>1.server上获取数据并将数据与页面模板结合，在服务端渲染成最终的HTML</p>
+<p>2.返回最终的HTML显示</p>
+</li>
+</ul>
+<h3 id="【跨域与前端安全】"><a href="#【跨域与前端安全】" class="headerlink" title="【跨域与前端安全】"></a>【跨域与前端安全】</h3><ul>
+<li><h4 id="跨域的方式"><a href="#跨域的方式" class="headerlink" title="跨域的方式"></a>跨域的方式</h4><p>1.JSONP：强行执行不同文件下的JS文件，需要用外部JS配合，只能用JS方式</p>
+<p>2.CORS：服务器端设置Access-Control-Allow-Origin，使其能被其他与AJax访问到</p>
+<p>3.domain+iframe：只是用主域相同子域不同的两个站。需要将两个站的document.domain设成同一个子域</p>
+<p>4.window.postMessage(msg,targetOrgin)</p>
+</li>
+<li><h4 id="跨域攻击-详细"><a href="#跨域攻击-详细" class="headerlink" title="跨域攻击 详细"></a>跨域攻击 <a href="https://segmentfault.com/a/1190000004623125" title="跨域攻击" target="_blank" rel="external">详细</a></h4><p>1.跨域脚本</p>
+<p>2.跨域请求伪造</p>
+<h3 id="【HTTP】"><a href="#【HTTP】" class="headerlink" title="【HTTP】"></a>【HTTP】</h3></li>
+<li><h4 id="HTTP报文"><a href="#HTTP报文" class="headerlink" title="HTTP报文"></a>HTTP报文</h4></li>
+<li><h4 id="HTTP-1-HTTP-2-HTTPS-详细"><a href="#HTTP-1-HTTP-2-HTTPS-详细" class="headerlink" title="HTTP/1 HTTP/2 HTTPS 详细"></a>HTTP/1 HTTP/2 HTTPS <a href="http://www.alloyteam.com/2016/07/httphttp2-0spdyhttps-reading-this-is-enough/" title="HTTP" target="_blank" rel="external">详细</a></h4>建立在TCP基础上</li>
+<li><h4 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h4></li>
+<li><h4 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h4>设置缓存 服务器返回Cache-Control:max-age=xxx；expires:Thu, 03 Jan 2019 04:24:16 GMT、设置etag、last-modified</li>
+<li><h4 id="描述从输入URL到一个页面展现在你面前的全过程"><a href="#描述从输入URL到一个页面展现在你面前的全过程" class="headerlink" title="描述从输入URL到一个页面展现在你面前的全过程"></a>描述从输入URL到一个页面展现在你面前的全过程</h4><p>1.DNS Lookup</p>
+<p>2.建立TCP请求</p>
+<p>3.发送http请求</p>
+<p>4.服务器发送响应</p>
+<p>5.浏览器加载解析DOM&amp;CSS</p>
+<p>6.生成DOM Tree&amp;CSS RuleTree</p>
+<p>7.DOMTree和CSSRuleTree结合生成RenderTree</p>
+<p>8.对RenderTree上的每一个元素计算其坐标称为布局</p>
+<p>9.对RenderTree的元素进行绘制和展示&gt;称为Painting</p>
+</li>
+<li><h4 id="引申当前页面渲染时，浏览器发生了什么"><a href="#引申当前页面渲染时，浏览器发生了什么" class="headerlink" title="引申当前页面渲染时，浏览器发生了什么"></a>引申当前页面渲染时，浏览器发生了什么</h4></li>
+</ul>
+<h3 id="【工具】"><a href="#【工具】" class="headerlink" title="【工具】"></a>【工具】</h3><h4 id="【前端自动化工具】"><a href="#【前端自动化工具】" class="headerlink" title="【前端自动化工具】"></a>【前端自动化工具】</h4><ul>
+<li><h4 id="grunt"><a href="#grunt" class="headerlink" title="grunt"></a>grunt</h4></li>
+<li><h4 id="glup"><a href="#glup" class="headerlink" title="glup"></a>glup</h4></li>
+</ul>
+<h4 id="【CSS预处理】"><a href="#【CSS预处理】" class="headerlink" title="【CSS预处理】"></a>【CSS预处理】</h4><p>优势：</p>
+<p>  1.利用嵌套方式写CSS，结构更加的清晰</p>
+<p>  2.可使用变量、函数、更类似编程的方式</p>
+<p>  3.可将一整套CSS拆分成若干个组件、粒子性、可组合的特点更加的明显</p>
+<ul>
+<li><h4 id="Sass"><a href="#Sass" class="headerlink" title="Sass"></a>Sass</h4></li>
+<li><h4 id="Less"><a href="#Less" class="headerlink" title="Less"></a>Less</h4></li>
+<li><h4 id="Compass"><a href="#Compass" class="headerlink" title="Compass"></a>Compass</h4></li>
+</ul>
+<h3 id="【数据结构】"><a href="#【数据结构】" class="headerlink" title="【数据结构】"></a>【数据结构】</h3><ul>
+<li><h4 id="排序-详细"><a href="#排序-详细" class="headerlink" title="排序 详细"></a>排序 <a href="http://www.cnblogs.com/codingmylife/archive/2012/10/21/2732980.html" title="排序" target="_blank" rel="external">详细</a></h4></li>
+<li><h4 id="二叉树原理与实现"><a href="#二叉树原理与实现" class="headerlink" title="二叉树原理与实现"></a>二叉树原理与实现</h4></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat.png" alt="winter WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/ali.jpg" alt="winter Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试题/" rel="tag"># 面试题</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/24/hold on or give up/" rel="prev" title="Hold on or give up!">
+                Hold on or give up! <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars1.githubusercontent.com/u/21253138?v=3&s=460"
+               alt="winter" />
+          <p class="site-author-name" itemprop="name">winter</p>
+           
+              <p class="site-description motion-element" itemprop="description">Some things are so important that they force us to overcome our fears.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Gwemz" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/gwemz" target="_blank" title="Coding">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  Coding
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML"><span class="nav-number">1.</span> <span class="nav-text">HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#行内元素"><span class="nav-number">1.1.</span> <span class="nav-text">行内元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器内核"><span class="nav-number">1.2.</span> <span class="nav-text">浏览器内核</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#W3C标准"><span class="nav-number">1.3.</span> <span class="nav-text">W3C标准</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Doctype"><span class="nav-number">1.4.</span> <span class="nav-text">Doctype</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标签语义化的重要性"><span class="nav-number">1.5.</span> <span class="nav-text">标签语义化的重要性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#strong与em的异同"><span class="nav-number">1.6.</span> <span class="nav-text">strong与em的异同</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SEO-详细"><span class="nav-number">1.7.</span> <span class="nav-text">SEO 详细</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图片格式"><span class="nav-number">1.8.</span> <span class="nav-text">图片格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#link-vs-import"><span class="nav-number">1.9.</span> <span class="nav-text">link vs @import</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS"><span class="nav-number">2.</span> <span class="nav-text">CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#盒模型"><span class="nav-number">2.1.</span> <span class="nav-text">盒模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS可继承属性"><span class="nav-number">2.2.</span> <span class="nav-text">CSS可继承属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BFC"><span class="nav-number">2.3.</span> <span class="nav-text">BFC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#清除浮动"><span class="nav-number">2.4.</span> <span class="nav-text">清除浮动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#position"><span class="nav-number">2.5.</span> <span class="nav-text">position</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5"><span class="nav-number">3.</span> <span class="nav-text">HTML5</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#【新标签】"><span class="nav-number">3.1.</span> <span class="nav-text">【新标签】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新增的标签"><span class="nav-number">3.2.</span> <span class="nav-text">新增的标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表单新类型"><span class="nav-number">3.3.</span> <span class="nav-text">表单新类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表单新属性"><span class="nav-number">3.4.</span> <span class="nav-text">表单新属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#【新API】"><span class="nav-number">3.5.</span> <span class="nav-text">【新API】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交互"><span class="nav-number">3.6.</span> <span class="nav-text">交互</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#history-详细"><span class="nav-number">3.7.</span> <span class="nav-text">history 详细</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存储"><span class="nav-number">3.8.</span> <span class="nav-text">存储</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#跨域"><span class="nav-number">3.9.</span> <span class="nav-text">跨域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#【WebAPP】"><span class="nav-number">3.10.</span> <span class="nav-text">【WebAPP】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见dpr"><span class="nav-number">3.11.</span> <span class="nav-text">常见dpr</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移动端适配"><span class="nav-number">3.12.</span> <span class="nav-text">移动端适配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用meta"><span class="nav-number">3.13.</span> <span class="nav-text">常用meta</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#IE相关"><span class="nav-number">3.13.1.</span> <span class="nav-text">IE相关</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#UC浏览器"><span class="nav-number">3.13.2.</span> <span class="nav-text">UC浏览器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#X5浏览器"><span class="nav-number">3.13.3.</span> <span class="nav-text">X5浏览器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#360"><span class="nav-number">3.13.4.</span> <span class="nav-text">360</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#iphone相关"><span class="nav-number">3.14.</span> <span class="nav-text">iphone相关</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【CSS3】"><span class="nav-number">4.</span> <span class="nav-text">【CSS3】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新属性"><span class="nav-number">4.1.</span> <span class="nav-text">[新属性]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开启GPU加速"><span class="nav-number">4.2.</span> <span class="nav-text">开启GPU加速</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#【动画】"><span class="nav-number">4.3.</span> <span class="nav-text">【动画】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS-动画性能"><span class="nav-number">4.4.</span> <span class="nav-text">CSS 动画性能</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript"><span class="nav-number">5.</span> <span class="nav-text">JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#【原生】"><span class="nav-number">5.1.</span> <span class="nav-text">【原生】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#js数据类型"><span class="nav-number">5.2.</span> <span class="nav-text">js数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#this指向"><span class="nav-number">5.3.</span> <span class="nav-text">this指向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null和undefined的区别"><span class="nav-number">5.4.</span> <span class="nav-text">null和undefined的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#new的具体值"><span class="nav-number">5.5.</span> <span class="nav-text">new的具体值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建对象方式"><span class="nav-number">5.6.</span> <span class="nav-text">创建对象方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原型-原型链"><span class="nav-number">5.7.</span> <span class="nav-text">原型 原型链</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现继承"><span class="nav-number">5.8.</span> <span class="nav-text">实现继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浅拷贝VS深拷贝"><span class="nav-number">5.9.</span> <span class="nav-text">浅拷贝VS深拷贝</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#闭包-详细"><span class="nav-number">5.10.</span> <span class="nav-text">闭包 详细</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内存泄漏"><span class="nav-number">5.11.</span> <span class="nav-text">内存泄漏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原生Ajax使用过程"><span class="nav-number">5.12.</span> <span class="nav-text">原生Ajax使用过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#get和post的区别"><span class="nav-number">5.13.</span> <span class="nav-text">get和post的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件处理-详细"><span class="nav-number">5.14.</span> <span class="nav-text">事件处理 详细</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组去重"><span class="nav-number">5.15.</span> <span class="nav-text">数组去重</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES5数组新方法"><span class="nav-number">5.16.</span> <span class="nav-text">ES5数组新方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#斐波纳挈数列高效递归"><span class="nav-number">5.17.</span> <span class="nav-text">斐波纳挈数列高效递归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#getComputed-Style和Style的区别"><span class="nav-number">5.18.</span> <span class="nav-text">getComputed Style和Style的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM"><span class="nav-number">5.19.</span> <span class="nav-text">DOM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BOM"><span class="nav-number">5.20.</span> <span class="nav-text">BOM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异步编程方法"><span class="nav-number">5.21.</span> <span class="nav-text">异步编程方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【jQuery】"><span class="nav-number">6.</span> <span class="nav-text">【jQuery】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#操作DOM"><span class="nav-number">6.1.</span> <span class="nav-text">操作DOM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Ajax"><span class="nav-number">6.2.</span> <span class="nav-text">Ajax</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【模块化】"><span class="nav-number">7.</span> <span class="nav-text">【模块化】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【MV】-详细"><span class="nav-number">8.</span> <span class="nav-text">【MV】 详细</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【虚拟DOM】"><span class="nav-number">9.</span> <span class="nav-text">【虚拟DOM】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【性能优化】"><span class="nav-number">10.</span> <span class="nav-text">【性能优化】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#雅虎十四条-详细"><span class="nav-number">10.1.</span> <span class="nav-text">雅虎十四条 详细</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移动端优化"><span class="nav-number">10.2.</span> <span class="nav-text">移动端优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16毫秒的优化-详细"><span class="nav-number">10.3.</span> <span class="nav-text">16毫秒的优化 详细</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#渲染路径优化"><span class="nav-number">10.4.</span> <span class="nav-text">渲染路径优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#页面直出-详细"><span class="nav-number">10.5.</span> <span class="nav-text">页面直出 详细</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【跨域与前端安全】"><span class="nav-number">11.</span> <span class="nav-text">【跨域与前端安全】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#跨域的方式"><span class="nav-number">11.1.</span> <span class="nav-text">跨域的方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#跨域攻击-详细"><span class="nav-number">11.2.</span> <span class="nav-text">跨域攻击 详细</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【HTTP】"><span class="nav-number">12.</span> <span class="nav-text">【HTTP】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP报文"><span class="nav-number">12.1.</span> <span class="nav-text">HTTP报文</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP-1-HTTP-2-HTTPS-详细"><span class="nav-number">12.2.</span> <span class="nav-text">HTTP/1 HTTP/2 HTTPS 详细</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#状态码"><span class="nav-number">12.3.</span> <span class="nav-text">状态码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缓存"><span class="nav-number">12.4.</span> <span class="nav-text">缓存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#描述从输入URL到一个页面展现在你面前的全过程"><span class="nav-number">12.5.</span> <span class="nav-text">描述从输入URL到一个页面展现在你面前的全过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引申当前页面渲染时，浏览器发生了什么"><span class="nav-number">12.6.</span> <span class="nav-text">引申当前页面渲染时，浏览器发生了什么</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【工具】"><span class="nav-number">13.</span> <span class="nav-text">【工具】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#【前端自动化工具】"><span class="nav-number">13.1.</span> <span class="nav-text">【前端自动化工具】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#grunt"><span class="nav-number">13.2.</span> <span class="nav-text">grunt</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#glup"><span class="nav-number">13.3.</span> <span class="nav-text">glup</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#【CSS预处理】"><span class="nav-number">13.4.</span> <span class="nav-text">【CSS预处理】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sass"><span class="nav-number">13.5.</span> <span class="nav-text">Sass</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Less"><span class="nav-number">13.6.</span> <span class="nav-text">Less</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Compass"><span class="nav-number">13.7.</span> <span class="nav-text">Compass</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【数据结构】"><span class="nav-number">14.</span> <span class="nav-text">【数据结构】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#排序-详细"><span class="nav-number">14.1.</span> <span class="nav-text">排序 详细</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二叉树原理与实现"><span class="nav-number">14.2.</span> <span class="nav-text">二叉树原理与实现</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">winter</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://winter.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/04/24/前端开发面试题二/';
+          this.page.identifier = '2017/04/24/前端开发面试题二/';
+          this.page.title = '前端开发面试题二';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://winter.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

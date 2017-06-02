@@ -1,0 +1,919 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="面试题," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="1. WEB标准以及W3C标准是什么？标签闭合、标签小写、不乱嵌套、使用外链的css和js、结构行为表现的分离 2. xhtml和html有什么区别？XHTML元素必须被正确的嵌套，闭合，区分大小写，文档必须拥有根元素 3. 行内元素有哪些？块级元素有哪些？行内元素 a b img em i span input select 块级元素 div p h1-h6 form ul dl ol tabl">
+<meta name="keywords" content="面试题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端开发面试题一">
+<meta property="og:url" content="http://yoursite.com/2017/04/24/前端开发面试题一/index.html">
+<meta property="og:site_name" content="winter blog">
+<meta property="og:description" content="1. WEB标准以及W3C标准是什么？标签闭合、标签小写、不乱嵌套、使用外链的css和js、结构行为表现的分离 2. xhtml和html有什么区别？XHTML元素必须被正确的嵌套，闭合，区分大小写，文档必须拥有根元素 3. 行内元素有哪些？块级元素有哪些？行内元素 a b img em i span input select 块级元素 div p h1-h6 form ul dl ol tabl">
+<meta property="og:updated_time" content="2017-06-02T17:04:34.688Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端开发面试题一">
+<meta name="twitter:description" content="1. WEB标准以及W3C标准是什么？标签闭合、标签小写、不乱嵌套、使用外链的css和js、结构行为表现的分离 2. xhtml和html有什么区别？XHTML元素必须被正确的嵌套，闭合，区分大小写，文档必须拥有根元素 3. 行内元素有哪些？块级元素有哪些？行内元素 a b img em i span input select 块级元素 div p h1-h6 form ul dl ol tabl">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/24/前端开发面试题一/"/>
+
+
+
+
+
+  <title>前端开发面试题一 | winter blog</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">winter blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/24/前端开发面试题一/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="winter">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/21253138?v=3&s=460">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="winter blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端开发面试题一</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-24T19:40:41+08:00">
+                2017-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/24/前端开发面试题一/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/04/24/前端开发面试题一/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="1-WEB标准以及W3C标准是什么？"><a href="#1-WEB标准以及W3C标准是什么？" class="headerlink" title="1. WEB标准以及W3C标准是什么？"></a>1. WEB标准以及W3C标准是什么？</h4><p>标签闭合、标签小写、不乱嵌套、使用外链的css和js、结构行为表现的分离</p>
+<h4 id="2-xhtml和html有什么区别？"><a href="#2-xhtml和html有什么区别？" class="headerlink" title="2. xhtml和html有什么区别？"></a>2. xhtml和html有什么区别？</h4><p>XHTML元素必须被正确的嵌套，闭合，区分大小写，文档必须拥有根元素</p>
+<h4 id="3-行内元素有哪些？块级元素有哪些？"><a href="#3-行内元素有哪些？块级元素有哪些？" class="headerlink" title="3. 行内元素有哪些？块级元素有哪些？"></a>3. 行内元素有哪些？块级元素有哪些？</h4><p>行内元素 a b img em i span input select</p>
+<p>块级元素 div p h1-h6 form ul dl ol table</p>
+<h4 id="4-行内元素和块级元素有什么区别？"><a href="#4-行内元素和块级元素有什么区别？" class="headerlink" title="4. 行内元素和块级元素有什么区别？"></a>4. 行内元素和块级元素有什么区别？</h4><p>行内元素不可以设宽高，不独占一行</p>
+<p>块级元素可以设置宽高，独占一行</p>
+<h4 id="5-我想让行内元素跟上面的元素距离10px，加margin-top，padding-top可以吗？"><a href="#5-我想让行内元素跟上面的元素距离10px，加margin-top，padding-top可以吗？" class="headerlink" title="5. 我想让行内元素跟上面的元素距离10px，加margin-top，padding-top可以吗？"></a>5. 我想让行内元素跟上面的元素距离10px，加margin-top，padding-top可以吗？</h4><p>margin-top和padding-top无效</p>
+<h4 id="6-CSS的盒模型由什么组成？"><a href="#6-CSS的盒模型由什么组成？" class="headerlink" title="6. CSS的盒模型由什么组成？"></a>6. CSS的盒模型由什么组成？</h4><p>内容、padding、border、margin</p>
+<h4 id="7-说说display属性有哪些？可以做什么？"><a href="#7-说说display属性有哪些？可以做什么？" class="headerlink" title="7. 说说display属性有哪些？可以做什么？"></a>7. 说说display属性有哪些？可以做什么？</h4><p>display:block 行内元素转换为块元素</p>
+<p>display:inline 块级元素转换为行元素</p>
+<p>display:inline-block 转换为内联元素</p>
+<h4 id="8-CSS的选择符有哪些？"><a href="#8-CSS的选择符有哪些？" class="headerlink" title="8. CSS的选择符有哪些？"></a>8. CSS的选择符有哪些？</h4><ul>
+<li>id选择器(#myid)</li>
+<li>类选择器(.myclassname)</li>
+<li>标签选择器(div,h1,p)</li>
+<li>相邻选择器(h1+p)</li>
+<li>子选择器(ul&gt;li)</li>
+<li>后代选择器(li a)</li>
+<li>通配符选择器</li>
+<li>属性选择器(a[rel=”exrernal”])</li>
+<li>伪类选择器(a:hover;li:nth-child)</li>
+</ul>
+<h4 id="9-哪些CSS属性可以继承？"><a href="#9-哪些CSS属性可以继承？" class="headerlink" title="9. 哪些CSS属性可以继承？"></a>9. 哪些CSS属性可以继承？</h4><p>  可继承性：font-size font-family color<br>  不可继承性：border padding margin width height</p>
+<h4 id="10-CSS优先级算法如何计算？"><a href="#10-CSS优先级算法如何计算？" class="headerlink" title="10. CSS优先级算法如何计算？"></a>10. CSS优先级算法如何计算？</h4><p>  !important&gt;id&gt;class&gt;标签</p>
+<h4 id="11-text-align-center-和-line-height有什么区别？"><a href="#11-text-align-center-和-line-height有什么区别？" class="headerlink" title="11. text-align:center 和 line-height有什么区别？"></a>11. text-align:center 和 line-height有什么区别？</h4><p>  text-align是水平对齐 line-height是行间</p>
+<h4 id="12-前端页面由哪三层构成，分别是什么？作用是什么？"><a href="#12-前端页面由哪三层构成，分别是什么？作用是什么？" class="headerlink" title="12. 前端页面由哪三层构成，分别是什么？作用是什么？"></a>12. 前端页面由哪三层构成，分别是什么？作用是什么？</h4><p>  结构层（html）、表示层（css）、行为层（js）</p>
+<h4 id="13-标签上的title和alt属性的区别是什么？"><a href="#13-标签上的title和alt属性的区别是什么？" class="headerlink" title="13. 标签上的title和alt属性的区别是什么？"></a>13. 标签上的title和alt属性的区别是什么？</h4><p>  alt是图片属性，让搜索引擎认识你的图片，当图片不显示的时候显示</p>
+<p>  title是网站的标题，是SEO中最重要的属性</p>
+<h4 id="14-使用css图片精灵有什么好处？"><a href="#14-使用css图片精灵有什么好处？" class="headerlink" title="14. 使用css图片精灵有什么好处？"></a>14. 使用css图片精灵有什么好处？</h4><p>  CSS图片精灵将一张张小的图片整合到一张大的图片上，减轻HTTP的请求数量。</p>
+<h4 id="15-什么是语义化的HTML？"><a href="#15-什么是语义化的HTML？" class="headerlink" title="15. 什么是语义化的HTML？"></a>15. 什么是语义化的HTML？</h4><p>  标签使用的合理性，对于搜索引擎的抓取有好处</p>
+<h4 id="16-b标签和strong标签，i标签和em标签的区别？"><a href="#16-b标签和strong标签，i标签和em标签的区别？" class="headerlink" title="16. b标签和strong标签，i标签和em标签的区别？"></a>16. b标签和strong标签，i标签和em标签的区别？</h4><p>  后者有语义 前者则无</p>
+<h4 id="17-title与h1的区别？"><a href="#17-title与h1的区别？" class="headerlink" title="17. title与h1的区别？"></a>17. title与h1的区别？</h4><p>  title侧重网站的信息标题</p>
+<p>  h1侧重于文章主题</p>
+<p>  站在SEO的角度来看，好网站少不了title，好文章少不了h1标题，title权重高于h1</p>
+<h4 id="18-清楚浮动的几种方式，各自的优缺点？"><a href="#18-清楚浮动的几种方式，各自的优缺点？" class="headerlink" title="18. 清楚浮动的几种方式，各自的优缺点？"></a>18. 清楚浮动的几种方式，各自的优缺点？</h4><p>  1.使用空标签清楚浮动clear:both(缺点：增加无意义的标签)</p>
+<p>  2.使用overflow:hidden;(使用ZOOM等于1  用于兼容IE)</p>
+<p>  3.使用after伪元素清楚浮动（适用与非IE浏览器）</p>
+<h4 id="19-display-none-和-visibility-hidden的去别是什么？"><a href="#19-display-none-和-visibility-hidden的去别是什么？" class="headerlink" title="19. display:none 和 visibility:hidden的去别是什么？"></a>19. display:none 和 visibility:hidden的去别是什么？</h4><p>  visibility:hidden;将元素隐藏，但还是占着位置</p>
+<p>  display:none; 将元素的显示设为无，不占任何位置</p>
+<h4 id="20-说出几种IE6-BUG的解决方法？"><a href="#20-说出几种IE6-BUG的解决方法？" class="headerlink" title="20. 说出几种IE6 BUG的解决方法？"></a>20. 说出几种IE6 BUG的解决方法？</h4><h4 id="21-域名和服务器的相关知识？"><a href="#21-域名和服务器的相关知识？" class="headerlink" title="21. 域名和服务器的相关知识？"></a>21. 域名和服务器的相关知识？</h4><p>  域名：www.baidu.com</p>
+<p>  服务器：后台处理程序以及数据库（对客户端的请求进行相应的响应）</p>
+<p>  IP地址指向域名 192.168.1.1——》www.baidu.com</p>
+<h4 id="22-HTTP状态码都有哪些？"><a href="#22-HTTP状态码都有哪些？" class="headerlink" title="22. HTTP状态码都有哪些？"></a>22. HTTP状态码都有哪些？</h4><p>  200OK 客户端请求成功</p>
+<p>  400Bad Request 客户端请求有语法错误，不能被服务器所理解</p>
+<p>  403Forbidden 服务器收到请求 但是拒绝提供服务</p>
+<p>  404Not Found 请求资源不存在 输入了错误的URL</p>
+<p>  500 Internet Server Error 服务器发生不可预期的错误</p>
+<p>  503 Server Unavailable 服务器当前不能处理客户端的请求，一段时间后可能回复正常</p>
+<h4 id="23-如何优化网页加载速度？"><a href="#23-如何优化网页加载速度？" class="headerlink" title="23. 如何优化网页加载速度？"></a>23. 如何优化网页加载速度？</h4><p>  1.减少css、js的文件数量和大小（减少重复性代码，代码重复性利用），压缩CSS和JS代码</p>
+<p>  2.图片的大小</p>
+<p>  3.把CSS样式表放置于顶部，把JS放置于页面底部</p>
+<p>  4.减少http的请求数</p>
+<p>  5.使用外部的js和css</p>
+<h4 id="24-position属性absolute和relative的区别？"><a href="#24-position属性absolute和relative的区别？" class="headerlink" title="24. position属性absolute和relative的区别？"></a>24. position属性absolute和relative的区别？</h4><p>  absolute绝对定位 相对于浏览器定位</p>
+<p>  relative相对定位 相对于前面的容器进行定位</p>
+<h4 id="25-HTML5有哪些新标签？"><a href="#25-HTML5有哪些新标签？" class="headerlink" title="25. HTML5有哪些新标签？"></a>25. HTML5有哪些新标签？</h4><h4 id="26-CSS新增伪类有哪些？"><a href="#26-CSS新增伪类有哪些？" class="headerlink" title="26. CSS新增伪类有哪些？"></a>26. CSS新增伪类有哪些？</h4><p>  p:first-of-type</p>
+<p>  p:last-of-type</p>
+<p>  p:only-of-type</p>
+<p>  p:only-child</p>
+<p>  p:nth-child(2)</p>
+<p>  :enabled、:disabled 控制表单控件的禁用状态</p>
+<p>  :checked 单选框和复选框被选中</p>
+<h4 id="27-全局变量和局部变量有什么区别？"><a href="#27-全局变量和局部变量有什么区别？" class="headerlink" title="27. 全局变量和局部变量有什么区别？"></a>27. 全局变量和局部变量有什么区别？</h4><h4 id="28-谈谈-this对象的理解"><a href="#28-谈谈-this对象的理解" class="headerlink" title="28. 谈谈 this对象的理解"></a>28. 谈谈 this对象的理解</h4><p>  this是js的一个关键字，随着函数的使用场合不同，this 的值会发生相应的变化。但是总有一个原则，那就是this指的是调用函数的那个对象</p>
+<p>  this 一般情况下，是全局对象Global。作为方法调用，那么this就是指这个对象</p>
+<h4 id="29-document-write和innerHTML有什么区别？"><a href="#29-document-write和innerHTML有什么区别？" class="headerlink" title="29. document.write和innerHTML有什么区别？"></a>29. document.write和innerHTML有什么区别？</h4><p>  DOM的innerHTML是DOM元素对象的一个属性</p>
+<p>  而write是document对象的一个方法</p>
+<h4 id="30-JSON是什么？"><a href="#30-JSON是什么？" class="headerlink" title="30. JSON是什么？"></a>30. JSON是什么？</h4><p>  JSON是一种轻量级的数据交换格式。它是基于JS的一个子集。数据格式简答，易读写，占用带宽小。</p>
+<p>  {‘age’:12,’name’:’winter’}</p>
+<h4 id="31-ajax是什么？ajax的交互模型？同步和异步的区别？"><a href="#31-ajax是什么？ajax的交互模型？同步和异步的区别？" class="headerlink" title="31. ajax是什么？ajax的交互模型？同步和异步的区别？"></a>31. ajax是什么？ajax的交互模型？同步和异步的区别？</h4><p>  1.通过异步模式，提升了用户体验</p>
+<p>  2.优化了浏览器和服务器之间的传输，减少了不必要的数据往返，减少了带宽占用</p>
+<p>  3.Ajax在客户端运行，承担了一部分本来由服务器承担的工作，减少了大用户量下的服务器负载</p>
+<p>  二、ajax的最大特点是什么？<br>  Ajax可以实现动态不刷新(局部刷新)<br>  三、ajax的缺点?</p>
+<ul>
+<li>ajax不支持浏览器的back按钮</li>
+<li>安全问题 ajax暴露了与服务器交互的细节</li>
+<li>对搜索引擎的支持比较弱</li>
+<li>破坏了程序的异常机制</li>
+<li>不容易调试</li>
+</ul>
+<h4 id="32-你常用的JS框架"><a href="#32-你常用的JS框架" class="headerlink" title="32. 你常用的JS框架"></a>32. 你常用的JS框架</h4><h4 id="33-工作流程，你怎么来实现页面设计图，你认为前端应该如何高质量的完成工作？"><a href="#33-工作流程，你怎么来实现页面设计图，你认为前端应该如何高质量的完成工作？" class="headerlink" title="33. 工作流程，你怎么来实现页面设计图，你认为前端应该如何高质量的完成工作？"></a>33. 工作流程，你怎么来实现页面设计图，你认为前端应该如何高质量的完成工作？</h4><h4 id="34-介绍项目经验、合作开发、独立开发"><a href="#34-介绍项目经验、合作开发、独立开发" class="headerlink" title="34. 介绍项目经验、合作开发、独立开发"></a>34. 介绍项目经验、合作开发、独立开发</h4><h4 id="35-开发过程中遇到的困难，如何解决？"><a href="#35-开发过程中遇到的困难，如何解决？" class="headerlink" title="35. 开发过程中遇到的困难，如何解决？"></a>35. 开发过程中遇到的困难，如何解决？</h4><h4 id="36-对前端界面工程师这个职位是怎么样理解的？它的前景会是怎么样？"><a href="#36-对前端界面工程师这个职位是怎么样理解的？它的前景会是怎么样？" class="headerlink" title="36. 对前端界面工程师这个职位是怎么样理解的？它的前景会是怎么样？"></a>36. 对前端界面工程师这个职位是怎么样理解的？它的前景会是怎么样？</h4><p>前端是最贴近用户的程序员，比后端、数据库、产品经理、运营、安全都近</p>
+<p>  1、实现界面交互</p>
+<p>  2、提升用户体验</p>
+<p>  3、有了Node.js前端可以实现服务端的一些事情</p>
+<p>  前端是最贴近用户的程序员，前端的能力就是能让产品从90分进化到100分，甚至更好。</p>
+<p>  参与项目，快速高质量完成实现效果图，精确到1px</p>
+<p>  参与团队成员，UI设计，产品经理的沟通</p>
+<p>  做好的页面结构，页面重构和用户体验</p>
+<p>  处理hack，兼容、写出优美的代码格式</p>
+<p>  针对服务器的优化、拥抱最新的前端技术</p>
+<blockquote>
+<p>其他相关的加分项</p>
+<ol>
+<li>都知道和使用过哪些编辑器，都使用和了解过哪些日常工具？</li>
+<li>都知道有哪些浏览器内核？开发过的项目都兼容哪些浏览器？</li>
+<li>瀑布流布局或者流式布局是否有了解？</li>
+<li>HTML5都有哪些新的API？</li>
+<li>都用过什么代码调试工具？</li>
+<li>是否接触或者了解过重构？</li>
+<li>你遇到比较难的技术问题是什么？你是如何解决的？</li>
+<li>什么叫优雅降级和渐进增强？</li>
+</ol>
+</blockquote>
+<h4 id="优雅降级-平稳退化："><a href="#优雅降级-平稳退化：" class="headerlink" title="优雅降级/平稳退化："></a>优雅降级/平稳退化：</h4><p>  Web站点在所有新式浏览器当中都能工作，如果用户使用的是老式浏览器，则代码会检查以确认他们是否能正常工作。由于IE独特的盒模型布局问题，针对不同版本的IE的hack实践过优雅降级了，为那些无法支持功能的浏览器增加候选方案，使之在旧式浏览器上以某种形式降级体验，却不至于完全失效。</p>
+<h4 id="渐进增强："><a href="#渐进增强：" class="headerlink" title="渐进增强："></a>渐进增强：</h4><p>  从被所有浏览器支持的基本功能开始，逐步的增加那些只有新式浏览器才支持的功能，向页面增加无害于基础浏览器的额外样式和功能的。当浏览器支持时，它们会自地呈现出来并发挥作用。<br>  跨浏览器，网页性能优化，seo，深刻理解Web标准，对可用性、可访问性等相关知识有实际的了解，包括代码的可维护性、组件的易用性、分层语义模板和浏览器分级支持等。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat.png" alt="winter WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/ali.jpg" alt="winter Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试题/" rel="tag"># 面试题</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/24/有思考的人/" rel="next" title="有思考的人">
+                <i class="fa fa-chevron-left"></i> 有思考的人
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/24/wamp下apache2.4.9局域网ip访问时提示403错误/" rel="prev" title="wamp下apache2.4.9局域网ip访问时提示403错误">
+                wamp下apache2.4.9局域网ip访问时提示403错误 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars1.githubusercontent.com/u/21253138?v=3&s=460"
+               alt="winter" />
+          <p class="site-author-name" itemprop="name">winter</p>
+           
+              <p class="site-description motion-element" itemprop="description">Some things are so important that they force us to overcome our fears.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Gwemz" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/gwemz" target="_blank" title="Coding">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  Coding
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-WEB标准以及W3C标准是什么？"><span class="nav-number">1.</span> <span class="nav-text">1. WEB标准以及W3C标准是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-xhtml和html有什么区别？"><span class="nav-number">2.</span> <span class="nav-text">2. xhtml和html有什么区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-行内元素有哪些？块级元素有哪些？"><span class="nav-number">3.</span> <span class="nav-text">3. 行内元素有哪些？块级元素有哪些？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-行内元素和块级元素有什么区别？"><span class="nav-number">4.</span> <span class="nav-text">4. 行内元素和块级元素有什么区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-我想让行内元素跟上面的元素距离10px，加margin-top，padding-top可以吗？"><span class="nav-number">5.</span> <span class="nav-text">5. 我想让行内元素跟上面的元素距离10px，加margin-top，padding-top可以吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-CSS的盒模型由什么组成？"><span class="nav-number">6.</span> <span class="nav-text">6. CSS的盒模型由什么组成？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-说说display属性有哪些？可以做什么？"><span class="nav-number">7.</span> <span class="nav-text">7. 说说display属性有哪些？可以做什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-CSS的选择符有哪些？"><span class="nav-number">8.</span> <span class="nav-text">8. CSS的选择符有哪些？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-哪些CSS属性可以继承？"><span class="nav-number">9.</span> <span class="nav-text">9. 哪些CSS属性可以继承？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-CSS优先级算法如何计算？"><span class="nav-number">10.</span> <span class="nav-text">10. CSS优先级算法如何计算？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-text-align-center-和-line-height有什么区别？"><span class="nav-number">11.</span> <span class="nav-text">11. text-align:center 和 line-height有什么区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-前端页面由哪三层构成，分别是什么？作用是什么？"><span class="nav-number">12.</span> <span class="nav-text">12. 前端页面由哪三层构成，分别是什么？作用是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-标签上的title和alt属性的区别是什么？"><span class="nav-number">13.</span> <span class="nav-text">13. 标签上的title和alt属性的区别是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-使用css图片精灵有什么好处？"><span class="nav-number">14.</span> <span class="nav-text">14. 使用css图片精灵有什么好处？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15-什么是语义化的HTML？"><span class="nav-number">15.</span> <span class="nav-text">15. 什么是语义化的HTML？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16-b标签和strong标签，i标签和em标签的区别？"><span class="nav-number">16.</span> <span class="nav-text">16. b标签和strong标签，i标签和em标签的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#17-title与h1的区别？"><span class="nav-number">17.</span> <span class="nav-text">17. title与h1的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#18-清楚浮动的几种方式，各自的优缺点？"><span class="nav-number">18.</span> <span class="nav-text">18. 清楚浮动的几种方式，各自的优缺点？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#19-display-none-和-visibility-hidden的去别是什么？"><span class="nav-number">19.</span> <span class="nav-text">19. display:none 和 visibility:hidden的去别是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#20-说出几种IE6-BUG的解决方法？"><span class="nav-number">20.</span> <span class="nav-text">20. 说出几种IE6 BUG的解决方法？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#21-域名和服务器的相关知识？"><span class="nav-number">21.</span> <span class="nav-text">21. 域名和服务器的相关知识？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22-HTTP状态码都有哪些？"><span class="nav-number">22.</span> <span class="nav-text">22. HTTP状态码都有哪些？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#23-如何优化网页加载速度？"><span class="nav-number">23.</span> <span class="nav-text">23. 如何优化网页加载速度？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#24-position属性absolute和relative的区别？"><span class="nav-number">24.</span> <span class="nav-text">24. position属性absolute和relative的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#25-HTML5有哪些新标签？"><span class="nav-number">25.</span> <span class="nav-text">25. HTML5有哪些新标签？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#26-CSS新增伪类有哪些？"><span class="nav-number">26.</span> <span class="nav-text">26. CSS新增伪类有哪些？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#27-全局变量和局部变量有什么区别？"><span class="nav-number">27.</span> <span class="nav-text">27. 全局变量和局部变量有什么区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#28-谈谈-this对象的理解"><span class="nav-number">28.</span> <span class="nav-text">28. 谈谈 this对象的理解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#29-document-write和innerHTML有什么区别？"><span class="nav-number">29.</span> <span class="nav-text">29. document.write和innerHTML有什么区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#30-JSON是什么？"><span class="nav-number">30.</span> <span class="nav-text">30. JSON是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#31-ajax是什么？ajax的交互模型？同步和异步的区别？"><span class="nav-number">31.</span> <span class="nav-text">31. ajax是什么？ajax的交互模型？同步和异步的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#32-你常用的JS框架"><span class="nav-number">32.</span> <span class="nav-text">32. 你常用的JS框架</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#33-工作流程，你怎么来实现页面设计图，你认为前端应该如何高质量的完成工作？"><span class="nav-number">33.</span> <span class="nav-text">33. 工作流程，你怎么来实现页面设计图，你认为前端应该如何高质量的完成工作？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#34-介绍项目经验、合作开发、独立开发"><span class="nav-number">34.</span> <span class="nav-text">34. 介绍项目经验、合作开发、独立开发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#35-开发过程中遇到的困难，如何解决？"><span class="nav-number">35.</span> <span class="nav-text">35. 开发过程中遇到的困难，如何解决？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#36-对前端界面工程师这个职位是怎么样理解的？它的前景会是怎么样？"><span class="nav-number">36.</span> <span class="nav-text">36. 对前端界面工程师这个职位是怎么样理解的？它的前景会是怎么样？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优雅降级-平稳退化："><span class="nav-number">37.</span> <span class="nav-text">优雅降级/平稳退化：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#渐进增强："><span class="nav-number">38.</span> <span class="nav-text">渐进增强：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">winter</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://winter.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/04/24/前端开发面试题一/';
+          this.page.identifier = '2017/04/24/前端开发面试题一/';
+          this.page.title = '前端开发面试题一';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://winter.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

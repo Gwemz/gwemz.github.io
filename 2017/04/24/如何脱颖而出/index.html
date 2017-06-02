@@ -1,0 +1,865 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="面试题," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="如何脱颖而出 版权声明：本文为 winter文章，可以随意转载，但必须在明确位置注明出处！！！  前两天有一位同学在小密圈里问我一个问题，说自己高中学历，想要学习编程，不知道可行么？ 我给他的回答是：很难，非常难，比你想象的还要难，但是难不代表不可行。 有别的热心的同学评论说，没什么不行的，只要比别人更努力就行，你看张哥，当初不也是非科班，学渣出身么，一步步靠自己努力走到现在。 是啊，很多读者喜欢">
+<meta name="keywords" content="面试题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何脱颖而出">
+<meta property="og:url" content="http://yoursite.com/2017/04/24/如何脱颖而出/index.html">
+<meta property="og:site_name" content="winter blog">
+<meta property="og:description" content="如何脱颖而出 版权声明：本文为 winter文章，可以随意转载，但必须在明确位置注明出处！！！  前两天有一位同学在小密圈里问我一个问题，说自己高中学历，想要学习编程，不知道可行么？ 我给他的回答是：很难，非常难，比你想象的还要难，但是难不代表不可行。 有别的热心的同学评论说，没什么不行的，只要比别人更努力就行，你看张哥，当初不也是非科班，学渣出身么，一步步靠自己努力走到现在。 是啊，很多读者喜欢">
+<meta property="og:updated_time" content="2017-06-02T17:05:53.809Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何脱颖而出">
+<meta name="twitter:description" content="如何脱颖而出 版权声明：本文为 winter文章，可以随意转载，但必须在明确位置注明出处！！！  前两天有一位同学在小密圈里问我一个问题，说自己高中学历，想要学习编程，不知道可行么？ 我给他的回答是：很难，非常难，比你想象的还要难，但是难不代表不可行。 有别的热心的同学评论说，没什么不行的，只要比别人更努力就行，你看张哥，当初不也是非科班，学渣出身么，一步步靠自己努力走到现在。 是啊，很多读者喜欢">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/24/如何脱颖而出/"/>
+
+
+
+
+
+  <title>如何脱颖而出 | winter blog</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">winter blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/24/如何脱颖而出/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="winter">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/21253138?v=3&s=460">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="winter blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">如何脱颖而出</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-24T19:40:41+08:00">
+                2017-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/24/如何脱颖而出/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/04/24/如何脱颖而出/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="如何脱颖而出"><a href="#如何脱颖而出" class="headerlink" title="如何脱颖而出"></a>如何脱颖而出</h1><p> <code>版权声明：本文为 winter文章，可以随意转载，但必须在明确位置注明出处！！！</code></p>
+<p> 前两天有一位同学在小密圈里问我一个问题，说自己高中学历，想要学习编程，不知道可行么？</p>
+<p>我给他的回答是：很难，非常难，比你想象的还要难，但是难不代表不可行。</p>
+<p>有别的热心的同学评论说，没什么不行的，只要比别人更努力就行，你看张哥，当初不也是非科班，学渣出身么，一步步靠自己努力走到现在。</p>
+<p>是啊，很多读者喜欢拿我的经历来激励自己，我毕业转行做开发的时候，已经比同龄人落后太多太多，中间有过不少波折，但是走上正轨，确定方向之后，很快 2、3 年的时间就取得飞快进步，并且在业内也积累了一点名气，之后又从技术到产品、管理，业余时间从写博客，再到公众号，都取得了点小成就，大家都知道我很努力，甚至到拼命的地步，所以，很多人把我取得的成就全部归功于我的努力，其实，今天，我要说，这是一个假象！</p>
+<p>不可否认，努力固然重要，但是如果只是单纯努力的话，我相信这世界上努力的人随处可见，这世界从来不缺努力的人，但是，如何能在这一群努力的人中间，脱颖而出，这才是一个关键点，今天，我就在这里分享下我私人总结的一点经验。</p>
+<p><strong> 1. 提高自己的起点 </strong></p>
+<p>不管你是高中学历也好，还是跟我一样非科班的学渣也好，其实本质上我们的先天条件比别人差，时间周期也比别人晚，我们要想赶上那些先天条件比我们好的同学，比他们更努力，虽然可以赶上一部分人，但是很多条件好，同样很努力的人比比皆是，这个时候，就需要寻找点方法了，我总结的第一个方法就是–提高自己的起点。</p>
+<p>举个例子，我们大部分人学习编程的时候，大都是看视频、百度、CSDN 博客、一些国内论坛等，可以这么说，即使是现在，这仍然是大部分人学习的主要方式。但是我当时就不这么想，大家都这么学习，我如何才能效率更高呢？</p>
+<p>所以，我当时的做法，当别人都在看视频的时候，我坚持看博客、文档学习，因为看视频很没效率，看博客除了节省我的学习时间之外，还提高了我的阅读能力。当别人在用百度，查看国内各种二手资料的时候，我坚持使用 Google，查看国外大牛博客，我英语很差，这对我来说很难，但是我硬逼着自己，坚持下去，当别人混国内小白论坛的时候，我就开始混 GitHub 开源社区，学习国外大牛的开源项目，当别人在看国内翻译的资料的时候，我却逼着自己去官方看英文文档。</p>
+<p>这一切的一切，本质上都是为了提高自己的起点，虽然我起步晚，但是我起点高，慢慢的就会缩小差距，时间长了，甚至后来居上。</p>
+<p>当然，前提是自己得衡量自己的能力，就好比，你才刚学会写一个 Hello World ，你说你要去看 Android 源码，这不现实。所以，我在最初入门的时候也经历过看视频，百度的阶段，但是一旦自己上手之后，我坚定的逼着自己让自己的起点更高。</p>
+<p><strong> 2. 保持专注 </strong></p>
+<p>很多人其实论努力程度不输任何人，但是总感觉自己进步非常慢，那么原因很可能是你不够专注。我看到这么一个现象，IT 界技术日新月异，动不动就会出来一门新语言，新框架，尤其前端界更是，很多人就看到有一个看似很火的东西出来了，然后去学习，另一个东西出来了，又忙不迭的去学习，生怕错过了时间窗口就错过了巨大的机会。</p>
+<p>然而殊不知，万变不离其宗，你连手上的事都没做好呢，就想着可能会错失巨大的机会，在编程界，其实各个语言都是通的，把一门领域学好学精，后面再涉及其他领域也是很快速的。</p>
+<p>有人可能会问，不紧跟时代潮流，错过了机会怎么办？</p>
+<p>潮流固然要关注，但是我敢这么说，你连手上的事都还没做好呢，即使机会来了，一样不属于你。我们总是夸大了时间窗口的作用，以为错过了互联网、错过了移动互联网，决不能错过下一个风口浪尖了，这真的是一个误区，看似每一个风口来了，抓住机会的都是第一时间进入的，殊不知，第一时间死掉的比存活下来的不知道要多出多少，能存活下来的，只是被人忽略了自身的实力而已，而且很多后来居上的例子数不胜数。</p>
+<p>所以，你不妨专注在一件事上，专注手上正在做的事，就如我博客所说：做好现在的事！</p>
+<p><strong> 3. 把事情做到极致 </strong></p>
+<p>这世界上很多人都很专注，甚至有几十年如一日在自己的工作岗位上兢兢业业，但是专注在一件事上还不够，你要把事情做到极致才行。</p>
+<p>这个特质对很多职场中的同学非常有用，很多刚入职场的同学总是感觉自己做的工作没什么用，就是打杂的，抱怨自己被大材小用了，然而，就是这么简单的工作，你能把它做好，做到极致，一样很有价值，你也才能因此得到更多的机会。</p>
+<p>我刚加入公司的时候，甚至做过一段时间的「电话管理员与网管」，公司每每调换座位的时候，我从来都是利用下班时间帮大家调换电话线，我每次都会亲自验证，要知道很多电话不在同一楼层，这非常麻烦，但是从来没出过错，人事都觉得不可思议，因为之前的人负责的偶尔调错很正常。除此之外，我觉得机房里那些电话线非常混乱，杂乱无章，专门重新做了整理，这些工作，在之前，没人愿意去做。</p>
+<p>我在给别人重装系统的时候，每次都会把驱动、常用办公软件一并给装好，之前，也从来没人想过这事。</p>
+<p>正因为我把在公司的每件事都做到极致，我才能因此得到更多的信任与机会。</p>
+<p>现在我在公众号写作，除了内容之外，我会力求把所有细节都做好，字体大小、标点、间距排版等等，我都会很在意，直到现在也一直在改进。</p>
+<p>很多人总觉得自己工作做的还不错，分配的任务做完了，总觉得没事做，然而问问你自己，是否还可以做的更好？</p>
+<p>这个功能是不是还有更好的实现方式？代码是不是还可以更简练些？这个动画是不是还可以更流畅些？是不是有些历史遗留问题可以解决的？有些更好的框架是不是可以考虑学习应用在项目中？性能是不是还可以更好些？</p>
+<p>任何一件小事，做到极致，都是一项了不起的能力！</p>
+<p><strong> 4. 不要给自己设限 </strong></p>
+<p>之前有人问我这么一个问题，说之前一直做技术 Leader 的角色，公司觉得他做的还不错，想让他做项目管理，他很纠结，担心自己做不好，而且还影响了技术上的进步。</p>
+<p>如果是我，我会毫不犹豫的尝试。</p>
+<p>很多人知道我，我自己是从一位不起眼的程序员，一步步走到公司管理层的，我现在参与公司的重大决策，现在除了技术之外，我涉及到的领域非常多，有产品、运营、商业、管理、投资等。</p>
+<p>我当初一样面临过这种选择，一样犹豫过，一样有各种担心，但是当我走过来，我才明白我自己的职业选择都是来自于我的一个特质：我从来不给自己设限。</p>
+<p>我自己的性格比较开放，喜欢折腾，喜欢接触不同的领域，有很多奇特的想法，比如我认为现在国家规定一个人只能同时在一家公司上班不科学，我认为未来是一个多元化人才的时代，一个人如果只要有能力，在一家公司写代码的同时，为什么不能同时在另一家公司做销售呢？只不过时代还不认可我这么前卫的想法。</p>
+<p>但是，只要有机会，我都会接触不同的领域，我不会优先考虑我做不到，我只会先考虑，如果我做到了，会不会对自己的能力有很大帮助。</p>
+<p>所以，当我有一个工程师转到管理岗位的机会时，我尝试了，毕竟，万一尝试之后，不适合自己，或者自己做不到，又能如何呢？大不了再做回老本行好了。幸运的是，我成功了，而且一直做到公司管理层。</p>
+<p>除此之外，我还经常跟公司产品经理一起讨论产品，有很多不错的需求甚至都是我来提出的。由于我自己在公众号的运营经验，我有机会还教下我们的媒体运营同事，如何排版，如何更好的运营用户等。</p>
+<p>我说我在商业、投资领域也有涉及，很多人可能觉得我又扯淡了，这些都是我在老板身边学到的，老板是投资出身，在这方面很厉害，毕竟呆的时间久了，自己总会有所感染，而且在去年还跟着老板一起在上海投资了一家吐司店，一年多的时间，估值翻了将近十倍，当然，由于自己第一次投资，还没什么经验，投资额度较小。</p>
+<p>这个世界从来都是有得必有失，我做了管理之后，在 Android 技术领域上花费的时间很少了，也不用自己写代码了，但是我在其他领域的能力收获非常大，我也一直在向我口中所说的多元化人才努力。</p>
+<p>有人可能会有疑问了，不给自己设限不跟上面说到的专注矛盾么？</p>
+<p>当然不矛盾，不给自己设限的前提一定是自己具备了至少一项不错的能力，而且即使你再怎么专注，也没法一天 24 小时都在做一件事，即使你很专注，你也会有看电视、娱乐的时间。</p>
+<p>所以，专注的做好手上的事固然很重要，但是不要闷头工作，也偶尔抬头看下外面的天空，拓宽下自己的视野，在有其他领域机会的时候，不妨勇敢的去尝试下。</p>
+<p><strong> 5. 执行力 </strong></p>
+<p>我们都知道努力很重要，但是很少有人能做到。</p>
+<p>比如，即使我一而再再而三的号召大家，要写博客，学写作，又有几个人做到了呢？你知道，每天只需要学习 2 小时，一年之后，你的能力就有很大提高，又有几个人能做到？</p>
+<p>所以，大部分人的执行力很差，可能你一时做到了，也没法坚持下去，而把自己的执行力持续下去恰恰是最关键的一环，也就是所谓的：「道理我都懂，可是我做不到」。</p>
+<p>这个话题很长，后面我会抽时间单独写篇文章，以自己的亲身经历总结了一点方法，教教大家如何才能改变这一现状，提高你的执行力，让你的努力更容易坚持下去。</p>
+<p>以上，就是我所总结的，如何让你脱颖而出的一些技巧，希望对部分同学有所思考与帮助！</p>
+<p>PS：可能有些人，看了以上我的总结，会觉得，这些东西我都知道，但是，真的是这样么？我敢说，在你没看这篇文章之前，你丝毫没有意识到自己比别人差在哪里，你只是看了之后，恍然大悟罢了。</p>
+<p>还有些人，可能会觉得是鸡汤，某种意义上来说，确实是鸡汤，但是却都是自己真实经历的经验总结，有时候，鸡汤可能比所谓的干货更有用，很多道理其实大家都懂，我们做出改变缺乏的只是一个推动力。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat.png" alt="winter WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/ali.jpg" alt="winter Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试题/" rel="tag"># 面试题</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/24/java环境配置eclipse的安装/" rel="next" title="java环境配置eclipse的安装">
+                <i class="fa fa-chevron-left"></i> java环境配置eclipse的安装
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/24/有思考的人/" rel="prev" title="有思考的人">
+                有思考的人 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars1.githubusercontent.com/u/21253138?v=3&s=460"
+               alt="winter" />
+          <p class="site-author-name" itemprop="name">winter</p>
+           
+              <p class="site-description motion-element" itemprop="description">Some things are so important that they force us to overcome our fears.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Gwemz" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/gwemz" target="_blank" title="Coding">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  Coding
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#如何脱颖而出"><span class="nav-number">1.</span> <span class="nav-text">如何脱颖而出</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">winter</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://winter.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/04/24/如何脱颖而出/';
+          this.page.identifier = '2017/04/24/如何脱颖而出/';
+          this.page.title = '如何脱颖而出';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://winter.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
