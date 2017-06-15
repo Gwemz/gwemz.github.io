@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="winter blog">
 <meta property="og:description" content="如何利用Hexo搭建个人博客？  hexo简介hexo出自台湾大学生tommy351之手，是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上.    1231. 如果你对默认配置满意，只需几个命令便可秒搭一个hexo。2. 如果你跟我一样喜欢折腾下，30分钟也足够个性化。3. 如果你过于喜欢折腾，可">
 <meta property="og:image" content="http://www.enkj.com/idcnews/kindeditor-4.1.7/attached/image/20140920/20140920141003_7506.jpg">
-<meta property="og:updated_time" content="2017-06-02T15:38:03.868Z">
+<meta property="og:updated_time" content="2017-06-05T09:26:52.750Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo你的博客">
 <meta name="twitter:description" content="如何利用Hexo搭建个人博客？  hexo简介hexo出自台湾大学生tommy351之手，是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上.    1231. 如果你对默认配置满意，只需几个命令便可秒搭一个hexo。2. 如果你跟我一样喜欢折腾下，30分钟也足够个性化。3. 如果你过于喜欢折腾，可">
@@ -274,7 +274,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="winter">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/21253138?v=3&s=460">
+      <meta itemprop="image" content="/images/touxiang.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -355,6 +355,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo n #写文章</div><div class="line">hexo g #生成</div><div class="line">hexo d #部署 # 可与hexo g合并为 hexo d -g</div></pre></td></tr></table></figure>
 <h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><h4 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h4><p>到Node.js官网下载相应平台的最新版本，一路安装即可。</p>
 <h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4><p><a href="http://www.jianshu.com/p/393d067dba8d" target="_blank" rel="external">Hexo之next主题设置首页不显示全文(只显示预览)</a></p>
+<h3 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h3><p>执行new命令，生成指定名称的文章至hexo\source_posts\postName.md。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new [layout] &quot;postName&quot; #新建文章</div></pre></td></tr></table></figure>
+<p>其中layout是可选参数，默认值为post。有哪些layout呢，请到scaffolds目录下查看，这些文件名称就是layout名称。当然你可以添加自己的layout，方法就是添加一个文件即可，同时你也可以编辑现有的layout，比如post的layout默认是hexo\scaffolds\post.md</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title: &#123; &#123; title &#125; &#125;</div><div class="line">date: &#123; &#123; date &#125; &#125;</div><div class="line">tags:</div><div class="line">---</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -420,8 +424,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/02/astar算法研究/" rel="next" title="A-star算法的研究与应用">
-                <i class="fa fa-chevron-left"></i> A-star算法的研究与应用
+              <a href="/2017/04/24/wampserver端口号被占用/" rel="next" title="解决WampServer 80端口号被占用的问题">
+                <i class="fa fa-chevron-left"></i> 解决WampServer 80端口号被占用的问题
               </a>
             
           </div>
@@ -429,6 +433,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/02/astar算法研究/" rel="prev" title="A-star算法的研究与应用">
+                A-star算法的研究与应用 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -518,7 +526,7 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="https://avatars1.githubusercontent.com/u/21253138?v=3&s=460"
+               src="/images/touxiang.jpg"
                alt="winter" />
           <p class="site-author-name" itemprop="name">winter</p>
            
@@ -530,7 +538,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -543,7 +551,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -612,7 +620,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo简介"><span class="nav-number">1.</span> <span class="nav-text">hexo简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境准备"><span class="nav-number">2.</span> <span class="nav-text">环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装node"><span class="nav-number">2.1.</span> <span class="nav-text">安装node</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装git"><span class="nav-number">2.2.</span> <span class="nav-text">安装git</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo简介"><span class="nav-number">1.</span> <span class="nav-text">hexo简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境准备"><span class="nav-number">2.</span> <span class="nav-text">环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装node"><span class="nav-number">2.1.</span> <span class="nav-text">安装node</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装git"><span class="nav-number">2.2.</span> <span class="nav-text">安装git</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写文章"><span class="nav-number">3.</span> <span class="nav-text">写文章</span></a></li></ol></div>
             
 
           </div>
