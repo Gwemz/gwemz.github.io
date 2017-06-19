@@ -11,7 +11,7 @@
   <entry>
     <title><![CDATA[VueJS研究]]></title>
     <url>%2F2017%2F06%2F15%2FVueJS%E7%A0%94%E7%A9%B6%2F</url>
-    <content type="text"><![CDATA[介绍12]]></content>
+    <content type="text"><![CDATA[介绍Vue.js是一套构建用户界面的渐进式框架。与其他重量级框架不同的是，Vue采用自底向上增量开发的设计。Vue的核心库只关注视图层，他不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与单文件组件和Vue生态系统支持的库结合使用时，Vue也完全能够为复杂的单页应用程序提供驱动。 官方网站]]></content>
       <tags>
         <tag>vue</tag>
       </tags>
