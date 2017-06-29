@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="介绍Vue.js是一套构建用户界面的渐进式框架。与其他重量级框架不同的是，Vue采用自底向上增量开发的设计。Vue的核心库只关注视图层，他不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与单文件组件和Vue生态系统支持的库结合使用时，Vue也完全能够为复杂的单页应用程序提供驱动。 官方网站">
+<meta name="description" content="介绍Vue.js是一套构建用户界面的渐进式框架。与其他重量级框架不同的是，Vue采用自底向上增量开发的设计。Vue的核心库只关注视图层，他不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与单文件组件和Vue生态系统支持的库结合使用时，Vue也完全能够为复杂的单页应用程序提供驱动。 官方网站 引入方式 &amp;lt;script src=&amp;quot;https://unpkg.com/vue/d">
 <meta name="keywords" content="vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VueJS研究">
 <meta property="og:url" content="http://yoursite.com/2017/06/15/VueJS研究/index.html">
 <meta property="og:site_name" content="winter blog">
-<meta property="og:description" content="介绍Vue.js是一套构建用户界面的渐进式框架。与其他重量级框架不同的是，Vue采用自底向上增量开发的设计。Vue的核心库只关注视图层，他不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与单文件组件和Vue生态系统支持的库结合使用时，Vue也完全能够为复杂的单页应用程序提供驱动。 官方网站">
-<meta property="og:updated_time" content="2017-06-19T15:14:32.856Z">
+<meta property="og:description" content="介绍Vue.js是一套构建用户界面的渐进式框架。与其他重量级框架不同的是，Vue采用自底向上增量开发的设计。Vue的核心库只关注视图层，他不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与单文件组件和Vue生态系统支持的库结合使用时，Vue也完全能够为复杂的单页应用程序提供驱动。 官方网站 引入方式 &amp;lt;script src=&amp;quot;https://unpkg.com/vue/d">
+<meta property="og:updated_time" content="2017-06-21T03:39:06.436Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VueJS研究">
-<meta name="twitter:description" content="介绍Vue.js是一套构建用户界面的渐进式框架。与其他重量级框架不同的是，Vue采用自底向上增量开发的设计。Vue的核心库只关注视图层，他不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与单文件组件和Vue生态系统支持的库结合使用时，Vue也完全能够为复杂的单页应用程序提供驱动。 官方网站">
+<meta name="twitter:description" content="介绍Vue.js是一套构建用户界面的渐进式框架。与其他重量级框架不同的是，Vue采用自底向上增量开发的设计。Vue的核心库只关注视图层，他不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与单文件组件和Vue生态系统支持的库结合使用时，Vue也完全能够为复杂的单页应用程序提供驱动。 官方网站 引入方式 &amp;lt;script src=&amp;quot;https://unpkg.com/vue/d">
 
 
 
@@ -344,7 +344,18 @@
       
         <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Vue.js是一套构建用户界面的渐进式框架。与其他重量级框架不同的是，Vue采用自底向上增量开发的设计。Vue的核心库只关注视图层，他不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与单文件组件和Vue生态系统支持的库结合使用时，Vue也完全能够为复杂的单页应用程序提供驱动。</p>
 <p><a href="https://cn.vuejs.org/" target="_blank" rel="external">官方网站</a></p>
-
+<p>引入方式 <code>&lt;script src=&quot;https://unpkg.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt;</code></p>
+<h3 id="声明式渲染"><a href="#声明式渲染" class="headerlink" title="声明式渲染"></a>声明式渲染</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;app&quot;&gt;</div><div class="line">  &#123;&#123; message &#125;&#125;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">var app = new Vue(&#123;</div><div class="line">  el: &apos;#app&apos;,</div><div class="line">  data: &#123;</div><div class="line">    message: &apos;Hello Vue!&apos;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<div class="note default"><p>Hello Vue!</p>
+</div>
+<p>绑定Dom元素属性：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;app-2&quot;&gt;</div><div class="line">  &lt;span v-bind:title=&quot;message&quot;&gt;</div><div class="line">    鼠标悬停几秒钟查看此处动态绑定的提示信息！</div><div class="line">  &lt;/span&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">var app2 = new Vue(&#123;</div><div class="line">  el: &apos;#app-2&apos;,</div><div class="line">  data: &#123;</div><div class="line">    message: &apos;页面加载于 &apos; + new Date()</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p><code>鼠标悬停几秒钟查看此处动态绑定的信息！</code></p>
+<h3 id="条件与循环"><a href="#条件与循环" class="headerlink" title="条件与循环"></a>条件与循环</h3><p>条件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;app-3&quot;&gt;</div><div class="line">  &lt;p v-if=&quot;seen&quot;&gt;现在你看到我了&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">var app3 = new Vue(&#123;</div><div class="line">  el: &apos;#app-3&apos;,</div><div class="line">  data: &#123;</div><div class="line">    seen: true</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p><code>现在你看到我了</code></p>
+<p>循环<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;app-4&quot;&gt;</div><div class="line">  &lt;ol&gt;</div><div class="line">    &lt;li v-for=&quot;todo in todos&quot;&gt;</div><div class="line">      &#123;&#123; todo.text &#125;&#125;</div><div class="line">    &lt;/li&gt;</div><div class="line">  &lt;/ol&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">var app4 = new Vue(&#123;</div><div class="line">  el: &apos;#app-4&apos;,</div><div class="line">  data: &#123;</div><div class="line">    todos: [</div><div class="line">      &#123; text: &apos;学习 JavaScript&apos; &#125;,</div><div class="line">      &#123; text: &apos;学习 Vue&apos; &#125;,</div><div class="line">      &#123; text: &apos;整个牛项目&apos; &#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>1.学习JavaScript<br>2.学习Vue<br>3.整个牛项目</p>
+<h3 id="处理用户输入"><a href="#处理用户输入" class="headerlink" title="处理用户输入"></a>处理用户输入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;app-5&quot;&gt;</div><div class="line">  &lt;p&gt;&#123;&#123; message &#125;&#125;&lt;/p&gt;</div><div class="line">  &lt;button v-on:click=&quot;reverseMessage&quot;&gt;逆转消息&lt;/button&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">var app5 = new Vue(&#123;</div><div class="line">  el: &apos;#app-5&apos;,</div><div class="line">  data: &#123;</div><div class="line">    message: &apos;Hello Vue.js!&apos;</div><div class="line">  &#125;,</div><div class="line">  methods: &#123;</div><div class="line">    reverseMessage: function () &#123;</div><div class="line">      this.message = this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="Vue基本的路由结构"><a href="#Vue基本的路由结构" class="headerlink" title="Vue基本的路由结构"></a>Vue基本的路由结构</h3>
       
     </div>
 
@@ -521,7 +532,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -534,7 +545,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -603,7 +614,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#声明式渲染"><span class="nav-number">1.1.</span> <span class="nav-text">声明式渲染</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件与循环"><span class="nav-number">1.2.</span> <span class="nav-text">条件与循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理用户输入"><span class="nav-number">1.3.</span> <span class="nav-text">处理用户输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue基本的路由结构"><span class="nav-number">1.4.</span> <span class="nav-text">Vue基本的路由结构</span></a></li></ol></li></ol></div>
             
 
           </div>
