@@ -2,4 +2,4 @@
 
 个人博客地址：
 
-https://gwemz.github.io
+http://gwem.tk
