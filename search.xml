@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Cookie LocalStorage与SessionStorage的区别]]></title>
+    <url>%2F2017%2F07%2F20%2FCookie-LocalStorage%E4%B8%8ESessionStorage%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[“Cookie、LocalStorage、SessionStorage的区别？”这个问题成了近期面试中被问到最多的问题，索性把它归归类，让自己的记忆更加深刻一点。 基本概念CookieCookie是小甜饼的意思，顾名思义，它非常小，大小限制在4KB左右，是网景公司前雇员Lou Montulli在1993年3月被发明的。它的主要用途有保存登录信息，诸如在某一个网站的登录页面看到“记住密码”，这通常就是在Cookie中存入辨识用户身份的数据。 LocalStorageLocalStorage是HTMl5标准中新加入的技术，它并不是什么划时代的新东西，早在IE6时代就有相关技术userData，而当时由于考虑到浏览器的兼容性问题，故而没采用。如今，LocalStorage被大多数浏览器支持，故而炙手可热。 特性 Chrome Firefox Internet Explorer Opera Safari LocalStorage 4 3.5 8 10.5 4 sessionStorage 5 2 8 10.5 4 sessionStoragesessionStorage与LocalStorage接口类似，但数据保存的周期不同。sessionStorage将一部分数据在当前会话中保存下来，刷新页面数据依旧存在。但当页面关闭之后，sessionStorage中的数据就会被清空。 三者的异同 特性 Cookie LocalStorage sessionStorage 数据的生命周期 一般由服务器生成 ，可设置失效时间。如果是在浏览器端生成Cookie，默认是关闭浏览器后失效 除非被清除，否则永久保存 仅在当前会话下有效，关闭页面或浏览器之后就会失效 存放数据大小 4K左右 一般为5MB左右 一般为5MB左右 与服务器端通信 每次都会携带到HTTP头中，如果使用Cookie保存过多数据，会带来性能问题 仅在客户端（浏览器）中保存，不参与和服务器的通信 仅在客户端（浏览器）中保存，不参与和服务器的通信 易用性 需要程序员自己封装，原生的Cookie接口不友好 原生接口 原生接口 应用场景Cookie一个常用的场景就是判断用户是否登录。LocalStorage接替了cookie管理购物车的工作，同时也会保存一些诸如HTML5游戏中产生的本地数据。sessionStorage适用于一些用户填写表单信息。 安全性的考虑不是什么数据都适合放在 Cookie、localStorage 和 sessionStorage 中的。使用它们的时候，需要时刻注意是否有代码存在 XSS 注入的风险。因为只要打开控制台，你就随意修改它们的值，也就是说如果你的网站中有 XSS 的风险，它们就能对你的 localStorage 肆意妄为。所以千万不要用它们存储你系统中的敏感数据。]]></content>
+      <tags>
+        <tag>html5</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Github Pages如何自定义域名]]></title>
     <url>%2F2017%2F07%2F01%2FGithub-Pages%E5%A6%82%E4%BD%95%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%2F</url>
     <content type="text"><![CDATA[将自己的博客代码托管到Github上时，默认域名为 https://gwemz.github.io ，如何给其添加自定义域名？如通过 http://gwem.tk 这样的顶级域名进行访问？ 首先需要ping gwemz.github.io的ip地址（在后边DNS域名解析地址的时候会用到）如图所示： 得到地址之后进入dnspod中进行设置，添加A记录(这儿需要添加两条A记录，一条记录为*，另一条记录为@)，之前就是这一步遗漏，致使无法正确解析出域名: 需要在github项目中建立CNAME文件并填入域名，这儿不需要添加www，然后进行同步 这儿值得注意的是因为使用的是DNSPOD域名解析，故而在DNSPOD中设置域名解析之前需要在Freenom（其它域名申请地址原理类似）中设置选择自定义的DNS服务器，DNS服务器为DNSPOD中默认给的服务器f1g1ns1.dnspod.net.和f1g1ns2.dnspod.net. 最后，输入你的域名，便会发现域名已经成功和你的项目绑定了！！！]]></content>
@@ -27,7 +35,7 @@
   <entry>
     <title><![CDATA[VueJS研究]]></title>
     <url>%2F2017%2F06%2F15%2FVueJS%E7%A0%94%E7%A9%B6%2F</url>
-    <content type="text"><![CDATA[介绍Vue.js是一套构建用户界面的渐进式框架。与其他重量级框架不同的是，Vue采用自底向上增量开发的设计。Vue的核心库只关注视图层，他不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与单文件组件和Vue生态系统支持的库结合使用时，Vue也完全能够为复杂的单页应用程序提供驱动。 官方网站 什么是Vue.js 它是一个轻量级的MVVM框架 数据驱动+组件化的前端开发 GitHub超过25K+的Star数，社区完善引入方式 &lt;script src=&quot;https://unpkg.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt; 声明式渲染12345678910&lt;div id=&quot;app&quot;&gt; &#123;&#123; message &#125;&#125;&lt;/div&gt;var app = new Vue(&#123; el: &apos;#app&apos;, data: &#123; message: &apos;Hello Vue!&apos; &#125;&#125;) Hello Vue! 绑定Dom元素属性：123456789101112&lt;div id=&quot;app-2&quot;&gt; &lt;span v-bind:title=&quot;message&quot;&gt; 鼠标悬停几秒钟查看此处动态绑定的提示信息！ &lt;/span&gt;&lt;/div&gt;var app2 = new Vue(&#123; el: &apos;#app-2&apos;, data: &#123; message: &apos;页面加载于 &apos; + new Date() &#125;&#125;) 鼠标悬停几秒钟查看此处动态绑定的信息！ 条件与循环条件12345678910&lt;div id=&quot;app-3&quot;&gt; &lt;p v-if=&quot;seen&quot;&gt;现在你看到我了&lt;/p&gt;&lt;/div&gt;var app3 = new Vue(&#123; el: &apos;#app-3&apos;, data: &#123; seen: true &#125;&#125;) 现在你看到我了 循环123456789101112131415161718&lt;div id=&quot;app-4&quot;&gt; &lt;ol&gt; &lt;li v-for=&quot;todo in todos&quot;&gt; &#123;&#123; todo.text &#125;&#125; &lt;/li&gt; &lt;/ol&gt;&lt;/div&gt;var app4 = new Vue(&#123; el: &apos;#app-4&apos;, data: &#123; todos: [ &#123; text: &apos;学习 JavaScript&apos; &#125;, &#123; text: &apos;学习 Vue&apos; &#125;, &#123; text: &apos;整个牛项目&apos; &#125; ] &#125;&#125;) 1.学习JavaScript2.学习Vue3.整个牛项目 处理用户输入12345678910111213141516&lt;div id=&quot;app-5&quot;&gt; &lt;p&gt;&#123;&#123; message &#125;&#125;&lt;/p&gt; &lt;button v-on:click=&quot;reverseMessage&quot;&gt;逆转消息&lt;/button&gt;&lt;/div&gt;var app5 = new Vue(&#123; el: &apos;#app-5&apos;, data: &#123; message: &apos;Hello Vue.js!&apos; &#125;, methods: &#123; reverseMessage: function () &#123; this.message = this.message.split(&apos;&apos;).reverse().join(&apos;&apos;) &#125; &#125;&#125;) Vue基本的路由结构Vue-cli是Vue的脚手架工具Vue-cli GitHub地址 项目创建： 全局安装：cnpm install --global vue-cli创建一个基于webpack的新项目：vue init webpack my-project安装依赖：cd my-projectnpm installnpm run dev]]></content>
+    <content type="text"><![CDATA[介绍Vue.js是一套构建用户界面的渐进式框架。与其他重量级框架不同的是，Vue采用自底向上增量开发的设计。Vue的核心库只关注视图层，他不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与单文件组件和Vue生态系统支持的库结合使用时，Vue也完全能够为复杂的单页应用程序提供驱动。 官方网站 什么是Vue.js 它是一个轻量级的MVVM框架 数据驱动+组件化的前端开发 GitHub超过25K+的Star数，社区完善引入方式 &lt;script src=&quot;https://unpkg.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt; 声明式渲染12345678910&lt;div id=&quot;app&quot;&gt; &#123;&#123; message &#125;&#125;&lt;/div&gt;var app = new Vue(&#123; el: &apos;#app&apos;, data: &#123; message: &apos;Hello Vue!&apos; &#125;&#125;) Hello Vue! 绑定Dom元素属性：123456789101112&lt;div id=&quot;app-2&quot;&gt; &lt;span v-bind:title=&quot;message&quot;&gt; 鼠标悬停几秒钟查看此处动态绑定的提示信息！ &lt;/span&gt;&lt;/div&gt;var app2 = new Vue(&#123; el: &apos;#app-2&apos;, data: &#123; message: &apos;页面加载于 &apos; + new Date() &#125;&#125;) 鼠标悬停几秒钟查看此处动态绑定的信息！ 条件与循环条件12345678910&lt;div id=&quot;app-3&quot;&gt; &lt;p v-if=&quot;seen&quot;&gt;现在你看到我了&lt;/p&gt;&lt;/div&gt;var app3 = new Vue(&#123; el: &apos;#app-3&apos;, data: &#123; seen: true &#125;&#125;) 现在你看到我了 循环123456789101112131415161718&lt;div id=&quot;app-4&quot;&gt; &lt;ol&gt; &lt;li v-for=&quot;todo in todos&quot;&gt; &#123;&#123; todo.text &#125;&#125; &lt;/li&gt; &lt;/ol&gt;&lt;/div&gt;var app4 = new Vue(&#123; el: &apos;#app-4&apos;, data: &#123; todos: [ &#123; text: &apos;学习 JavaScript&apos; &#125;, &#123; text: &apos;学习 Vue&apos; &#125;, &#123; text: &apos;整个牛项目&apos; &#125; ] &#125;&#125;) 1.学习JavaScript2.学习Vue3.整个牛项目 处理用户输入12345678910111213141516&lt;div id=&quot;app-5&quot;&gt; &lt;p&gt;&#123;&#123; message &#125;&#125;&lt;/p&gt; &lt;button v-on:click=&quot;reverseMessage&quot;&gt;逆转消息&lt;/button&gt;&lt;/div&gt;var app5 = new Vue(&#123; el: &apos;#app-5&apos;, data: &#123; message: &apos;Hello Vue.js!&apos; &#125;, methods: &#123; reverseMessage: function () &#123; this.message = this.message.split(&apos;&apos;).reverse().join(&apos;&apos;) &#125; &#125;&#125;) Vue基本的路由结构Vue-cli是Vue的脚手架工具Vue-cli项目地址 项目创建： 全局安装：cnpm install --global vue-cli创建一个基于webpack的新项目：vue init webpack my-project安装依赖：cd my-project npm install npm run dev Webpack官方地址]]></content>
       <tags>
         <tag>vue</tag>
       </tags>
@@ -66,39 +74,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[解决WampServer 80端口号被占用的问题]]></title>
-    <url>%2F2017%2F04%2F24%2Fwampserver%E7%AB%AF%E5%8F%A3%E5%8F%B7%E8%A2%AB%E5%8D%A0%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[沿着C:\wamp\bin\apache\apache2.4.9\conf目录，找到文件httpd.conf文件将80端口号改为任意值，诸如8080端口： 改完之后重启WampServer就会发现软件图标变为了绿色 但是“Localhost”、“phpMyAdmin”、“SQLiteManager”，你可以点击打开看到依旧是默认的80端口。 找到wamp安装目录下的wampmanager.tpl文件，记事本打开： 找到wamp安装目录下的wampmanager.ini文件 将本文件中的http://localhost 替换为 http://localhost:8080]]></content>
-      <tags>
-        <tag>wampserver</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[如何脱颖而出]]></title>
-    <url>%2F2017%2F04%2F24%2F%E5%A6%82%E4%BD%95%E8%84%B1%E9%A2%96%E8%80%8C%E5%87%BA%2F</url>
-    <content type="text"><![CDATA[如何脱颖而出 版权声明：本文为 winter文章，可以随意转载，但必须在明确位置注明出处！！！ 前两天有一位同学在小密圈里问我一个问题，说自己高中学历，想要学习编程，不知道可行么？ 我给他的回答是：很难，非常难，比你想象的还要难，但是难不代表不可行。 有别的热心的同学评论说，没什么不行的，只要比别人更努力就行，你看张哥，当初不也是非科班，学渣出身么，一步步靠自己努力走到现在。 是啊，很多读者喜欢拿我的经历来激励自己，我毕业转行做开发的时候，已经比同龄人落后太多太多，中间有过不少波折，但是走上正轨，确定方向之后，很快 2、3 年的时间就取得飞快进步，并且在业内也积累了一点名气，之后又从技术到产品、管理，业余时间从写博客，再到公众号，都取得了点小成就，大家都知道我很努力，甚至到拼命的地步，所以，很多人把我取得的成就全部归功于我的努力，其实，今天，我要说，这是一个假象！ 不可否认，努力固然重要，但是如果只是单纯努力的话，我相信这世界上努力的人随处可见，这世界从来不缺努力的人，但是，如何能在这一群努力的人中间，脱颖而出，这才是一个关键点，今天，我就在这里分享下我私人总结的一点经验。 1. 提高自己的起点 不管你是高中学历也好，还是跟我一样非科班的学渣也好，其实本质上我们的先天条件比别人差，时间周期也比别人晚，我们要想赶上那些先天条件比我们好的同学，比他们更努力，虽然可以赶上一部分人，但是很多条件好，同样很努力的人比比皆是，这个时候，就需要寻找点方法了，我总结的第一个方法就是–提高自己的起点。 举个例子，我们大部分人学习编程的时候，大都是看视频、百度、CSDN 博客、一些国内论坛等，可以这么说，即使是现在，这仍然是大部分人学习的主要方式。但是我当时就不这么想，大家都这么学习，我如何才能效率更高呢？ 所以，我当时的做法，当别人都在看视频的时候，我坚持看博客、文档学习，因为看视频很没效率，看博客除了节省我的学习时间之外，还提高了我的阅读能力。当别人在用百度，查看国内各种二手资料的时候，我坚持使用 Google，查看国外大牛博客，我英语很差，这对我来说很难，但是我硬逼着自己，坚持下去，当别人混国内小白论坛的时候，我就开始混 GitHub 开源社区，学习国外大牛的开源项目，当别人在看国内翻译的资料的时候，我却逼着自己去官方看英文文档。 这一切的一切，本质上都是为了提高自己的起点，虽然我起步晚，但是我起点高，慢慢的就会缩小差距，时间长了，甚至后来居上。 当然，前提是自己得衡量自己的能力，就好比，你才刚学会写一个 Hello World ，你说你要去看 Android 源码，这不现实。所以，我在最初入门的时候也经历过看视频，百度的阶段，但是一旦自己上手之后，我坚定的逼着自己让自己的起点更高。 2. 保持专注 很多人其实论努力程度不输任何人，但是总感觉自己进步非常慢，那么原因很可能是你不够专注。我看到这么一个现象，IT 界技术日新月异，动不动就会出来一门新语言，新框架，尤其前端界更是，很多人就看到有一个看似很火的东西出来了，然后去学习，另一个东西出来了，又忙不迭的去学习，生怕错过了时间窗口就错过了巨大的机会。 然而殊不知，万变不离其宗，你连手上的事都没做好呢，就想着可能会错失巨大的机会，在编程界，其实各个语言都是通的，把一门领域学好学精，后面再涉及其他领域也是很快速的。 有人可能会问，不紧跟时代潮流，错过了机会怎么办？ 潮流固然要关注，但是我敢这么说，你连手上的事都还没做好呢，即使机会来了，一样不属于你。我们总是夸大了时间窗口的作用，以为错过了互联网、错过了移动互联网，决不能错过下一个风口浪尖了，这真的是一个误区，看似每一个风口来了，抓住机会的都是第一时间进入的，殊不知，第一时间死掉的比存活下来的不知道要多出多少，能存活下来的，只是被人忽略了自身的实力而已，而且很多后来居上的例子数不胜数。 所以，你不妨专注在一件事上，专注手上正在做的事，就如我博客所说：做好现在的事！ 3. 把事情做到极致 这世界上很多人都很专注，甚至有几十年如一日在自己的工作岗位上兢兢业业，但是专注在一件事上还不够，你要把事情做到极致才行。 这个特质对很多职场中的同学非常有用，很多刚入职场的同学总是感觉自己做的工作没什么用，就是打杂的，抱怨自己被大材小用了，然而，就是这么简单的工作，你能把它做好，做到极致，一样很有价值，你也才能因此得到更多的机会。 我刚加入公司的时候，甚至做过一段时间的「电话管理员与网管」，公司每每调换座位的时候，我从来都是利用下班时间帮大家调换电话线，我每次都会亲自验证，要知道很多电话不在同一楼层，这非常麻烦，但是从来没出过错，人事都觉得不可思议，因为之前的人负责的偶尔调错很正常。除此之外，我觉得机房里那些电话线非常混乱，杂乱无章，专门重新做了整理，这些工作，在之前，没人愿意去做。 我在给别人重装系统的时候，每次都会把驱动、常用办公软件一并给装好，之前，也从来没人想过这事。 正因为我把在公司的每件事都做到极致，我才能因此得到更多的信任与机会。 现在我在公众号写作，除了内容之外，我会力求把所有细节都做好，字体大小、标点、间距排版等等，我都会很在意，直到现在也一直在改进。 很多人总觉得自己工作做的还不错，分配的任务做完了，总觉得没事做，然而问问你自己，是否还可以做的更好？ 这个功能是不是还有更好的实现方式？代码是不是还可以更简练些？这个动画是不是还可以更流畅些？是不是有些历史遗留问题可以解决的？有些更好的框架是不是可以考虑学习应用在项目中？性能是不是还可以更好些？ 任何一件小事，做到极致，都是一项了不起的能力！ 4. 不要给自己设限 之前有人问我这么一个问题，说之前一直做技术 Leader 的角色，公司觉得他做的还不错，想让他做项目管理，他很纠结，担心自己做不好，而且还影响了技术上的进步。 如果是我，我会毫不犹豫的尝试。 很多人知道我，我自己是从一位不起眼的程序员，一步步走到公司管理层的，我现在参与公司的重大决策，现在除了技术之外，我涉及到的领域非常多，有产品、运营、商业、管理、投资等。 我当初一样面临过这种选择，一样犹豫过，一样有各种担心，但是当我走过来，我才明白我自己的职业选择都是来自于我的一个特质：我从来不给自己设限。 我自己的性格比较开放，喜欢折腾，喜欢接触不同的领域，有很多奇特的想法，比如我认为现在国家规定一个人只能同时在一家公司上班不科学，我认为未来是一个多元化人才的时代，一个人如果只要有能力，在一家公司写代码的同时，为什么不能同时在另一家公司做销售呢？只不过时代还不认可我这么前卫的想法。 但是，只要有机会，我都会接触不同的领域，我不会优先考虑我做不到，我只会先考虑，如果我做到了，会不会对自己的能力有很大帮助。 所以，当我有一个工程师转到管理岗位的机会时，我尝试了，毕竟，万一尝试之后，不适合自己，或者自己做不到，又能如何呢？大不了再做回老本行好了。幸运的是，我成功了，而且一直做到公司管理层。 除此之外，我还经常跟公司产品经理一起讨论产品，有很多不错的需求甚至都是我来提出的。由于我自己在公众号的运营经验，我有机会还教下我们的媒体运营同事，如何排版，如何更好的运营用户等。 我说我在商业、投资领域也有涉及，很多人可能觉得我又扯淡了，这些都是我在老板身边学到的，老板是投资出身，在这方面很厉害，毕竟呆的时间久了，自己总会有所感染，而且在去年还跟着老板一起在上海投资了一家吐司店，一年多的时间，估值翻了将近十倍，当然，由于自己第一次投资，还没什么经验，投资额度较小。 这个世界从来都是有得必有失，我做了管理之后，在 Android 技术领域上花费的时间很少了，也不用自己写代码了，但是我在其他领域的能力收获非常大，我也一直在向我口中所说的多元化人才努力。 有人可能会有疑问了，不给自己设限不跟上面说到的专注矛盾么？ 当然不矛盾，不给自己设限的前提一定是自己具备了至少一项不错的能力，而且即使你再怎么专注，也没法一天 24 小时都在做一件事，即使你很专注，你也会有看电视、娱乐的时间。 所以，专注的做好手上的事固然很重要，但是不要闷头工作，也偶尔抬头看下外面的天空，拓宽下自己的视野，在有其他领域机会的时候，不妨勇敢的去尝试下。 5. 执行力 我们都知道努力很重要，但是很少有人能做到。 比如，即使我一而再再而三的号召大家，要写博客，学写作，又有几个人做到了呢？你知道，每天只需要学习 2 小时，一年之后，你的能力就有很大提高，又有几个人能做到？ 所以，大部分人的执行力很差，可能你一时做到了，也没法坚持下去，而把自己的执行力持续下去恰恰是最关键的一环，也就是所谓的：「道理我都懂，可是我做不到」。 这个话题很长，后面我会抽时间单独写篇文章，以自己的亲身经历总结了一点方法，教教大家如何才能改变这一现状，提高你的执行力，让你的努力更容易坚持下去。 以上，就是我所总结的，如何让你脱颖而出的一些技巧，希望对部分同学有所思考与帮助！ PS：可能有些人，看了以上我的总结，会觉得，这些东西我都知道，但是，真的是这样么？我敢说，在你没看这篇文章之前，你丝毫没有意识到自己比别人差在哪里，你只是看了之后，恍然大悟罢了。 还有些人，可能会觉得是鸡汤，某种意义上来说，确实是鸡汤，但是却都是自己真实经历的经验总结，有时候，鸡汤可能比所谓的干货更有用，很多道理其实大家都懂，我们做出改变缺乏的只是一个推动力。]]></content>
-      <tags>
-        <tag>面试题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[java环境配置eclipse的安装]]></title>
-    <url>%2F2017%2F04%2F24%2Fjava%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEeclipse%E7%9A%84%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[- java基础语法教程教程链接 - JDK环境配置 配置教程 - eclipse for JavaEE的安装 安装教程 - eclipse教程 教程链接 - 使用Tomcat搭建本地服务器 使用链接 - Java与MySQL连接 连接教程 - SQL Sever环境配置（安装SQL Sever数据库）- 解决命令提示符输入命令无反应的情况： 解决方法 - win10打开管理员命令提示符： windows+X——》命令提示符（管理员） - 解决win10无法更新组件的问题：(下载.NET Framework 3.5安装错误：) 解决方式一 解决方式二]]></content>
-      <tags>
-        <tag>java</tag>
-        <tag>eclipse</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[PHPCMS的安装流程]]></title>
-    <url>%2F2017%2F04%2F24%2Fphpcms%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[1234561. 本地服务器www目录下新建文件phpcms2. 在网站www.phpcms.cn下载安装包。有GBK 和 UTF8两个版本，推荐使用UTF8版本。下载文件解压，删除readme文件夹，将install_package文件夹下的文件拷贝到www目录下的phpcms文件夹内3. 访问localhost/phpcms/install/install.php按照指导进行安装 不懂本教程，没关系，查看 详细教程 注：后台管理系统中的设置可修改默认站点域名 三个重要的地址12345localhost/phpcms/admin.php(后台管理系统 账号：phpcms 密码：phpcms)localhost/phpcms/index.php(前台首页文件)localhost/phpcms/myadmin(数据库) 两个重要的目录1231. www/phpcms/phpcms/tmplates/default/content/2. www/phpcms/statics/ -css/ -images/ -js/]]></content>
-      <tags>
-        <tag>phpcms</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[前端框架MVC、MVVM、MVP介绍]]></title>
     <url>%2F2017%2F04%2F24%2FMVC%E4%BB%A5%E5%8F%8AMVVM%20MVP%E4%BB%8B%E7%BB%8D%2F</url>
     <content type="text"><![CDATA[1. MVCModel-View-Controller(模型-视图-控制器)是最常见的软件架构之一，业界有着广泛应用。 视图（View）：用户界面 控制器（Controller）：业务逻辑 模型（Model）：数据保存 各部分之间的通信如下： View传送指令到Controller Controller完成业务之后要求Model改变状态 Model将新的数据发送到View，用户得到反馈 接受用户指令时，MVC的两种方式：（互动模式） 另一种是直接通过Controller接受指令 2. MVPMVP模式将Controller改名为Presenter，同时改变了通信方向 各部分之间的通信，都是双向的 View与Model不发生联系，都是通过Presenter传递 View非常薄，不部署任何业务逻辑，称为“被动视图”（Passive View）,即没有任何主动性，而Presenter非常厚，所有逻辑都部署在那里 3. MVVMMVVM模式将Presenter改名为ViewModel，基本上与MVP模式完全一致 唯一的区别是，它采用双向数据绑定（data-binding）:View的变动自动反映在ViewModel，反之亦然。Angular和Ember都采用这种模式]]></content>
@@ -113,6 +88,48 @@
     <content type="text"><![CDATA[说来惭愧，都说隔行如隔山，没想到自己对同行的了解都微乎其微，还成天称是程序猿，直到前几天自己才听到Ionic,上度娘一问，瞬间就泪崩了，竟然在我身边有PhoneGap、cordova、AngularJS、nodejs、npm等等这么多“赫赫有名”的专有名词我以前竟然听都没听到过，可想自己是有多无知，以下是我这几天科普来的，错误之处还望指出，谢谢！ What is the Ionic？Ionic 是一个强大的 HTML5 应用程序开发框架，号称Advanced Html5 Hybrid Mobile AppFramework 是 AngularJS 移动端解决方案 可以帮助您使用 Web 技术，比如 HTML、 CSS 和JavaScript 构建接近原生体验的移动应用程序。 Ionic 主要关注外观和体验，以及和你的应用程序的 UI 交互，特别适合用于基于 Hybird 模式的 HTML5 移动应用程序开发..…. What is the PhoneGap ?PhoneGap是一个用基于HTML，CSS和JavaScript的，创建移动跨平台移动应用程序的快速开发平台。PhoneGap是一个跨平台的移动app开发框架，可以把html css js写的页面打包成跨平台的可以安装的移动app，并且可以调用原生的几乎所有的功能，比如摄像头，联系人，加速度等。 What is the Cordova ?Cordova提供了一组设备相关的API，通过这组API，移动应用能够以JavaScript访问原生的设备功能，如摄像头、麦克风等。 Cordova是PhoneGap贡献给Apache后的开源项目，是从PhoneGap中抽离出的核心代码，是驱动PhoneGap的核心引擎。有点类似Webkit和Google Chrome的关系。渊源就是：早在2011年10月，Adobe收购了Nitobi Software和它的PhoneGap产品，然后宣布这个移动Web开发框架将会继续开源，并把它提交到Apache Incubator，以便完全接受ASF的管治。当然，由于Adobe拥有了PhoneGap商标，所以开源组织的这个PhoneGap v2.0版产品就更名为Apache Cordova。 What is the AngularJS ?AngularJS 是一个JavaScript 框架。它是一个以JavaScript 编写的库。AngularJS 使得开发现代的单一页面应用程序（SPAs：Single Page Applications）变得更加容易。 AngularJS 把应用程序数据绑定到 HTML 元素。 AngularJS 可以克隆和重复 HTML 元素。 AngularJS 可以隐藏和显示 HTML 元素。 AngularJS 可以在 HTML 元素”背后”添加代码。AngularJS 支持输入验证。 What is the NodeJs?Node.js 是一个基于Chrome JavaScript 运行时建立的一个平台。 Node.js是一个事件驱动I/O服务端JavaScript环境，基于Google的V8引擎，V8引擎执行Javascript的速度非常快，性能非常好。 其实吧，可以认为 Node.js 就是运行在服务端的 JavaScript。 What is the NPM ?NPM是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题，常见的使用场景有以下几种： 允许用户从NPM服务器下载别人编写的第三方包到本地使用。 允许用户从NPM服务器下载并安装别人编写的命令行程序到本地使用。 允许用户将自己编写的包或命令行程序上传到NPM服务器供别人使用。 新版的nodejs已经集成了npm，所以装了nodejs的话npm也一并安装好了。可以通过输入”npm -v”来测试是否成功安装。 How to make 移动应用(App)有三种方式可以为手机制作移动应用： 原生应用（Native app） 手机网站（Mobile website） 混合应用（Hybrid app） 原生应用（Native app）如上述，你可以根据不同系统平台指定SDK制作对应系统平台下的移动应用，如果你想要为iOS系统创建一款应用，你需要： 拥有一台苹果Mac电脑，当然其他方法也可以，但是我不推荐。作为初学者，一台廉价的Mac Mimi就可以了。 从App store下载Xcode 购买苹果开发者许可证（Apple Developer license）99刀￥一年（如果你想要在App store上发布应用） 你可以利用Swift语言或者它的前辈ObjectiveC语言创建App，Swift 语言在沉重的ObjectiveC语言上做出了巨大改进，如果你决定开发原生app，相比利用ObjectiveC开发原生app，Swift更容易上手，特别是当你有Web开发的背景时。 如果你想要为Android系统创建一款原生应用，你需要： 拥有一台电脑 下载合适的SDKs（后面将会讲到） 购买谷歌开发者许可证（Google Developer license）25刀￥（如果你想要在Google Play Store上发布应用） 利用原生开发技术开发的应用具有速度快和直接利用原生API的优势（你不需要像开发混合应用一样【Hybrid App】作任何中间封装），缺点是，你需要为不同手机系统平台开发不同版本的移动应用。（撰写多套代码） 手机网站（Mobile website）通过手机浏览器可以访问手机网站，手机网站可以根据手机屏幕大小自适应。由于手机网站比较难以维护，一种叫做响应式网站设计（responsive website design）的方法被使用，通过这种方法你拥有一套HTML代码库，你可以通过使用媒体查询（Media queries）根据不同设备不同分辨率（resolutions）改变他们的网站外观。jQuery mobile 是一种出色的移动框架。使用它你可以制作一款移动版本的Web应用程序。移动网站一个显著的优势就是你可以根据需要实时更新他们的内容，而不用去等待苹果Apple或者谷歌Google的审核，劣势则包括低耦合，更少的特征。 混合app（Hybrid app）混合应用基本上是一款手机应用，它和撰写网站的程序语言基本相同，唯一不同的就是他们包含在一个孤立的浏览器中（WebView）， 原生应用通过WebView运行Web应用，混合应用可以调用手机摄像头、GPS等，通过利用插件，混合应用可以调用手机其它的硬件功能，你可以利用开发Web应用的技术开发混合应用。然而，WebView有速度的限制， 制作成熟的3D图像游戏可能不是最好的选择。 安装Ionic1. 需要有JDK和SDK环境，这是Android开发必有的平台（JDK在技术文章003中已经详细阐述了）安卓SDK下载以及环境的配置： 下载地址：（可以使用包含的 sdkmanager 下载其他 SDK 软件包 需要翻墙）立即下载 安卓开发相关资源链接 包含Android Studio 下载后双击安装，指定Android SDK的安装目录，为了方便使用Android SDK包含的开发工具，我们在系统环境变量中的Path设置Android SDK的安装目录下的tools目录。 在Android SDK的安装目录下，双击“SDK Manager.exe”，打开Android SDK Manager，Android SDK Manage负责下载或更新不同版本的SDK包，我们看到默认安装的Android SDK Manager只安装了一个版本的sdk tools。 打开Android SDK Manager，(tools目录下的android.bat)它会获取可安装的sdk版本，但是国内有墙，有时候会出现获取失败的情况。 12345678910111213**配置Android环境变量**- 默认路径安装后，安装完成，开始配置环境变量。- 打开计算机属性——高级系统设置——环境变量- 新建一个环境变量，变量名：ANDROID_HOME，变量值：E:\android_sdk\tools_r25.2.3-windows（以你安装目录为准,确认里面有tools和add-ons等多个文件夹），点击确认。- 在用户变量PATH后面加上变量值%ANDROID_HOME%\platform-tools;点击确认即可。 在系统变量path中添加;E:\android_sdk\tools_r25.2.3-windows\toolsAndroid SDK配置完成，接下来验证配置是否成功。点击运行——输入cmd——回车——输入adb——回车，如果出现一堆英文，即表示配置成功，在输入Android，启动Android SDK Manager。 2. 下载Node.js，安装Node.js下载地址： https://nodejs.org/ 安装都选默认的就行 装好之后，nodejs会默认配好环境变量，你可以去path路径查看 Node Pakcege Manager（NPM）会在安装Node.js时同时安装其它的包，为了检验Node.js是否在Windows上安装成功，在终端上运行下面的命令： node -v 你会获得类似下面的版本信息： v0.12.7 3.安装Git你仅仅需要下载和运行它，根据相应的指引安装即可。为了验证你是否在Windows/Mac上安装Git成功，在终端运行下面的命令行： Git 你会获得如下输出： 4.安装ionic和cordova 打开node.js command prompt使用npm install –g cordova ionic进行安装cordova和ionic（可以分开安装，npm install –g cordova 和 npm install –g -ionic）,很明显，在天朝使用这种方法安装有点行不通。 不用急，咱天朝子民有天朝子民的方法，使用淘宝镜像是网上很多人用的方式输入npm install –g cnpm –registry=https//registry.npm.taobao.org,安装完成之后，以后的插件都可以使用cnpm来替代npm来安装cnpm install –g ionic cordova 如果上面方法还不行，就看这里吧1.npm config –globalset registryhttp://registry.cnpmjs.org 2.npm install –g cordova ionic 查看ionic和cordova是否安装 ionic ionic –v cordova –v 5. 创建项目如果你仅仅只运行ionic start appname 命令，Ionic CLI将会构建一个bootstrap应用（所有需要的构建都会在appname文件夹里面），伴随着空的模板，这儿有其他三个模板包括blank（空模板），sidemenu（侧边栏）和tabs（底部导航栏），除此之外，你可以使用Github repo starters和Codepen URL starters等模块，为了获得更多的starter apps模块，你可以访问 这篇文章 ，在我们的例子中，我们将会使用sidemenu（侧板栏）模板，在终端运行下面的命令： ionic start g_app1 sidemenu 通过cd命令进入你的项目:$ cd g_app1 设置项目使用Sass:ionic setup sass 在本地浏览器中实时开发:ionic serve 添加一个系统平台 (ios or Android):ionic platform add iOS [Android] 注意: iOS 开发需要OS X系统 注意2：在ionic build的时候需要使用VPN 否则它的包下载的非常慢！！！ 详细见Android平台开发指南 编译你的app:ionic build 在模拟器上运行你的app:ionic emulate 在真机上运行你的apps（安装应用到插入电脑的Android手机上）:ionic run 使用ionic打包服务打包一个app:ionic package 12345注意：npm install -g ionic cordova （此处安装很费劲，，，，如果安装不上，请直接使用国内镜像），也可以安装cnpm，这样就容易装cordova和ionicnpm install -g cordova --registry https://registry.npm.taobao.orgnpm install -g ionic --registry https://registry.npm.taobao.org]]></content>
       <tags>
         <tag>ionic</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[java环境配置eclipse的安装]]></title>
+    <url>%2F2017%2F04%2F24%2Fjava%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEeclipse%E7%9A%84%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[- java基础语法教程教程链接 - JDK环境配置 配置教程 - eclipse for JavaEE的安装 安装教程 - eclipse教程 教程链接 - 使用Tomcat搭建本地服务器 使用链接 - Java与MySQL连接 连接教程 - SQL Sever环境配置（安装SQL Sever数据库）- 解决命令提示符输入命令无反应的情况： 解决方法 - win10打开管理员命令提示符： windows+X——》命令提示符（管理员） - 解决win10无法更新组件的问题：(下载.NET Framework 3.5安装错误：) 解决方式一 解决方式二]]></content>
+      <tags>
+        <tag>java</tag>
+        <tag>eclipse</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[有意思语言摘录]]></title>
+    <url>%2F2017%2F04%2F24%2F%E6%9C%89%E6%84%8F%E6%80%9D%E8%AF%AD%E8%A8%80%E6%91%98%E5%BD%95%2F</url>
+    <content type="text"><![CDATA[1234567891011121314知乎上有网友提问：我读过很多书，但后来大部分都忘记了，那读书有什么用呢？有人说：当我还是个孩子的时候，我吃过很多食物，虽然现在已经记不起来吃过什么了。但可以肯定的是，它们中的一部分已经长成了我的骨头和肉。其实，何止是读书呢？每一次旅行都让我们脚下的路更长更远，每一次尝试都给我们的世界打开一个新的大门，每一段感情都让我们的心灵更加感性丰满。我们的一言一行，所作所为，那些有用的无用的，都在一点点变成我们成长的骨头和肉。 1本人学识渊博、经验丰富，代码风骚、效率恐怖，c/c++、java、php无不精通，熟练掌握各种框架，深山苦练20余年，一天只睡4小时，千里之外定位问题，瞬息之间修复上线。身体强壮、健步如飞，可连续编程100小时不休息，讨论技术方案5小时不喝水，上至带项目、出方案，下至盗账号、威胁pm，啥都能干。泡面矿泉水已备好，学校不支持编程已辍学，家人不支持编程已断绝关系，老婆不支持编程已离婚，小孩不支持编程已送孤儿院，备用电源万兆光纤永不断电断网，门口已埋雷无人打扰 12]]></content>
+      <tags>
+        <tag>摘录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[解决WampServer 80端口号被占用的问题]]></title>
+    <url>%2F2017%2F04%2F24%2Fwampserver%E7%AB%AF%E5%8F%A3%E5%8F%B7%E8%A2%AB%E5%8D%A0%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[沿着C:\wamp\bin\apache\apache2.4.9\conf目录，找到文件httpd.conf文件将80端口号改为任意值，诸如8080端口： 改完之后重启WampServer就会发现软件图标变为了绿色 但是“Localhost”、“phpMyAdmin”、“SQLiteManager”，你可以点击打开看到依旧是默认的80端口。 找到wamp安装目录下的wampmanager.tpl文件，记事本打开： 找到wamp安装目录下的wampmanager.ini文件 将本文件中的http://localhost 替换为 http://localhost:8080]]></content>
+      <tags>
+        <tag>wampserver</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[wamp下apache2.4.9局域网ip访问时提示403错误]]></title>
+    <url>%2F2017%2F04%2F24%2Fwamp%E4%B8%8Bapache2.4.9%E5%B1%80%E5%9F%9F%E7%BD%91ip%E8%AE%BF%E9%97%AE%E6%97%B6%E6%8F%90%E7%A4%BA403%E9%94%99%E8%AF%AF%2F</url>
+    <content type="text"><![CDATA[在自己的笔记本上搭建了一个apache服务器，想通过手机访问主机上的一个页面，但是在访问过程中总提示403错误。经过在网上查找别人的解决方案，及不断尝试修改httpd.conf配置文件，最终测试出修改方案。 找到(目录C:\wamp\bin\apache\apache2.4.9\conf下的httpd.conf文件)123&lt;Directory&gt;Require local&lt;/Directory&gt; 将 Require local 修改为 Require all granted 真心是尝试过很多修改方法，网友们也说去修改什么allow from all类似这种，都有尝试过。可能是版本不同吧，本方法经测试OK，希望对大家有帮助。]]></content>
+      <tags>
+        <tag>wamp</tag>
+        <tag>apache</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[使用命令行和github交互]]></title>
+    <url>%2F2017%2F04%2F24%2F%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8Cgithub%E4%BA%A4%E4%BA%92%2F</url>
+    <content type="text"><![CDATA[全局配置1234567初次配置git环境时需要进行的步骤：(配置过之后不需要再次配置)git config --global user.name &quot;Gwemz&quot;git config --global user.email &quot;3396543978@qq.com&quot;git config --global push.default simple clone一个已有的仓库做开发12345678git clone https://github.com/Gwemz/myblog.git .(将项目克隆到当前文件夹下)git --help //git相关命令查询git status //查看项目的状态(是否更新)git add * //添加需要更新的所有内容git status git commit -m &apos;myblog&apos; //每次提交的标注git push //提交(需要输入用户名和密码) 管理分支(除了 https://gwemz.github.io 之外其它 https://gwemz.github.io/myblog 如果需要访问则必须进行下述操作) 1234567git branch gh-pagesgit checkout gh-pagesgit merge mastergit push --set-upstream origin gh-pages 注意 多使用git status 查看自己目前所在的分支]]></content>
+      <tags>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -148,28 +165,11 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[wamp下apache2.4.9局域网ip访问时提示403错误]]></title>
-    <url>%2F2017%2F04%2F24%2Fwamp%E4%B8%8Bapache2.4.9%E5%B1%80%E5%9F%9F%E7%BD%91ip%E8%AE%BF%E9%97%AE%E6%97%B6%E6%8F%90%E7%A4%BA403%E9%94%99%E8%AF%AF%2F</url>
-    <content type="text"><![CDATA[在自己的笔记本上搭建了一个apache服务器，想通过手机访问主机上的一个页面，但是在访问过程中总提示403错误。经过在网上查找别人的解决方案，及不断尝试修改httpd.conf配置文件，最终测试出修改方案。 找到(目录C:\wamp\bin\apache\apache2.4.9\conf下的httpd.conf文件)123&lt;Directory&gt;Require local&lt;/Directory&gt; 将 Require local 修改为 Require all granted 真心是尝试过很多修改方法，网友们也说去修改什么allow from all类似这种，都有尝试过。可能是版本不同吧，本方法经测试OK，希望对大家有帮助。]]></content>
+    <title><![CDATA[如何脱颖而出]]></title>
+    <url>%2F2017%2F04%2F24%2F%E5%A6%82%E4%BD%95%E8%84%B1%E9%A2%96%E8%80%8C%E5%87%BA%2F</url>
+    <content type="text"><![CDATA[如何脱颖而出 版权声明：本文为 winter文章，可以随意转载，但必须在明确位置注明出处！！！ 前两天有一位同学在小密圈里问我一个问题，说自己高中学历，想要学习编程，不知道可行么？ 我给他的回答是：很难，非常难，比你想象的还要难，但是难不代表不可行。 有别的热心的同学评论说，没什么不行的，只要比别人更努力就行，你看张哥，当初不也是非科班，学渣出身么，一步步靠自己努力走到现在。 是啊，很多读者喜欢拿我的经历来激励自己，我毕业转行做开发的时候，已经比同龄人落后太多太多，中间有过不少波折，但是走上正轨，确定方向之后，很快 2、3 年的时间就取得飞快进步，并且在业内也积累了一点名气，之后又从技术到产品、管理，业余时间从写博客，再到公众号，都取得了点小成就，大家都知道我很努力，甚至到拼命的地步，所以，很多人把我取得的成就全部归功于我的努力，其实，今天，我要说，这是一个假象！ 不可否认，努力固然重要，但是如果只是单纯努力的话，我相信这世界上努力的人随处可见，这世界从来不缺努力的人，但是，如何能在这一群努力的人中间，脱颖而出，这才是一个关键点，今天，我就在这里分享下我私人总结的一点经验。 1. 提高自己的起点 不管你是高中学历也好，还是跟我一样非科班的学渣也好，其实本质上我们的先天条件比别人差，时间周期也比别人晚，我们要想赶上那些先天条件比我们好的同学，比他们更努力，虽然可以赶上一部分人，但是很多条件好，同样很努力的人比比皆是，这个时候，就需要寻找点方法了，我总结的第一个方法就是–提高自己的起点。 举个例子，我们大部分人学习编程的时候，大都是看视频、百度、CSDN 博客、一些国内论坛等，可以这么说，即使是现在，这仍然是大部分人学习的主要方式。但是我当时就不这么想，大家都这么学习，我如何才能效率更高呢？ 所以，我当时的做法，当别人都在看视频的时候，我坚持看博客、文档学习，因为看视频很没效率，看博客除了节省我的学习时间之外，还提高了我的阅读能力。当别人在用百度，查看国内各种二手资料的时候，我坚持使用 Google，查看国外大牛博客，我英语很差，这对我来说很难，但是我硬逼着自己，坚持下去，当别人混国内小白论坛的时候，我就开始混 GitHub 开源社区，学习国外大牛的开源项目，当别人在看国内翻译的资料的时候，我却逼着自己去官方看英文文档。 这一切的一切，本质上都是为了提高自己的起点，虽然我起步晚，但是我起点高，慢慢的就会缩小差距，时间长了，甚至后来居上。 当然，前提是自己得衡量自己的能力，就好比，你才刚学会写一个 Hello World ，你说你要去看 Android 源码，这不现实。所以，我在最初入门的时候也经历过看视频，百度的阶段，但是一旦自己上手之后，我坚定的逼着自己让自己的起点更高。 2. 保持专注 很多人其实论努力程度不输任何人，但是总感觉自己进步非常慢，那么原因很可能是你不够专注。我看到这么一个现象，IT 界技术日新月异，动不动就会出来一门新语言，新框架，尤其前端界更是，很多人就看到有一个看似很火的东西出来了，然后去学习，另一个东西出来了，又忙不迭的去学习，生怕错过了时间窗口就错过了巨大的机会。 然而殊不知，万变不离其宗，你连手上的事都没做好呢，就想着可能会错失巨大的机会，在编程界，其实各个语言都是通的，把一门领域学好学精，后面再涉及其他领域也是很快速的。 有人可能会问，不紧跟时代潮流，错过了机会怎么办？ 潮流固然要关注，但是我敢这么说，你连手上的事都还没做好呢，即使机会来了，一样不属于你。我们总是夸大了时间窗口的作用，以为错过了互联网、错过了移动互联网，决不能错过下一个风口浪尖了，这真的是一个误区，看似每一个风口来了，抓住机会的都是第一时间进入的，殊不知，第一时间死掉的比存活下来的不知道要多出多少，能存活下来的，只是被人忽略了自身的实力而已，而且很多后来居上的例子数不胜数。 所以，你不妨专注在一件事上，专注手上正在做的事，就如我博客所说：做好现在的事！ 3. 把事情做到极致 这世界上很多人都很专注，甚至有几十年如一日在自己的工作岗位上兢兢业业，但是专注在一件事上还不够，你要把事情做到极致才行。 这个特质对很多职场中的同学非常有用，很多刚入职场的同学总是感觉自己做的工作没什么用，就是打杂的，抱怨自己被大材小用了，然而，就是这么简单的工作，你能把它做好，做到极致，一样很有价值，你也才能因此得到更多的机会。 我刚加入公司的时候，甚至做过一段时间的「电话管理员与网管」，公司每每调换座位的时候，我从来都是利用下班时间帮大家调换电话线，我每次都会亲自验证，要知道很多电话不在同一楼层，这非常麻烦，但是从来没出过错，人事都觉得不可思议，因为之前的人负责的偶尔调错很正常。除此之外，我觉得机房里那些电话线非常混乱，杂乱无章，专门重新做了整理，这些工作，在之前，没人愿意去做。 我在给别人重装系统的时候，每次都会把驱动、常用办公软件一并给装好，之前，也从来没人想过这事。 正因为我把在公司的每件事都做到极致，我才能因此得到更多的信任与机会。 现在我在公众号写作，除了内容之外，我会力求把所有细节都做好，字体大小、标点、间距排版等等，我都会很在意，直到现在也一直在改进。 很多人总觉得自己工作做的还不错，分配的任务做完了，总觉得没事做，然而问问你自己，是否还可以做的更好？ 这个功能是不是还有更好的实现方式？代码是不是还可以更简练些？这个动画是不是还可以更流畅些？是不是有些历史遗留问题可以解决的？有些更好的框架是不是可以考虑学习应用在项目中？性能是不是还可以更好些？ 任何一件小事，做到极致，都是一项了不起的能力！ 4. 不要给自己设限 之前有人问我这么一个问题，说之前一直做技术 Leader 的角色，公司觉得他做的还不错，想让他做项目管理，他很纠结，担心自己做不好，而且还影响了技术上的进步。 如果是我，我会毫不犹豫的尝试。 很多人知道我，我自己是从一位不起眼的程序员，一步步走到公司管理层的，我现在参与公司的重大决策，现在除了技术之外，我涉及到的领域非常多，有产品、运营、商业、管理、投资等。 我当初一样面临过这种选择，一样犹豫过，一样有各种担心，但是当我走过来，我才明白我自己的职业选择都是来自于我的一个特质：我从来不给自己设限。 我自己的性格比较开放，喜欢折腾，喜欢接触不同的领域，有很多奇特的想法，比如我认为现在国家规定一个人只能同时在一家公司上班不科学，我认为未来是一个多元化人才的时代，一个人如果只要有能力，在一家公司写代码的同时，为什么不能同时在另一家公司做销售呢？只不过时代还不认可我这么前卫的想法。 但是，只要有机会，我都会接触不同的领域，我不会优先考虑我做不到，我只会先考虑，如果我做到了，会不会对自己的能力有很大帮助。 所以，当我有一个工程师转到管理岗位的机会时，我尝试了，毕竟，万一尝试之后，不适合自己，或者自己做不到，又能如何呢？大不了再做回老本行好了。幸运的是，我成功了，而且一直做到公司管理层。 除此之外，我还经常跟公司产品经理一起讨论产品，有很多不错的需求甚至都是我来提出的。由于我自己在公众号的运营经验，我有机会还教下我们的媒体运营同事，如何排版，如何更好的运营用户等。 我说我在商业、投资领域也有涉及，很多人可能觉得我又扯淡了，这些都是我在老板身边学到的，老板是投资出身，在这方面很厉害，毕竟呆的时间久了，自己总会有所感染，而且在去年还跟着老板一起在上海投资了一家吐司店，一年多的时间，估值翻了将近十倍，当然，由于自己第一次投资，还没什么经验，投资额度较小。 这个世界从来都是有得必有失，我做了管理之后，在 Android 技术领域上花费的时间很少了，也不用自己写代码了，但是我在其他领域的能力收获非常大，我也一直在向我口中所说的多元化人才努力。 有人可能会有疑问了，不给自己设限不跟上面说到的专注矛盾么？ 当然不矛盾，不给自己设限的前提一定是自己具备了至少一项不错的能力，而且即使你再怎么专注，也没法一天 24 小时都在做一件事，即使你很专注，你也会有看电视、娱乐的时间。 所以，专注的做好手上的事固然很重要，但是不要闷头工作，也偶尔抬头看下外面的天空，拓宽下自己的视野，在有其他领域机会的时候，不妨勇敢的去尝试下。 5. 执行力 我们都知道努力很重要，但是很少有人能做到。 比如，即使我一而再再而三的号召大家，要写博客，学写作，又有几个人做到了呢？你知道，每天只需要学习 2 小时，一年之后，你的能力就有很大提高，又有几个人能做到？ 所以，大部分人的执行力很差，可能你一时做到了，也没法坚持下去，而把自己的执行力持续下去恰恰是最关键的一环，也就是所谓的：「道理我都懂，可是我做不到」。 这个话题很长，后面我会抽时间单独写篇文章，以自己的亲身经历总结了一点方法，教教大家如何才能改变这一现状，提高你的执行力，让你的努力更容易坚持下去。 以上，就是我所总结的，如何让你脱颖而出的一些技巧，希望对部分同学有所思考与帮助！ PS：可能有些人，看了以上我的总结，会觉得，这些东西我都知道，但是，真的是这样么？我敢说，在你没看这篇文章之前，你丝毫没有意识到自己比别人差在哪里，你只是看了之后，恍然大悟罢了。 还有些人，可能会觉得是鸡汤，某种意义上来说，确实是鸡汤，但是却都是自己真实经历的经验总结，有时候，鸡汤可能比所谓的干货更有用，很多道理其实大家都懂，我们做出改变缺乏的只是一个推动力。]]></content>
       <tags>
-        <tag>wamp</tag>
-        <tag>apache</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[有意思语言摘录]]></title>
-    <url>%2F2017%2F04%2F24%2F%E6%9C%89%E6%84%8F%E6%80%9D%E8%AF%AD%E8%A8%80%E6%91%98%E5%BD%95%2F</url>
-    <content type="text"><![CDATA[1234567891011121314知乎上有网友提问：我读过很多书，但后来大部分都忘记了，那读书有什么用呢？有人说：当我还是个孩子的时候，我吃过很多食物，虽然现在已经记不起来吃过什么了。但可以肯定的是，它们中的一部分已经长成了我的骨头和肉。其实，何止是读书呢？每一次旅行都让我们脚下的路更长更远，每一次尝试都给我们的世界打开一个新的大门，每一段感情都让我们的心灵更加感性丰满。我们的一言一行，所作所为，那些有用的无用的，都在一点点变成我们成长的骨头和肉。 1本人学识渊博、经验丰富，代码风骚、效率恐怖，c/c++、java、php无不精通，熟练掌握各种框架，深山苦练20余年，一天只睡4小时，千里之外定位问题，瞬息之间修复上线。身体强壮、健步如飞，可连续编程100小时不休息，讨论技术方案5小时不喝水，上至带项目、出方案，下至盗账号、威胁pm，啥都能干。泡面矿泉水已备好，学校不支持编程已辍学，家人不支持编程已断绝关系，老婆不支持编程已离婚，小孩不支持编程已送孤儿院，备用电源万兆光纤永不断电断网，门口已埋雷无人打扰 12]]></content>
-      <tags>
-        <tag>摘录</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[有思考的人]]></title>
-    <url>%2F2017%2F04%2F24%2F%E6%9C%89%E6%80%9D%E8%80%83%E7%9A%84%E4%BA%BA%2F</url>
-    <content type="text"><![CDATA[这几天看了好多技术大牛的博客，颇有感悟，尤以stormzhang和陈三的博客最深刻，知道这帮闷骚的技术男除了每天都在研究技术之外，也在写一些生活中的感悟、撒撒狗粮等等，技术性文章可以慢慢研读，但是看了很多他们对于不同面的一些感悟。的确，我们总得需要有自己的时间可以反省反省自己 明后天坐火车回去，23个小时，希望不要中途歇菜。。。。晚安！！！]]></content>
-      <tags>
-        <tag>杂文</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -181,11 +181,19 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[使用命令行和github交互]]></title>
-    <url>%2F2017%2F04%2F24%2F%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8Cgithub%E4%BA%A4%E4%BA%92%2F</url>
-    <content type="text"><![CDATA[全局配置1234567初次配置git环境时需要进行的步骤：(配置过之后不需要再次配置)git config --global user.name &quot;Gwemz&quot;git config --global user.email &quot;3396543978@qq.com&quot;git config --global push.default simple clone一个已有的仓库做开发12345678git clone https://github.com/Gwemz/myblog.git .(将项目克隆到当前文件夹下)git --help //git相关命令查询git status //查看项目的状态(是否更新)git add * //添加需要更新的所有内容git status git commit -m &apos;myblog&apos; //每次提交的标注git push //提交(需要输入用户名和密码) 管理分支(除了 https://gwemz.github.io 之外其它 https://gwemz.github.io/myblog 如果需要访问则必须进行下述操作) 1234567git branch gh-pagesgit checkout gh-pagesgit merge mastergit push --set-upstream origin gh-pages 注意 多使用git status 查看自己目前所在的分支]]></content>
+    <title><![CDATA[有思考的人]]></title>
+    <url>%2F2017%2F04%2F24%2F%E6%9C%89%E6%80%9D%E8%80%83%E7%9A%84%E4%BA%BA%2F</url>
+    <content type="text"><![CDATA[这几天看了好多技术大牛的博客，颇有感悟，尤以stormzhang和陈三的博客最深刻，知道这帮闷骚的技术男除了每天都在研究技术之外，也在写一些生活中的感悟、撒撒狗粮等等，技术性文章可以慢慢研读，但是看了很多他们对于不同面的一些感悟。的确，我们总得需要有自己的时间可以反省反省自己 明后天坐火车回去，23个小时，希望不要中途歇菜。。。。晚安！！！]]></content>
       <tags>
-        <tag>github</tag>
+        <tag>杂文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PHPCMS的安装流程]]></title>
+    <url>%2F2017%2F04%2F24%2Fphpcms%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[1234561. 本地服务器www目录下新建文件phpcms2. 在网站www.phpcms.cn下载安装包。有GBK 和 UTF8两个版本，推荐使用UTF8版本。下载文件解压，删除readme文件夹，将install_package文件夹下的文件拷贝到www目录下的phpcms文件夹内3. 访问localhost/phpcms/install/install.php按照指导进行安装 不懂本教程，没关系，查看 详细教程 注：后台管理系统中的设置可修改默认站点域名 三个重要的地址12345localhost/phpcms/admin.php(后台管理系统 账号：phpcms 密码：phpcms)localhost/phpcms/index.php(前台首页文件)localhost/phpcms/myadmin(数据库) 两个重要的目录1231. www/phpcms/phpcms/tmplates/default/content/2. www/phpcms/statics/ -css/ -images/ -js/]]></content>
+      <tags>
+        <tag>phpcms</tag>
       </tags>
   </entry>
   <entry>
