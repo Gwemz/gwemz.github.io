@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="var c1=Date();//返回一个字符串，内容为当前时间Fri Jul 21 2017 10:20:06 GMT+0800 (中国标准时间)var c2=new Date();//返回一个日期对象，内容为当前时间Fri Jul 21 2017 10:21:57 GMT+0800 (中国标准时间)var c3=Date(‘2017-1-1’);//返回一个字符串（String），内容仍旧为当前">
+<meta name="description" content="Date()直接返回当前时间字符串，不管参数是number还是任何string1234Date();Date(&amp;apos;sssss&amp;apos;);Date(1000);//Fri Aug 21 2015 15:46:21 GMT+0800 (中国标准时间) 而new Date()则是会根据参数来返回对应的值，无参数的时候，返回当前时间的字符串形式；有参数的时候返回参数所对应时间的字符串。new">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Js中Date和new Date的区别">
 <meta property="og:url" content="http://yoursite.com/2017/07/21/Js中Date和new-Date的区别/index.html">
 <meta property="og:site_name" content="winter blog">
-<meta property="og:description" content="var c1=Date();//返回一个字符串，内容为当前时间Fri Jul 21 2017 10:20:06 GMT+0800 (中国标准时间)var c2=new Date();//返回一个日期对象，内容为当前时间Fri Jul 21 2017 10:21:57 GMT+0800 (中国标准时间)var c3=Date(‘2017-1-1’);//返回一个字符串（String），内容仍旧为当前">
-<meta property="og:updated_time" content="2017-07-21T13:50:59.663Z">
+<meta property="og:description" content="Date()直接返回当前时间字符串，不管参数是number还是任何string1234Date();Date(&amp;apos;sssss&amp;apos;);Date(1000);//Fri Aug 21 2015 15:46:21 GMT+0800 (中国标准时间) 而new Date()则是会根据参数来返回对应的值，无参数的时候，返回当前时间的字符串形式；有参数的时候返回参数所对应时间的字符串。new">
+<meta property="og:updated_time" content="2017-07-23T13:33:49.993Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Js中Date和new Date的区别">
-<meta name="twitter:description" content="var c1=Date();//返回一个字符串，内容为当前时间Fri Jul 21 2017 10:20:06 GMT+0800 (中国标准时间)var c2=new Date();//返回一个日期对象，内容为当前时间Fri Jul 21 2017 10:21:57 GMT+0800 (中国标准时间)var c3=Date(‘2017-1-1’);//返回一个字符串（String），内容仍旧为当前">
+<meta name="twitter:description" content="Date()直接返回当前时间字符串，不管参数是number还是任何string1234Date();Date(&amp;apos;sssss&amp;apos;);Date(1000);//Fri Aug 21 2015 15:46:21 GMT+0800 (中国标准时间) 而new Date()则是会根据参数来返回对应的值，无参数的时候，返回当前时间的字符串形式；有参数的时候返回参数所对应时间的字符串。new">
 
 
 
@@ -342,7 +342,9 @@
       
 
       
-        <p>var c1=Date();<br>//返回一个字符串，内容为当前时间<br><code>Fri Jul 21 2017 10:20:06 GMT+0800 (中国标准时间)</code><br>var c2=new Date();<br>//返回一个日期对象，内容为当前时间<br><code>Fri Jul 21 2017 10:21:57 GMT+0800 (中国标准时间)</code><br>var c3=Date(‘2017-1-1’);<br>//返回一个字符串（String），内容仍旧为当前时间，也就是不受参数影响<br><code>Fri Jul 21 2017 10:23:28 GMT+0800 (中国标准时间)</code><br>var c4=new Date(‘2017-1-1’);<br>//返回一个日期对象，内容为2017年元旦<br><code>Sun Jan 01 2017 00:00:00 GMT+0800 (中国标准时间)</code></p>
+        <h4 id="Date-直接返回当前时间字符串，不管参数是number还是任何string"><a href="#Date-直接返回当前时间字符串，不管参数是number还是任何string" class="headerlink" title="Date()直接返回当前时间字符串，不管参数是number还是任何string"></a>Date()直接返回当前时间字符串，不管参数是number还是任何string</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Date();</div><div class="line">Date(&apos;sssss&apos;);</div><div class="line">Date(1000);</div><div class="line">//Fri Aug 21 2015 15:46:21 GMT+0800 (中国标准时间)</div></pre></td></tr></table></figure>
+<h4 id="而new-Date-则是会根据参数来返回对应的值，无参数的时候，返回当前时间的字符串形式；有参数的时候返回参数所对应时间的字符串。new-Date-对参数不管是格式还是内容都要求-且只返回字符串"><a href="#而new-Date-则是会根据参数来返回对应的值，无参数的时候，返回当前时间的字符串形式；有参数的时候返回参数所对应时间的字符串。new-Date-对参数不管是格式还是内容都要求-且只返回字符串" class="headerlink" title="而new Date()则是会根据参数来返回对应的值，无参数的时候，返回当前时间的字符串形式；有参数的时候返回参数所对应时间的字符串。new Date()对参数不管是格式还是内容都要求,且只返回字符串"></a>而new Date()则是会根据参数来返回对应的值，无参数的时候，返回当前时间的字符串形式；有参数的时候返回参数所对应时间的字符串。new Date()对参数不管是格式还是内容都要求,且只返回字符串</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">new Date();</div><div class="line">//Fri Aug 21 2015 15:51:55 GMT+0800 (中国标准时间)</div><div class="line">new Date(1293879600000);</div><div class="line">new Date(&apos;2011-01-01T11:00:00&apos;)</div><div class="line">new Date(&apos;2011/01/01 11:00:00&apos;)</div><div class="line">new Date(2011,0,1,11,0,0)</div><div class="line">new Date(&apos;jan 01 2011,11 11:00:00&apos;)</div><div class="line">new Date(&apos;Sat Jan 01 2011 11:00:00&apos;)</div><div class="line">//Sat Jan 01 2011 11:00:00 GMT+0800 (中国标准时间)</div><div class="line">new Date(&apos;sss&apos;);</div><div class="line">new Date(&apos;2011/01/01T11:00:00&apos;);</div><div class="line">new Date(&apos;2011-01-01-11:00:00&apos;)</div><div class="line">new Date(&apos;1293879600000&apos;);</div><div class="line">//Invalid Date</div><div class="line">new Date(&apos;2011-01-01T11:00:00&apos;)-new Date(&apos;1992/02/11 12:00:12&apos;)</div><div class="line">//596069988000</div></pre></td></tr></table></figure>
+<p>new Date()对参数有严格的要求，格式不准确的时候会返回Invalid Date</p>
 
       
     </div>
@@ -505,8 +507,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/touxiang.jpg"
@@ -593,6 +604,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Date-直接返回当前时间字符串，不管参数是number还是任何string"><span class="nav-number">1.</span> <span class="nav-text">Date()直接返回当前时间字符串，不管参数是number还是任何string</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#而new-Date-则是会根据参数来返回对应的值，无参数的时候，返回当前时间的字符串形式；有参数的时候返回参数所对应时间的字符串。new-Date-对参数不管是格式还是内容都要求-且只返回字符串"><span class="nav-number">2.</span> <span class="nav-text">而new Date()则是会根据参数来返回对应的值，无参数的时候，返回当前时间的字符串形式；有参数的时候返回参数所对应时间的字符串。new Date()对参数不管是格式还是内容都要求,且只返回字符串</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

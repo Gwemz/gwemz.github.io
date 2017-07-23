@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Js中Date和new Date的区别]]></title>
     <url>%2F2017%2F07%2F21%2FJs%E4%B8%ADDate%E5%92%8Cnew-Date%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
-    <content type="text"><![CDATA[var c1=Date();//返回一个字符串，内容为当前时间Fri Jul 21 2017 10:20:06 GMT+0800 (中国标准时间)var c2=new Date();//返回一个日期对象，内容为当前时间Fri Jul 21 2017 10:21:57 GMT+0800 (中国标准时间)var c3=Date(‘2017-1-1’);//返回一个字符串（String），内容仍旧为当前时间，也就是不受参数影响Fri Jul 21 2017 10:23:28 GMT+0800 (中国标准时间)var c4=new Date(‘2017-1-1’);//返回一个日期对象，内容为2017年元旦Sun Jan 01 2017 00:00:00 GMT+0800 (中国标准时间)]]></content>
+    <content type="text"><![CDATA[Date()直接返回当前时间字符串，不管参数是number还是任何string1234Date();Date(&apos;sssss&apos;);Date(1000);//Fri Aug 21 2015 15:46:21 GMT+0800 (中国标准时间) 而new Date()则是会根据参数来返回对应的值，无参数的时候，返回当前时间的字符串形式；有参数的时候返回参数所对应时间的字符串。new Date()对参数不管是格式还是内容都要求,且只返回字符串12345678910111213141516new Date();//Fri Aug 21 2015 15:51:55 GMT+0800 (中国标准时间)new Date(1293879600000);new Date(&apos;2011-01-01T11:00:00&apos;)new Date(&apos;2011/01/01 11:00:00&apos;)new Date(2011,0,1,11,0,0)new Date(&apos;jan 01 2011,11 11:00:00&apos;)new Date(&apos;Sat Jan 01 2011 11:00:00&apos;)//Sat Jan 01 2011 11:00:00 GMT+0800 (中国标准时间)new Date(&apos;sss&apos;);new Date(&apos;2011/01/01T11:00:00&apos;);new Date(&apos;2011-01-01-11:00:00&apos;)new Date(&apos;1293879600000&apos;);//Invalid Datenew Date(&apos;2011-01-01T11:00:00&apos;)-new Date(&apos;1992/02/11 12:00:12&apos;)//596069988000 new Date()对参数有严格的要求，格式不准确的时候会返回Invalid Date]]></content>
       <tags>
         <tag>JavaScript</tag>
       </tags>

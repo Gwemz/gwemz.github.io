@@ -346,7 +346,8 @@
       
         
           
-          var c1=Date();//返回一个字符串，内容为当前时间Fri Jul 21 2017 10:20:06 GMT+0800 (中国标准时间)var c2=new Date();//返回一个日期对象，内容为当前时间Fri Jul 21 2017 10:21:57 GMT+0800 (中国标准时间
+          Date()直接返回当前时间字符串，不管参数是number还是任何string1234Date();Date(&apos;sssss&apos;);Date(1000);//Fri Aug 21 2015 15:46:21 GMT+0800 (中国标准时间)
+而new Date()则是会根据参数来返
           ...
           <!--noindex-->
           <div class="post-button text-center">
