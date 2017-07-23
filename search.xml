@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Js中Date和new Date的区别]]></title>
+    <url>%2F2017%2F07%2F21%2FJs%E4%B8%ADDate%E5%92%8Cnew-Date%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[var c1=Date();//返回一个字符串，内容为当前时间Fri Jul 21 2017 10:20:06 GMT+0800 (中国标准时间)var c2=new Date();//返回一个日期对象，内容为当前时间Fri Jul 21 2017 10:21:57 GMT+0800 (中国标准时间)var c3=Date(‘2017-1-1’);//返回一个字符串（String），内容仍旧为当前时间，也就是不受参数影响Fri Jul 21 2017 10:23:28 GMT+0800 (中国标准时间)var c4=new Date(‘2017-1-1’);//返回一个日期对象，内容为2017年元旦Sun Jan 01 2017 00:00:00 GMT+0800 (中国标准时间)]]></content>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Cookie LocalStorage与SessionStorage的区别]]></title>
     <url>%2F2017%2F07%2F20%2FCookie-LocalStorage%E4%B8%8ESessionStorage%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
     <content type="text"><![CDATA[“Cookie、LocalStorage、SessionStorage的区别？”这个问题成了近期面试中被问到最多的问题，索性把它归归类，让自己的记忆更加深刻一点。 基本概念CookieCookie是小甜饼的意思，顾名思义，它非常小，大小限制在4KB左右，是网景公司前雇员Lou Montulli在1993年3月被发明的。它的主要用途有保存登录信息，诸如在某一个网站的登录页面看到“记住密码”，这通常就是在Cookie中存入辨识用户身份的数据。 LocalStorageLocalStorage是HTMl5标准中新加入的技术，它并不是什么划时代的新东西，早在IE6时代就有相关技术userData，而当时由于考虑到浏览器的兼容性问题，故而没采用。如今，LocalStorage被大多数浏览器支持，故而炙手可热。 特性 Chrome Firefox Internet Explorer Opera Safari LocalStorage 4 3.5 8 10.5 4 sessionStorage 5 2 8 10.5 4 sessionStoragesessionStorage与LocalStorage接口类似，但数据保存的周期不同。sessionStorage将一部分数据在当前会话中保存下来，刷新页面数据依旧存在。但当页面关闭之后，sessionStorage中的数据就会被清空。 三者的异同 特性 Cookie LocalStorage sessionStorage 数据的生命周期 一般由服务器生成 ，可设置失效时间。如果是在浏览器端生成Cookie，默认是关闭浏览器后失效 除非被清除，否则永久保存 仅在当前会话下有效，关闭页面或浏览器之后就会失效 存放数据大小 4K左右 一般为5MB左右 一般为5MB左右 与服务器端通信 每次都会携带到HTTP头中，如果使用Cookie保存过多数据，会带来性能问题 仅在客户端（浏览器）中保存，不参与和服务器的通信 仅在客户端（浏览器）中保存，不参与和服务器的通信 易用性 需要程序员自己封装，原生的Cookie接口不友好 原生接口 原生接口 应用场景Cookie一个常用的场景就是判断用户是否登录。LocalStorage接替了cookie管理购物车的工作，同时也会保存一些诸如HTML5游戏中产生的本地数据。sessionStorage适用于一些用户填写表单信息。 安全性的考虑不是什么数据都适合放在 Cookie、localStorage 和 sessionStorage 中的。使用它们的时候，需要时刻注意是否有代码存在 XSS 注入的风险。因为只要打开控制台，你就随意修改它们的值，也就是说如果你的网站中有 XSS 的风险，它们就能对你的 localStorage 肆意妄为。所以千万不要用它们存储你系统中的敏感数据。]]></content>
@@ -74,12 +82,11 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[前端框架MVC、MVVM、MVP介绍]]></title>
-    <url>%2F2017%2F04%2F24%2FMVC%E4%BB%A5%E5%8F%8AMVVM%20MVP%E4%BB%8B%E7%BB%8D%2F</url>
-    <content type="text"><![CDATA[1. MVCModel-View-Controller(模型-视图-控制器)是最常见的软件架构之一，业界有着广泛应用。 视图（View）：用户界面 控制器（Controller）：业务逻辑 模型（Model）：数据保存 各部分之间的通信如下： View传送指令到Controller Controller完成业务之后要求Model改变状态 Model将新的数据发送到View，用户得到反馈 接受用户指令时，MVC的两种方式：（互动模式） 另一种是直接通过Controller接受指令 2. MVPMVP模式将Controller改名为Presenter，同时改变了通信方向 各部分之间的通信，都是双向的 View与Model不发生联系，都是通过Presenter传递 View非常薄，不部署任何业务逻辑，称为“被动视图”（Passive View）,即没有任何主动性，而Presenter非常厚，所有逻辑都部署在那里 3. MVVMMVVM模式将Presenter改名为ViewModel，基本上与MVP模式完全一致 唯一的区别是，它采用双向数据绑定（data-binding）:View的变动自动反映在ViewModel，反之亦然。Angular和Ember都采用这种模式]]></content>
+    <title><![CDATA[有意思语言摘录]]></title>
+    <url>%2F2017%2F04%2F24%2F%E6%9C%89%E6%84%8F%E6%80%9D%E8%AF%AD%E8%A8%80%E6%91%98%E5%BD%95%2F</url>
+    <content type="text"><![CDATA[1234567891011121314知乎上有网友提问：我读过很多书，但后来大部分都忘记了，那读书有什么用呢？有人说：当我还是个孩子的时候，我吃过很多食物，虽然现在已经记不起来吃过什么了。但可以肯定的是，它们中的一部分已经长成了我的骨头和肉。其实，何止是读书呢？每一次旅行都让我们脚下的路更长更远，每一次尝试都给我们的世界打开一个新的大门，每一段感情都让我们的心灵更加感性丰满。我们的一言一行，所作所为，那些有用的无用的，都在一点点变成我们成长的骨头和肉。 1本人学识渊博、经验丰富，代码风骚、效率恐怖，c/c++、java、php无不精通，熟练掌握各种框架，深山苦练20余年，一天只睡4小时，千里之外定位问题，瞬息之间修复上线。身体强壮、健步如飞，可连续编程100小时不休息，讨论技术方案5小时不喝水，上至带项目、出方案，下至盗账号、威胁pm，啥都能干。泡面矿泉水已备好，学校不支持编程已辍学，家人不支持编程已断绝关系，老婆不支持编程已离婚，小孩不支持编程已送孤儿院，备用电源万兆光纤永不断电断网，门口已埋雷无人打扰 12]]></content>
       <tags>
-        <tag>java</tag>
-        <tag>eclipse</tag>
+        <tag>摘录</tag>
       </tags>
   </entry>
   <entry>
@@ -100,11 +107,12 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[有意思语言摘录]]></title>
-    <url>%2F2017%2F04%2F24%2F%E6%9C%89%E6%84%8F%E6%80%9D%E8%AF%AD%E8%A8%80%E6%91%98%E5%BD%95%2F</url>
-    <content type="text"><![CDATA[1234567891011121314知乎上有网友提问：我读过很多书，但后来大部分都忘记了，那读书有什么用呢？有人说：当我还是个孩子的时候，我吃过很多食物，虽然现在已经记不起来吃过什么了。但可以肯定的是，它们中的一部分已经长成了我的骨头和肉。其实，何止是读书呢？每一次旅行都让我们脚下的路更长更远，每一次尝试都给我们的世界打开一个新的大门，每一段感情都让我们的心灵更加感性丰满。我们的一言一行，所作所为，那些有用的无用的，都在一点点变成我们成长的骨头和肉。 1本人学识渊博、经验丰富，代码风骚、效率恐怖，c/c++、java、php无不精通，熟练掌握各种框架，深山苦练20余年，一天只睡4小时，千里之外定位问题，瞬息之间修复上线。身体强壮、健步如飞，可连续编程100小时不休息，讨论技术方案5小时不喝水，上至带项目、出方案，下至盗账号、威胁pm，啥都能干。泡面矿泉水已备好，学校不支持编程已辍学，家人不支持编程已断绝关系，老婆不支持编程已离婚，小孩不支持编程已送孤儿院，备用电源万兆光纤永不断电断网，门口已埋雷无人打扰 12]]></content>
+    <title><![CDATA[前端框架MVC、MVVM、MVP介绍]]></title>
+    <url>%2F2017%2F04%2F24%2FMVC%E4%BB%A5%E5%8F%8AMVVM%20MVP%E4%BB%8B%E7%BB%8D%2F</url>
+    <content type="text"><![CDATA[1. MVCModel-View-Controller(模型-视图-控制器)是最常见的软件架构之一，业界有着广泛应用。 视图（View）：用户界面 控制器（Controller）：业务逻辑 模型（Model）：数据保存 各部分之间的通信如下： View传送指令到Controller Controller完成业务之后要求Model改变状态 Model将新的数据发送到View，用户得到反馈 接受用户指令时，MVC的两种方式：（互动模式） 另一种是直接通过Controller接受指令 2. MVPMVP模式将Controller改名为Presenter，同时改变了通信方向 各部分之间的通信，都是双向的 View与Model不发生联系，都是通过Presenter传递 View非常薄，不部署任何业务逻辑，称为“被动视图”（Passive View）,即没有任何主动性，而Presenter非常厚，所有逻辑都部署在那里 3. MVVMMVVM模式将Presenter改名为ViewModel，基本上与MVP模式完全一致 唯一的区别是，它采用双向数据绑定（data-binding）:View的变动自动反映在ViewModel，反之亦然。Angular和Ember都采用这种模式]]></content>
       <tags>
-        <tag>摘录</tag>
+        <tag>java</tag>
+        <tag>eclipse</tag>
       </tags>
   </entry>
   <entry>
@@ -116,12 +124,11 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[wamp下apache2.4.9局域网ip访问时提示403错误]]></title>
-    <url>%2F2017%2F04%2F24%2Fwamp%E4%B8%8Bapache2.4.9%E5%B1%80%E5%9F%9F%E7%BD%91ip%E8%AE%BF%E9%97%AE%E6%97%B6%E6%8F%90%E7%A4%BA403%E9%94%99%E8%AF%AF%2F</url>
-    <content type="text"><![CDATA[在自己的笔记本上搭建了一个apache服务器，想通过手机访问主机上的一个页面，但是在访问过程中总提示403错误。经过在网上查找别人的解决方案，及不断尝试修改httpd.conf配置文件，最终测试出修改方案。 找到(目录C:\wamp\bin\apache\apache2.4.9\conf下的httpd.conf文件)123&lt;Directory&gt;Require local&lt;/Directory&gt; 将 Require local 修改为 Require all granted 真心是尝试过很多修改方法，网友们也说去修改什么allow from all类似这种，都有尝试过。可能是版本不同吧，本方法经测试OK，希望对大家有帮助。]]></content>
+    <title><![CDATA[PHPCMS的安装流程]]></title>
+    <url>%2F2017%2F04%2F24%2Fphpcms%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[1234561. 本地服务器www目录下新建文件phpcms2. 在网站www.phpcms.cn下载安装包。有GBK 和 UTF8两个版本，推荐使用UTF8版本。下载文件解压，删除readme文件夹，将install_package文件夹下的文件拷贝到www目录下的phpcms文件夹内3. 访问localhost/phpcms/install/install.php按照指导进行安装 不懂本教程，没关系，查看 详细教程 注：后台管理系统中的设置可修改默认站点域名 三个重要的地址12345localhost/phpcms/admin.php(后台管理系统 账号：phpcms 密码：phpcms)localhost/phpcms/index.php(前台首页文件)localhost/phpcms/myadmin(数据库) 两个重要的目录1231. www/phpcms/phpcms/tmplates/default/content/2. www/phpcms/statics/ -css/ -images/ -js/]]></content>
       <tags>
-        <tag>wamp</tag>
-        <tag>apache</tag>
+        <tag>phpcms</tag>
       </tags>
   </entry>
   <entry>
@@ -189,11 +196,12 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[PHPCMS的安装流程]]></title>
-    <url>%2F2017%2F04%2F24%2Fphpcms%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[1234561. 本地服务器www目录下新建文件phpcms2. 在网站www.phpcms.cn下载安装包。有GBK 和 UTF8两个版本，推荐使用UTF8版本。下载文件解压，删除readme文件夹，将install_package文件夹下的文件拷贝到www目录下的phpcms文件夹内3. 访问localhost/phpcms/install/install.php按照指导进行安装 不懂本教程，没关系，查看 详细教程 注：后台管理系统中的设置可修改默认站点域名 三个重要的地址12345localhost/phpcms/admin.php(后台管理系统 账号：phpcms 密码：phpcms)localhost/phpcms/index.php(前台首页文件)localhost/phpcms/myadmin(数据库) 两个重要的目录1231. www/phpcms/phpcms/tmplates/default/content/2. www/phpcms/statics/ -css/ -images/ -js/]]></content>
+    <title><![CDATA[wamp下apache2.4.9局域网ip访问时提示403错误]]></title>
+    <url>%2F2017%2F04%2F24%2Fwamp%E4%B8%8Bapache2.4.9%E5%B1%80%E5%9F%9F%E7%BD%91ip%E8%AE%BF%E9%97%AE%E6%97%B6%E6%8F%90%E7%A4%BA403%E9%94%99%E8%AF%AF%2F</url>
+    <content type="text"><![CDATA[在自己的笔记本上搭建了一个apache服务器，想通过手机访问主机上的一个页面，但是在访问过程中总提示403错误。经过在网上查找别人的解决方案，及不断尝试修改httpd.conf配置文件，最终测试出修改方案。 找到(目录C:\wamp\bin\apache\apache2.4.9\conf下的httpd.conf文件)123&lt;Directory&gt;Require local&lt;/Directory&gt; 将 Require local 修改为 Require all granted 真心是尝试过很多修改方法，网友们也说去修改什么allow from all类似这种，都有尝试过。可能是版本不同吧，本方法经测试OK，希望对大家有帮助。]]></content>
       <tags>
-        <tag>phpcms</tag>
+        <tag>wamp</tag>
+        <tag>apache</tag>
       </tags>
   </entry>
   <entry>
