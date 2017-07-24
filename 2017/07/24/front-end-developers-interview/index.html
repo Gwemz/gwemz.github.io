@@ -1,0 +1,950 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="面试题," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="1.CSS盒模型包含哪些元素:content(内容) 、padding(填充) 、border(边框) 、margin(边界) 2.写出你知道的清除浮动的方法方法一：使用带有clear属性的空元素12345在浮动元素后添加一个空元素如&amp;lt;div class=&amp;quot;clear&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;.clear&amp;#123;  clear:both;&amp;#125;亦可使用&amp;">
+<meta name="keywords" content="面试题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="front-end developers interview">
+<meta property="og:url" content="http://yoursite.com/2017/07/24/front-end-developers-interview/index.html">
+<meta property="og:site_name" content="winter blog">
+<meta property="og:description" content="1.CSS盒模型包含哪些元素:content(内容) 、padding(填充) 、border(边框) 、margin(边界) 2.写出你知道的清除浮动的方法方法一：使用带有clear属性的空元素12345在浮动元素后添加一个空元素如&amp;lt;div class=&amp;quot;clear&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;.clear&amp;#123;  clear:both;&amp;#125;亦可使用&amp;">
+<meta property="og:updated_time" content="2017-07-24T18:17:03.320Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="front-end developers interview">
+<meta name="twitter:description" content="1.CSS盒模型包含哪些元素:content(内容) 、padding(填充) 、border(边框) 、margin(边界) 2.写出你知道的清除浮动的方法方法一：使用带有clear属性的空元素12345在浮动元素后添加一个空元素如&amp;lt;div class=&amp;quot;clear&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;.clear&amp;#123;  clear:both;&amp;#125;亦可使用&amp;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/24/front-end-developers-interview/"/>
+
+
+
+
+
+  <title>front-end developers interview | winter blog</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">winter blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/24/front-end-developers-interview/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="winter">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="winter blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">front-end developers interview</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-24T19:56:04+08:00">
+                2017-07-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/07/24/front-end-developers-interview/" class="leancloud_visitors" data-flag-title="front-end developers interview">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="1-CSS盒模型包含哪些元素"><a href="#1-CSS盒模型包含哪些元素" class="headerlink" title="1.CSS盒模型包含哪些元素:"></a>1.CSS盒模型包含哪些元素:</h4><p>content(内容) 、padding(填充) 、border(边框) 、margin(边界)</p>
+<h4 id="2-写出你知道的清除浮动的方法"><a href="#2-写出你知道的清除浮动的方法" class="headerlink" title="2.写出你知道的清除浮动的方法"></a>2.写出你知道的清除浮动的方法</h4><p>方法一：使用带有clear属性的空元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">在浮动元素后添加一个空元素如&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;</div><div class="line">.clear&#123;</div><div class="line">  clear:both;</div><div class="line">&#125;</div><div class="line">亦可使用&lt;hr class=&quot;clear&quot;/&gt;或&lt;br class=&quot;clear&quot;/&gt;来清理</div></pre></td></tr></table></figure></p>
+<p>方法二：使用CSS的:after伪元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;container clearfix&quot;&gt;&lt;/div&gt;</div><div class="line">.clearfix:after&#123;</div><div class="line">  content:&quot;&quot;;</div><div class="line">  display:block;</div><div class="line">  height:0;</div><div class="line">  clear:both;</div><div class="line">&#125;</div><div class="line">为了考虑到IE6/IE7浏览器，可以给clearfix添加zoom:1;</div><div class="line">.clearfix&#123;</div><div class="line">  zoom:1;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>方法三：使用css的overflow:hidden;属性进行处理<br>给浮动元素的容器添加overflow:hidden;或overflow:auto;可以怪异清理浮动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;container&quot;&gt;</div><div class="line">  &lt;div class=&quot;floatleft&quot;&gt;&lt;/div&gt;</div><div class="line">  &lt;div class=&quot;floatright&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">.container&#123;</div><div class="line">  overflow:hidden;</div><div class="line">&#125;</div><div class="line">.container&#123;</div><div class="line">  overflow:auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>方法四：给浮动元素的容器添加浮动<br>给浮动元素的容器添加浮动属性即可清理内部浮动,使用方便但是会对文档造成影响<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;ul class=&quot;menu&quot;&gt;</div><div class="line">  &lt;li class=&quot;floatleft&quot;&gt;&lt;/li&gt;</div><div class="line">  &lt;li class=&quot;floatright&quot;&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">.menu&#123;</div><div class="line">  float:left;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>方法五：使用邻接元素清理<br>给浮动元素后边的元素添加clear属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;container&quot;&gt;</div><div class="line">  &lt;div class=&quot;floatleft&quot;&gt;</div><div class="line">  &lt;div class=&quot;floatright&quot;&gt;</div><div class="line">  &lt;div class=&quot;content&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">.content&#123;</div><div class="line">  clear:both;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>确保的是content元素和floatleft、floatright元素在同一个父元素内<br>方法六：使用display:table<br>使用display:table模拟表格布局也可解决浮动问题，并可以自动对齐高度。但是table存在一系列问题，建议不使用。</p>
+<h4 id="3-CSS选择器的优先级"><a href="#3-CSS选择器的优先级" class="headerlink" title="3.CSS选择器的优先级"></a>3.CSS选择器的优先级</h4><p>!important &gt; 行内样式 &gt; 后代、交叉 &gt; ID &gt; class &gt; 标签选择器 &gt; * &gt;浏览器预定义样式 &gt; 继承样式</p>
+<h4 id="4-让子块元素相对于父元素居中"><a href="#4-让子块元素相对于父元素居中" class="headerlink" title="4.让子块元素相对于父元素居中"></a>4.让子块元素相对于父元素居中</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;parent&quot;&gt;</div><div class="line">  &lt;div class=&quot;child&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">方法一：</div><div class="line">.parent&#123;</div><div class="line">  text-align:center;</div><div class="line">&#125;</div><div class="line">.child&#123;</div><div class="line">  display:inline-block;</div><div class="line">&#125;</div><div class="line">方法二：</div><div class="line">.child&#123;</div><div class="line">  margin:0 auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="5-说下opacity-0-visibility-hidden-display-none的区别"><a href="#5-说下opacity-0-visibility-hidden-display-none的区别" class="headerlink" title="5.说下opacity:0,visibility:hidden,display:none的区别"></a>5.说下opacity:0,visibility:hidden,display:none的区别</h4><p>opacity:0;该元素被隐藏起来了，但不会改变页面布局，并且，如果该元素已经绑定了一些事件，如click事件，那么点击该区域，也能触发点击事件的.<br>visibility:hidden;该元素被隐藏起来了，但是不会改变页面布局，但是不会触发该元素已经绑定的事件<br>display:none;把元素隐藏起来，并且会改变页面布局，可以理解成在页面中把该元素删掉一样</p>
+<h4 id="6-微信HTML5页面制作"><a href="#6-微信HTML5页面制作" class="headerlink" title="6.微信HTML5页面制作"></a>6.微信HTML5页面制作</h4><p>1.H5页面正规流程下需要用什么软件制作（不要网上那种几张图片摆摆自动生成的）<br>首先需要澄清一下，H5页面，全称HTML5页面，指的其实是充分利用HTML5技术的网页。而网页，归根其实就是资源＋CSS＋HTML5+JAVASCRIPT代码，涉及到服务端请求的，还需要后端的支持，因此制作丰富精美的HTML5页面，如果细化一下你所说的正规流程：<br>－文案出策划案与线框图。（笔、Balsamiq Mockup）<br>－设计师出高保真原型（PSD、Sketch、Axure）。<br>－程序（前端后端撰写JavaScript／CSS／HTML代码，后端代码PHP、Node.JS等）<br>其实你提到的网上生成的最终只是把这些步骤通过页面自动帮你实现了，生成的代码页是这些。<br>2.需要用到哪些技术（比如哪些程序语言）<br>前端表现效果：HTML、CSS、JAVASCRIPT<br>后端实现：PHP、Node.JS等。<br>3.微信里的一些特殊的动态效果，比如摇一摇、倾斜手机、举起手机是怎样实现的<br>有些是微信特有的，有些是浏览器本身就支持的。<br>这些其实取决于微信特定的功能开放清单，有些可以做有些不可以做，只要程序根据微信的开放API文档即可实现，文档在这里。<br><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1445241432" target="_blank" rel="external">微信公众平台开发概述</a><br><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1445241432" target="_blank" rel="external">微信提供的JS－SDK工具</a><br>4.H5页面怎样发布到微信上<br>H5页面其实就是个链接，你可以通过直接将该链接发送给好友、朋友圈、嵌入公众号、嵌入公众号图文<br>也可以通过生成二维码来让用户通过识别二维码来查看链接。<br><a href="http://cli.im/" target="_blank" rel="external">草料二维码生成器</a><br>5.有什么相关参考资料<br>其实对于常见的HTML5工具，取决于你所要制作的形式，对于常见互动展示类，易企秀、MAKA其实足矣，功能非常强大，模版也很丰富。<br>如果你需要的更多互动，甚至游戏类，可以推荐采用24好玩平台。</p>
+<h4 id="7-定义函数的方式有哪些，可以写下区别是什么？"><a href="#7-定义函数的方式有哪些，可以写下区别是什么？" class="headerlink" title="7.定义函数的方式有哪些，可以写下区别是什么？"></a>7.定义函数的方式有哪些，可以写下区别是什么？</h4><p>函数的声明方式：<br>A.基本语法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function 函数名([参数1],[参数2],...)&#123;</div><div class="line">  函数体</div><div class="line">  [return] //返回值</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>B.字面量定义的形式(匿名函数)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var 变量=function([参数1],[参数2],...)&#123;</div><div class="line">  函数体</div><div class="line">  [return] //返回值</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>C.以对象的形式来声明<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">new 关键字</div><div class="line">var 变量=new function([],[]...,&quot;函数体&quot;);</div></pre></td></tr></table></figure></p>
+<h4 id="8-写出正则表达式，用于匹配字符串至少包含五个连续的中文字，例如-中国人ss中国-注：UTF-8格式中文正则字符编码范围：-u4e00-u9fa5"><a href="#8-写出正则表达式，用于匹配字符串至少包含五个连续的中文字，例如-中国人ss中国-注：UTF-8格式中文正则字符编码范围：-u4e00-u9fa5" class="headerlink" title="8.写出正则表达式，用于匹配字符串至少包含五个连续的中文字，例如 中国人ss中国(注：UTF-8格式中文正则字符编码范围：\u4e00-\u9fa5)"></a>8.写出正则表达式，用于匹配字符串至少包含五个连续的中文字，例如 中国人ss中国(注：UTF-8格式中文正则字符编码范围：\u4e00-\u9fa5)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var str=&quot;中国人ss中国&quot;;</div><div class="line">var reg=/\w/g; 或者var reg=/[a-z]/g; 或者var reg=/[^\u4e00-\u9fa5]/g;</div><div class="line">var arr=str.replace(reg,&quot;&quot;);</div><div class="line">console.log(arr);</div><div class="line"></div><div class="line">输出结果：‘中国人中国’</div></pre></td></tr></table></figure>
+<h4 id="9-jquery中的hover事件等效于哪两个事件的组成"><a href="#9-jquery中的hover事件等效于哪两个事件的组成" class="headerlink" title="9.jquery中的hover事件等效于哪两个事件的组成?"></a>9.jquery中的hover事件等效于哪两个事件的组成?</h4><p>移入移出事件 onmouseover、onmouseout<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;container&quot;&gt;</div><div class="line">  &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">//鼠标移入移出效果</div><div class="line">&lt;script src=&quot;https://code.jquery.com/jquery-2.2.4.js&quot;&gt;</div><div class="line">$(&apos;.container&apos;).hover(function()&#123;</div><div class="line">	$(this).children().fadeOut(1000);</div><div class="line">	$(this).children().fadeIn(500);</div><div class="line">&#125;)</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="10-JS中哪些情况下会产生undefined值？"><a href="#10-JS中哪些情况下会产生undefined值？" class="headerlink" title="10.JS中哪些情况下会产生undefined值？"></a>10.JS中哪些情况下会产生undefined值？</h4><p>有许多的方法产生一个undefined值的代码。它通常为当试图访问一个不存在的值时。<br>1.任何变量声明时没有提供一个初始值，就会返回undefined<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var foo;</div><div class="line">console.log(foo);  //默认值为undefined</div></pre></td></tr></table></figure></p>
+<p>2.当试图访问一个不存在的对象属性或数组项时，返回undefined<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var array = [1, 2, 3];</div><div class="line">var foo = array.foo; // foo 属性不存在, 返回 undefined</div><div class="line">var item = array[5]; // 数组中没有索引为5的项，返回 undefined</div><div class="line">console.log(foo,item);</div></pre></td></tr></table></figure></p>
+<p>3.如果省略了函数的返回语句，就会返回undefined<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var value = (function()&#123;&#125;)(); // 返回 undefined</div></pre></td></tr></table></figure></p>
+<p>4.函数调用时提供的参数值为undefined<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(function(undefined)&#123;</div><div class="line">    // 参数是 undefined</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
+<h4 id="11-获取一个数组中的最大最小值，var-numbers-5-145-11-38-400-78-834"><a href="#11-获取一个数组中的最大最小值，var-numbers-5-145-11-38-400-78-834" class="headerlink" title="11.获取一个数组中的最大最小值，var numbers=[5,145,11,38,400,78,-834];"></a>11.获取一个数组中的最大最小值，var numbers=[5,145,11,38,400,78,-834];</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var numbers=[5,145,11,38,400,78,834];</div><div class="line">var max=numbers[0];</div><div class="line">for(var i=0;i&lt;numbers.length-1;i++)&#123;</div><div class="line">	if(max&lt;numbers[i+1])&#123;</div><div class="line">		max=numbers[i+1];</div><div class="line">	&#125;else&#123;</div><div class="line">		max=max;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">console.log(max);</div><div class="line"></div><div class="line">输出结果&apos;400&apos;</div></pre></td></tr></table></figure>
+<h4 id="12-数组有哪些自带的方法或属性"><a href="#12-数组有哪些自带的方法或属性" class="headerlink" title="12.数组有哪些自带的方法或属性"></a>12.数组有哪些自带的方法或属性</h4><p>var arr=[0,1,2];<br>1.pop();删除数组的最后一个元素，减少删除的长度，返回删除的值。<br><code>这里是2</code><br>2.push(3);将参数加载到数组的最后，返回新数组的长度。<br><code>这里是4</code><br>3.shift();删除数组的第一个元素，返回删除的值，同时数组长度减一。<br><code>这里是0</code><br>4.unshift(3,4);把参数加载数组的前面，返回新数组的长度<br><code>这里是5</code><br>5.sort();按指定的参数对数组进行排序，返回的值是经过排序之后的数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var arr=[0,1,2,5,4];</div><div class="line">function compare(val1,val2)&#123;</div><div class="line">	return val2-val1;</div><div class="line">&#125;</div><div class="line">console.log(arr.sort(compare));</div><div class="line"></div><div class="line">这里是[5, 4, 2, 1, 0]</div></pre></td></tr></table></figure></p>
+<p>6.reverse();反转数组项的顺序，返回的值是经过排序之后的数组<br><code>这里是[2,1,0]</code><br>7.contact(3,4);把两个数组拼接起来，返回的值是一个副本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var arr=[0,1,2,5,4];</div><div class="line">var arr2=[7,8,9];</div><div class="line">console.log(arr.concat(arr2));</div><div class="line"></div><div class="line">这里是[0, 1, 2, 5, 4, 7, 8, 9]</div></pre></td></tr></table></figure></p>
+<p>8.slice(start,end);返回从元素组中指定开始下标到结束下标之间的项组成的新数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;, &quot;yellow&quot;, &quot;purple&quot;];</div><div class="line"></div><div class="line">// 一个参数:</div><div class="line">var color1 = colors.slice(1);</div><div class="line">alert(color1);  // green,blue,yellow,purple</div><div class="line"></div><div class="line">// 两个参数：</div><div class="line">var color2 = colors.slice(1,4);</div><div class="line">alert(color2);  // green,blue,yellow</div></pre></td></tr></table></figure></p>
+<p>9.splice()<br>删除：2个参数，起始位置，删除的项数<br>插入：3个参数，起始位置，删除的项数，插入的项<br>替换：任意参数，起始位置，删除的项数，插入的任意数量的项<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;];</div><div class="line">var removed = colors.splice(0,1);  // 删除第一项</div><div class="line">alert(colors);  // green,blue</div><div class="line">alert(removed);  // red,返回数组中只包含一项</div><div class="line"></div><div class="line">removed = colors.splice(1, 0, &quot;yellow&quot;, &quot;orange&quot;);  // 从位置1开始插入两项</div><div class="line">alert(colors);  // green,yellow,orange,blue</div><div class="line">alert(removed);  // 返回的数组是一个空数组</div><div class="line"></div><div class="line">removed = colors.splice(1, 1, &quot;red&quot;, &quot;purple&quot;);  // 从位置I开始插入两项</div><div class="line">alert(colors);  // green,red,yellow,orange,blue</div><div class="line">alert(removed);    // yellow,返回的数组中只包含一项</div></pre></td></tr></table></figure></p>
+<p>10.indexOf()和lastIndexOf();接受两个参数，要查找的项(可选)和查找起点位置的索引<br>indexOf();从数组开头向后查找<br>lastIndexOf();从数组末尾开始向前查找<br>11.every();对数组中的每一项运行给定函数，如果该函数对每一项都返回true，则返回true。<br>12.filter();对数组中的每一项运行给定函数，返回该函数会返回true的项组成数组。<br>13.forEach();对数组的每一项运行给定函数，这个方法没有返回值。<br>14.map();对数组的每一项运行给定函数，返回每次函数调用的结果组成的数组。<br>15.some();对数组的每一项运行给定参数，如果该函数对任一项返回true，则返回true。以上方法都不会修改数组中的包含的值。<br>16.reduce()和reduceRight();缩小数组的方法，这两个方法都会迭代数组的所有项，然后构建一个最终返回的值。<br>17.join(separator);将数组的元素组起一个字符串，以separator为分隔符，省略的话则用默认用逗号为分隔符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var a = [1,2,3,4,5];</div><div class="line">var b = a.join(&quot;|&quot;); //a：[1,2,3,4,5] b：&quot;1|2|3|4|5&quot;</div></pre></td></tr></table></figure></p>
+<h4 id="13-你想用前端知识做些什么事，如果给你自由的空间"><a href="#13-你想用前端知识做些什么事，如果给你自由的空间" class="headerlink" title="13.你想用前端知识做些什么事，如果给你自由的空间"></a>13.你想用前端知识做些什么事，如果给你自由的空间</h4><h4 id="14-如果让你参与一个前端相关的新技术领域研究，你觉得如何能快速掌握"><a href="#14-如果让你参与一个前端相关的新技术领域研究，你觉得如何能快速掌握" class="headerlink" title="14.如果让你参与一个前端相关的新技术领域研究，你觉得如何能快速掌握"></a>14.如果让你参与一个前端相关的新技术领域研究，你觉得如何能快速掌握</h4>
+      
+    </div>
+
+    <div>    
+     
+     
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+              <strong>本文作者：</strong>winter
+          </li>
+          <li class="post-copyright-link">
+            <strong>本文链接：</strong>
+            <a href="/2017/07/24/front-end-developers-interview/" title="front-end developers interview">http://gwem.tk/2017/07/24/front-end-developers-interview/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>版权声明： </strong>
+            本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+          </li>
+        </ul>
+      
+    </div>  
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat.png" alt="winter WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/ali.jpg" alt="winter Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试题/" rel="tag"># 面试题</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/21/Js中Date和new-Date的区别/" rel="next" title="Js中Date和new Date的区别">
+                <i class="fa fa-chevron-left"></i> Js中Date和new Date的区别
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/touxiang.jpg"
+               alt="winter" />
+          <p class="site-author-name" itemprop="name">winter</p>
+           
+              <p class="site-description motion-element" itemprop="description">Some things are so important that they force us to overcome our fears.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Gwemz" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/gwemz" target="_blank" title="Coding">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  Coding
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-CSS盒模型包含哪些元素"><span class="nav-number">1.</span> <span class="nav-text">1.CSS盒模型包含哪些元素:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-写出你知道的清除浮动的方法"><span class="nav-number">2.</span> <span class="nav-text">2.写出你知道的清除浮动的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-CSS选择器的优先级"><span class="nav-number">3.</span> <span class="nav-text">3.CSS选择器的优先级</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-让子块元素相对于父元素居中"><span class="nav-number">4.</span> <span class="nav-text">4.让子块元素相对于父元素居中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-说下opacity-0-visibility-hidden-display-none的区别"><span class="nav-number">5.</span> <span class="nav-text">5.说下opacity:0,visibility:hidden,display:none的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-微信HTML5页面制作"><span class="nav-number">6.</span> <span class="nav-text">6.微信HTML5页面制作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-定义函数的方式有哪些，可以写下区别是什么？"><span class="nav-number">7.</span> <span class="nav-text">7.定义函数的方式有哪些，可以写下区别是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-写出正则表达式，用于匹配字符串至少包含五个连续的中文字，例如-中国人ss中国-注：UTF-8格式中文正则字符编码范围：-u4e00-u9fa5"><span class="nav-number">8.</span> <span class="nav-text">8.写出正则表达式，用于匹配字符串至少包含五个连续的中文字，例如 中国人ss中国(注：UTF-8格式中文正则字符编码范围：\u4e00-\u9fa5)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-jquery中的hover事件等效于哪两个事件的组成"><span class="nav-number">9.</span> <span class="nav-text">9.jquery中的hover事件等效于哪两个事件的组成?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-JS中哪些情况下会产生undefined值？"><span class="nav-number">10.</span> <span class="nav-text">10.JS中哪些情况下会产生undefined值？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-获取一个数组中的最大最小值，var-numbers-5-145-11-38-400-78-834"><span class="nav-number">11.</span> <span class="nav-text">11.获取一个数组中的最大最小值，var numbers=[5,145,11,38,400,78,-834];</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-数组有哪些自带的方法或属性"><span class="nav-number">12.</span> <span class="nav-text">12.数组有哪些自带的方法或属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-你想用前端知识做些什么事，如果给你自由的空间"><span class="nav-number">13.</span> <span class="nav-text">13.你想用前端知识做些什么事，如果给你自由的空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-如果让你参与一个前端相关的新技术领域研究，你觉得如何能快速掌握"><span class="nav-number">14.</span> <span class="nav-text">14.如果让你参与一个前端相关的新技术领域研究，你觉得如何能快速掌握</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">winter</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2139708"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("zrWfpR4RvFok6hW2p6mmj5PF-gzGzoHsz", "4er8qgeqe0KtvldK3HYyGSB0");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
