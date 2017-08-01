@@ -1,0 +1,973 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="java," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="什么是FreeMarker?FreeMarker是一款模板引擎：即一种基于模板、用来生成输出文本(任何来自于HTML格式的文本用来自动生成源代码)的通用工具。它是为Java程序员提供的一个开发包，或者说是一个类库。他不是面向最终用户的，而是为程序员提供的一款可以嵌入他们所开发铲平的应用程序。 FreeMarker是一款模板引擎FreeMarker不是web框架 FreeMarker官网 前端设计师">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java模板引擎FreeMarker">
+<meta property="og:url" content="http://yoursite.com/2017/08/01/Java模板引擎FreeMarker/index.html">
+<meta property="og:site_name" content="winter blog">
+<meta property="og:description" content="什么是FreeMarker?FreeMarker是一款模板引擎：即一种基于模板、用来生成输出文本(任何来自于HTML格式的文本用来自动生成源代码)的通用工具。它是为Java程序员提供的一个开发包，或者说是一个类库。他不是面向最终用户的，而是为程序员提供的一款可以嵌入他们所开发铲平的应用程序。 FreeMarker是一款模板引擎FreeMarker不是web框架 FreeMarker官网 前端设计师">
+<meta property="og:image" content="http://yoursite.com/images/2017-8-1.png">
+<meta property="og:image" content="http://yoursite.com/images/2017-8-1-2.png">
+<meta property="og:image" content="http://yoursite.com/images/2017-8-1-3.png">
+<meta property="og:image" content="http://yoursite.com/images/2017-8-1-4.png">
+<meta property="og:image" content="http://yoursite.com/images/2017-8-1-5.png">
+<meta property="og:image" content="http://yoursite.com/images/2017-8-1-6.png">
+<meta property="og:image" content="http://yoursite.com/images/2017-8-1-7.png">
+<meta property="og:image" content="http://yoursite.com/images/2017-8-1-8.png">
+<meta property="og:image" content="http://yoursite.com/images/2017-8-1-9.png">
+<meta property="og:image" content="http://yoursite.com/images/2017-8-1-10.png">
+<meta property="og:image" content="http://yoursite.com/images/2017-8-1-11.png">
+<meta property="og:image" content="http://yoursite.com/images/2017-8-1-12.png">
+<meta property="og:image" content="http://yoursite.com/images/2017-8-1-13.png">
+<meta property="og:image" content="http://yoursite.com/images/2017-8-1-14.png">
+<meta property="og:updated_time" content="2017-08-01T16:32:09.694Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java模板引擎FreeMarker">
+<meta name="twitter:description" content="什么是FreeMarker?FreeMarker是一款模板引擎：即一种基于模板、用来生成输出文本(任何来自于HTML格式的文本用来自动生成源代码)的通用工具。它是为Java程序员提供的一个开发包，或者说是一个类库。他不是面向最终用户的，而是为程序员提供的一款可以嵌入他们所开发铲平的应用程序。 FreeMarker是一款模板引擎FreeMarker不是web框架 FreeMarker官网 前端设计师">
+<meta name="twitter:image" content="http://yoursite.com/images/2017-8-1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/08/01/Java模板引擎FreeMarker/"/>
+
+
+
+
+
+  <title>Java模板引擎FreeMarker | winter blog</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">winter blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/01/Java模板引擎FreeMarker/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="winter">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="winter blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java模板引擎FreeMarker</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-01T20:33:38+08:00">
+                2017-08-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/08/01/Java模板引擎FreeMarker/" class="leancloud_visitors" data-flag-title="Java模板引擎FreeMarker">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="什么是FreeMarker"><a href="#什么是FreeMarker" class="headerlink" title="什么是FreeMarker?"></a>什么是FreeMarker?</h2><p>FreeMarker是一款模板引擎：即一种基于模板、用来生成输出文本(任何来自于HTML格式的文本用来自动生成源代码)的通用工具。它是为Java程序员提供的一个开发包，或者说是一个类库。他不是面向最终用户的，而是为程序员提供的一款可以嵌入他们所开发铲平的应用程序。</p>
+<p>FreeMarker是一款模板引擎<br>FreeMarker不是web框架</p>
+<p><a href="http://freemarker.org" target="_blank" rel="external">FreeMarker官网</a></p>
+<h2 id="前端设计师和程序员的学习侧重点"><a href="#前端设计师和程序员的学习侧重点" class="headerlink" title="前端设计师和程序员的学习侧重点"></a>前端设计师和程序员的学习侧重点</h2><p>MVC设计(Model、View、Controller)<br>前端设计师侧重于View(模板设计)<br>程序员全面掌握MVC</p>
+<p>学习心得：先规划一个范围；再指定一个目标；创建可行性计划；边玩边学</p>
+<h2 id="如何开始？"><a href="#如何开始？" class="headerlink" title="如何开始？"></a>如何开始？</h2><p>Freemarker原理:</p>
+<p><img src="/images/2017-8-1.png" alt="原理图"></p>
+<h4 id="maven构建FreeMarker项目"><a href="#maven构建FreeMarker项目" class="headerlink" title="maven构建FreeMarker项目"></a>maven构建FreeMarker项目</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Maven构建Spring+Freemarker项目</div><div class="line">配置文件介绍</div><div class="line">运行小例：列表展示</div></pre></td></tr></table></figure>
+<p>Maven构建Spring+Freemarker项目<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Eclipse+Maven使用简介</div><div class="line">Maven依赖Spring和Freemarker的jar包</div><div class="line">Spring配置文件和Freemarker Servlet配置文件</div></pre></td></tr></table></figure></p>
+<p>配置文件介绍：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Spring配置文件applicationContext.xml</div><div class="line">Spring Freemarker Servlet配置文件spring-servlet.xml</div></pre></td></tr></table></figure></p>
+<h4 id="maven构建freemarker项目代码实战"><a href="#maven构建freemarker项目代码实战" class="headerlink" title="maven构建freemarker项目代码实战"></a>maven构建freemarker项目代码实战</h4><p>使用springboot来进行项目搭建，同时，项目基于javaconfig进行配置。<br>整体目录结构如下：<br><img src="/images/2017-8-1-2.png" alt="目录结构"><br>项目POM文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</div><div class="line">  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</div><div class="line">  &lt;groupId&gt;com.zccoder&lt;/groupId&gt;</div><div class="line">  &lt;artifactId&gt;myfreemarker&lt;/artifactId&gt;</div><div class="line">  &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</div><div class="line"></div><div class="line">  &lt;parent&gt;</div><div class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</div><div class="line">        &lt;version&gt;1.5.1.RELEASE&lt;/version&gt;</div><div class="line">        &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;</div><div class="line">    &lt;/parent&gt;</div><div class="line"></div><div class="line">    &lt;properties&gt;</div><div class="line">        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</div><div class="line">        &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;</div><div class="line">        &lt;java.version&gt;1.8&lt;/java.version&gt;</div><div class="line">    &lt;/properties&gt;</div><div class="line"></div><div class="line">    &lt;dependencies&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line"></div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</div><div class="line">            &lt;scope&gt;test&lt;/scope&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line"></div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;spring-boot-starter-freemarker&lt;/artifactId&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line"></div><div class="line">        &lt;!-- 用于数据持久化 --&gt;</div><div class="line">        &lt;!-- &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line"></div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;mysql&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</div><div class="line">        &lt;/dependency&gt; --&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;spring-boot-configuration-processor&lt;/artifactId&gt;</div><div class="line">            &lt;optional&gt;true&lt;/optional&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;</div><div class="line">    &lt;artifactId&gt;fastjson&lt;/artifactId&gt;</div><div class="line">    &lt;version&gt;1.2.28&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div><div class="line">    &lt;/dependencies&gt;</div><div class="line"></div><div class="line">    &lt;build&gt;</div><div class="line">        &lt;plugins&gt;</div><div class="line">            &lt;plugin&gt;</div><div class="line">                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</div><div class="line">            &lt;/plugin&gt;</div><div class="line">        &lt;/plugins&gt;</div><div class="line">    &lt;/build&gt;</div><div class="line"></div><div class="line"></div><div class="line">&lt;/project&gt;</div></pre></td></tr></table></figure></p>
+<p>配置FreeMarker:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div></pre></td><td class="code"><pre><div class="line">package com.myimooc.myfreemarker.config;</div><div class="line"></div><div class="line">import java.nio.charset.Charset;</div><div class="line">import java.util.ArrayList;</div><div class="line">import java.util.HashMap;</div><div class="line">import java.util.List;</div><div class="line">import java.util.Map;</div><div class="line">import java.util.Properties;</div><div class="line"></div><div class="line">import org.springframework.context.annotation.Bean;</div><div class="line">import org.springframework.context.annotation.ComponentScan;</div><div class="line">import org.springframework.context.annotation.Configuration;</div><div class="line">import org.springframework.http.MediaType;</div><div class="line">import org.springframework.http.converter.HttpMessageConverter;</div><div class="line">import org.springframework.web.servlet.config.annotation.EnableWebMvc;</div><div class="line">import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;</div><div class="line">import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;</div><div class="line">import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;</div><div class="line">import org.springframework.web.servlet.view.freemarker.FreeMarkerView;</div><div class="line">import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;</div><div class="line"></div><div class="line">import com.alibaba.fastjson.serializer.SerializerFeature;</div><div class="line">import com.alibaba.fastjson.support.config.FastJsonConfig;</div><div class="line">import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;</div><div class="line">import com.myimooc.myfreemarker.web.controller.RoleDirectiveModel;</div><div class="line"></div><div class="line">/**</div><div class="line"> * Web项目SpringMvc配置</div><div class="line"> * @author ZhangCheng</div><div class="line"> * @date 2017-03-19</div><div class="line"> * @version V1.0</div><div class="line"> */</div><div class="line">@Configuration</div><div class="line">@EnableWebMvc</div><div class="line">@ComponentScan(&quot;com.myimooc.myfreemarker&quot;)</div><div class="line">public class SpringMvcConfig extends WebMvcConfigurerAdapter&#123;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 配置视图解析器</div><div class="line">     * @return</div><div class="line">     */</div><div class="line">    @Bean</div><div class="line">    public FreeMarkerViewResolver getFreeMarkerViewResolver()&#123;</div><div class="line">        FreeMarkerViewResolver freeMarkerViewResolver = new FreeMarkerViewResolver();</div><div class="line"></div><div class="line">        freeMarkerViewResolver.setOrder(1);</div><div class="line">        freeMarkerViewResolver.setSuffix(&quot;.html&quot;);</div><div class="line">        freeMarkerViewResolver.setCache(false);</div><div class="line">        freeMarkerViewResolver.setRequestContextAttribute(&quot;request&quot;);</div><div class="line">        freeMarkerViewResolver.setContentType(&quot;text/html;charset=utf-8&quot;);</div><div class="line">        freeMarkerViewResolver.setViewClass(FreeMarkerView.class);</div><div class="line"></div><div class="line">        return freeMarkerViewResolver;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 配置静态资源映射</div><div class="line">     */</div><div class="line">    @Override</div><div class="line">    public void addResourceHandlers(ResourceHandlerRegistry registry) &#123;</div><div class="line">        registry.addResourceHandler(&quot;/static/**&quot;).addResourceLocations(&quot;classpath:/static/&quot;);</div><div class="line">    &#125;</div><div class="line">    /**</div><div class="line">     * 配置FASTJSON</div><div class="line">     * @return</div><div class="line">     */</div><div class="line">    @Bean</div><div class="line">    public FastJsonHttpMessageConverter  fastJsonHttpMessageConverters() &#123;</div><div class="line">       FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();</div><div class="line"></div><div class="line">       FastJsonConfig fastJsonConfig = new FastJsonConfig();</div><div class="line">       fastJsonConfig.setSerializerFeatures(SerializerFeature.QuoteFieldNames);</div><div class="line">       fastJsonConfig.setCharset(Charset.forName(&quot;UTF-8&quot;));</div><div class="line">       fastJsonConfig.setDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);</div><div class="line"></div><div class="line">       List&lt;MediaType&gt; supportedMediaTypes = new ArrayList&lt;MediaType&gt;();</div><div class="line">       supportedMediaTypes.add(MediaType.APPLICATION_JSON_UTF8);</div><div class="line"></div><div class="line">       fastConverter.setSupportedMediaTypes(supportedMediaTypes);</div><div class="line">       fastConverter.setFastJsonConfig(fastJsonConfig);</div><div class="line">       return fastConverter;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 配置FreeMarker</div><div class="line">     * @return</div><div class="line">     */</div><div class="line">    @Bean</div><div class="line">    public FreeMarkerConfigurer getFreeMarkerConfigurer()&#123;</div><div class="line">        FreeMarkerConfigurer freeMarkerConfigurer = new FreeMarkerConfigurer();</div><div class="line">        freeMarkerConfigurer.setDefaultEncoding(&quot;UTF-8&quot;);</div><div class="line">        freeMarkerConfigurer.setTemplateLoaderPath(&quot;classpath:/templates/&quot;);</div><div class="line"></div><div class="line">        Properties settings = new Properties();</div><div class="line">        settings.setProperty(&quot;template_update_delay&quot;, &quot;5&quot;);</div><div class="line">        settings.setProperty(&quot;url_escaping_charset&quot;, &quot;UTF-8&quot;);</div><div class="line">        settings.setProperty(&quot;defaultEncoding&quot;, &quot;UTF-8&quot;);</div><div class="line">        settings.setProperty(&quot;whitespace_stripping&quot;, &quot;true&quot;);</div><div class="line">        settings.setProperty(&quot;boolean_format&quot;, &quot;true,false&quot;);</div><div class="line">        settings.setProperty(&quot;number_format&quot;, &quot;0.##########&quot;);</div><div class="line">        settings.setProperty(&quot;locale&quot;, &quot;zh_CN&quot;);</div><div class="line">        settings.setProperty(&quot;datetime_format&quot;, &quot;yyyy-MM-dd HH:mm:ss&quot;);</div><div class="line">        settings.setProperty(&quot;date_format&quot;, &quot;yyyy-MM-dd&quot;);</div><div class="line">        settings.setProperty(&quot;time_format&quot;, &quot;HH:mm:ss&quot;);</div><div class="line">        settings.setProperty(&quot;tag_syntax&quot;, &quot;square_bracket&quot;);</div><div class="line">        settings.setProperty(&quot;classic_compatible&quot;, &quot;true&quot;);</div><div class="line">        settings.setProperty(&quot;template_exception_handler&quot;, &quot;ignore&quot;);</div><div class="line">        settings.setProperty(&quot;auto_import&quot;, &quot;/spring.ftl as spring, /common/spring.ftl as spring&quot;);</div><div class="line">        freeMarkerConfigurer.setFreemarkerSettings(settings);</div><div class="line"></div><div class="line">        // 配置自定义指令</div><div class="line">        Map&lt;String,Object&gt; variables = new HashMap&lt;String,Object&gt;();</div><div class="line">        variables.put(&quot;role&quot;, new RoleDirectiveModel());</div><div class="line">        freeMarkerConfigurer.setFreemarkerVariables(variables);</div><div class="line"></div><div class="line">        return freeMarkerConfigurer;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 配置JSON解析器</div><div class="line">     */</div><div class="line">    @Override</div><div class="line">    public void configureMessageConverters(List&lt;HttpMessageConverter&lt;?&gt;&gt; converters) &#123;</div><div class="line">        super.configureMessageConverters(converters);</div><div class="line">        converters.add(this.fastJsonHttpMessageConverters());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>配置Web,类似于web.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">package com.myimooc.myfreemarker.config;</div><div class="line"></div><div class="line">import java.util.EnumSet;</div><div class="line"></div><div class="line">import javax.servlet.DispatcherType;</div><div class="line">import javax.servlet.FilterRegistration;</div><div class="line">import javax.servlet.ServletContext;</div><div class="line">import javax.servlet.ServletException;</div><div class="line">import javax.servlet.ServletRegistration;</div><div class="line"></div><div class="line">import org.springframework.context.annotation.Configuration;</div><div class="line">import org.springframework.web.WebApplicationInitializer;</div><div class="line">import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;</div><div class="line">import org.springframework.web.filter.CharacterEncodingFilter;</div><div class="line">import org.springframework.web.servlet.DispatcherServlet;</div><div class="line"></div><div class="line">/**</div><div class="line"> * Web项目启动类</div><div class="line"> *</div><div class="line"> * @author ZhangCheng</div><div class="line"> * @date 2017-03-19</div><div class="line"> * @version V1.0</div><div class="line"> *</div><div class="line"> */</div><div class="line">@Configuration</div><div class="line">public class WebConfig implements WebApplicationInitializer &#123;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void onStartup(ServletContext servletContext) throws ServletException &#123;</div><div class="line">        AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();</div><div class="line"></div><div class="line">        context.register(SpringMvcConfig.class);</div><div class="line"></div><div class="line">        // 新建WebApplication，注册配置类，并将其和当前servletContext关联。</div><div class="line">        context.setServletContext(servletContext);</div><div class="line"></div><div class="line">        // 注册SpringMVC的DispatcherServlet。</div><div class="line">        ServletRegistration.Dynamic servlet = servletContext.addServlet(&quot;dispatcher&quot;, new DispatcherServlet(context));</div><div class="line">        servlet.addMapping(&quot;/&quot;);</div><div class="line">        servlet.setLoadOnStartup(1);</div><div class="line"></div><div class="line">        // 注册SpringMVC的字符过滤器</div><div class="line">        FilterRegistration.Dynamic encodingFilter = servletContext.addFilter(&quot;encoding&quot;, new CharacterEncodingFilter());</div><div class="line">        EnumSet&lt;DispatcherType&gt; dispatcherTypes = EnumSet.allOf(DispatcherType.class);</div><div class="line">        dispatcherTypes.add(DispatcherType.REQUEST);</div><div class="line">        dispatcherTypes.add(DispatcherType.FORWARD);</div><div class="line">        encodingFilter.addMappingForUrlPatterns(dispatcherTypes, true, &quot;*&quot;);</div><div class="line">        encodingFilter.setInitParameter(&quot;encoding&quot;, &quot;UTF-8&quot;);</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>新建模板页面<br><img src="/images/2017-8-1-3.png" alt="模板页面"><br>边写控制器<br><img src="/images/2017-8-1-4.png" alt="控制器"><br>启动项目：<br><img src="/images/2017-8-1-5.png" alt="启动"></p>
+<h4 id="小例子：列表demo展示"><a href="#小例子：列表demo展示" class="headerlink" title="小例子：列表demo展示"></a>小例子：列表demo展示</h4><p><img src="/images/2017-8-1-6.png" alt="列表"></p>
+<p>编写控制器：<br><img src="/images/2017-8-1-7.png" alt="控制器"><br>编写FreeMarker:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;Insert title here&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;h1&gt;$&#123;username&#125;&lt;/h1&gt;</div><div class="line"></div><div class="line">&lt;ul&gt;</div><div class="line">    [#list userList as item]</div><div class="line">    &lt;li&gt;$&#123;item.name&#125;的生日是：$&#123;item.birthday?string(&apos;yyyy-MM-dd&apos;)&#125;&lt;/li&gt;</div><div class="line">    [/#list]</div><div class="line">&lt;/ul&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>效果如下：<br><img src="/images/2017-8-1-8.png" alt="效果"></p>
+<h4 id="补充：springboot集成FreeMarker"><a href="#补充：springboot集成FreeMarker" class="headerlink" title="补充：springboot集成FreeMarker"></a>补充：springboot集成FreeMarker</h4><p>输入网址： <a href="http://start.spring.io/" target="_blank" rel="external">start.spring.io</a></p>
+<h2 id="基础技能"><a href="#基础技能" class="headerlink" title="基础技能"></a>基础技能</h2><h4 id="FreeMarker取值章节简介"><a href="#FreeMarker取值章节简介" class="headerlink" title="FreeMarker取值章节简介"></a>FreeMarker取值章节简介</h4><p>本节要点：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Java中常用的数据模型</div><div class="line">取值（插值）指令</div><div class="line">逻辑指令：if、switch</div></pre></td></tr></table></figure></p>
+<h4 id="Java数据模型、freemarker取值"><a href="#Java数据模型、freemarker取值" class="headerlink" title="Java数据模型、freemarker取值"></a>Java数据模型、freemarker取值</h4><p>Java中常用的数据模型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">基本类型数据（比如integer）</div><div class="line">封装的对象类型(比如User对象)</div><div class="line">集合类型：List、Map</div></pre></td></tr></table></figure></p>
+<p>取值指令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">常用$&#123;var&#125;语法进行取值</div><div class="line">对null、不存在对象取值$&#123;var!&#125;</div><div class="line">对包装对象的值，通过“点”语法：$&#123;User.name&#125;</div><div class="line">取值的时候进行计算、赋值</div><div class="line">Date类型格式$&#123;date?string(&apos;yyyy-MM-dd&apos;)&#125;</div><div class="line">如何转义HTML内容：$&#123;var?html&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="FreeMarker取java基本数据模型的值"><a href="#FreeMarker取java基本数据模型的值" class="headerlink" title="FreeMarker取java基本数据模型的值"></a>FreeMarker取java基本数据模型的值</h4><p>控制器<br><img src="/images/2017-8-1-9.png" alt="控制器"><br>页面层<br><img src="/images/2017-8-1-10.png" alt="页面层"><br>效果图<br><img src="/images/2017-8-1-11.png" alt="效果图"></p>
+<h4 id="boolean类型值的format"><a href="#boolean类型值的format" class="headerlink" title="boolean类型值的format"></a>boolean类型值的format</h4><p>布尔值：${booleanVar?string(‘yes’,’no’)}</p>
+<h4 id="date类型值的format"><a href="#date类型值的format" class="headerlink" title="date类型值的format"></a>date类型值的format</h4><p>日期：${dateVar?string(‘yyyy-MM-dd’)}</p>
+<h4 id="null或者不存在的变量取值"><a href="#null或者不存在的变量取值" class="headerlink" title="null或者不存在的变量取值"></a>null或者不存在的变量取值</h4><p>null:${nullVar!’我是默认值’}<br>missing:${ssssVar!’我是默认值’}</p>
+<h2 id="技能进阶"><a href="#技能进阶" class="headerlink" title="技能进阶"></a>技能进阶</h2><h4 id="变量的定义、赋值、运算"><a href="#变量的定义、赋值、运算" class="headerlink" title="变量的定义、赋值、运算"></a>变量的定义、赋值、运算</h4><p>边写代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;h2&gt;2.赋值运算&lt;/h2&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">  &lt;li&gt;赋值&amp;运算&lt;/li&gt;</div><div class="line">  [#assign a=100]</div><div class="line">  a = $&#123;a&#125;</div><div class="line">  &lt;br/&gt;</div><div class="line">  a+100=$&#123;a+100&#125;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure></p>
+<p>效果如下：<br><img src="/images/2017-8-1-12.png" alt="效果"></p>
+<h4 id="自定义对象User变量的取值"><a href="#自定义对象User变量的取值" class="headerlink" title="自定义对象User变量的取值"></a>自定义对象User变量的取值</h4><p><img src="/images/2017-8-1-13.png" alt="自定义对象"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;h2&gt;3.封装类型&lt;/h2&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">  &lt;li&gt;对象&lt;/li&gt;</div><div class="line">  $&#123;(userObj.name)!&quot;默认值&quot;&#125;</div><div class="line">  &lt;li&gt;富文本&lt;/li&gt;</div><div class="line">  $&#123;(briefVar)!?html&#125;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure></p>
+<p><img src="/images/2017-8-1-14.png" alt="运行结果"></p>
+<h4 id="集合List的遍历"><a href="#集合List的遍历" class="headerlink" title="集合List的遍历"></a>集合List的遍历</h4><p>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[#list listName as item]</div><div class="line">  &lt;font color=&quot;red&quot;&gt;$&#123;item!&#125;&lt;/font&gt;&lt;br/&gt;</div><div class="line">[/#list]</div></pre></td></tr></table></figure></p>
+<h4 id="集合Map的遍历"><a href="#集合Map的遍历" class="headerlink" title="集合Map的遍历"></a>集合Map的遍历</h4><p>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[#list map?keys as key]</div><div class="line">  &lt;font color=&quot;red&quot;&gt;$&#123;key&#125;:$&#123;map[key]!&#125;&lt;/font&gt;&lt;br/&gt;</div><div class="line">[/#list]</div></pre></td></tr></table></figure></p>
+<h4 id="if语法"><a href="#if语法" class="headerlink" title="if语法"></a>if语法</h4><p>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;li&gt;if else&lt;/li&gt;</div><div class="line">[#assign var = 100/]</div><div class="line">[#if var == 99]</div><div class="line">  &lt;font color=&quot;red&quot;&gt;var = 99&lt;/font&gt;&lt;br/&gt;</div><div class="line">[#else]</div><div class="line">  &lt;font color=&quot;red&quot;&gt;var != 99&lt;/font&gt;&lt;br/&gt;</div><div class="line">[/#if]</div></pre></td></tr></table></figure></p>
+<p>判断某个对象或值是否存在<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[#if myList?exists]</div><div class="line">[/#if]</div><div class="line">或</div><div class="line">[#if myList??]</div><div class="line">[/#if]</div></pre></td></tr></table></figure></p>
+<h4 id="switch语法"><a href="#switch语法" class="headerlink" title="switch语法"></a>switch语法</h4><p>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;li&gt;switch case break default&lt;/li&gt;</div><div class="line">[#assign var3 = 10 /]</div><div class="line">[#switch var3]</div><div class="line"></div><div class="line">[#case 10] 10&lt;br/&gt;</div><div class="line">  [#break]</div><div class="line"></div><div class="line">[#case 100] 100&lt;br/&gt;</div><div class="line">  [#break]</div><div class="line"></div><div class="line">[#default] other</div><div class="line"></div><div class="line">[/#switch]</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>    
+     
+     
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+              <strong>本文作者：</strong>winter
+          </li>
+          <li class="post-copyright-link">
+            <strong>本文链接：</strong>
+            <a href="/2017/08/01/Java模板引擎FreeMarker/" title="Java模板引擎FreeMarker">http://gwem.tk/2017/08/01/Java模板引擎FreeMarker/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>版权声明： </strong>
+            本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+          </li>
+        </ul>
+      
+    </div>  
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat.png" alt="winter WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/ali.jpg" alt="winter Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/29/Flex布局语法及示例/" rel="next" title="Flex布局语法及示例">
+                <i class="fa fa-chevron-left"></i> Flex布局语法及示例
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/touxiang.jpg"
+               alt="winter" />
+          <p class="site-author-name" itemprop="name">winter</p>
+           
+              <p class="site-description motion-element" itemprop="description">Some things are so important that they force us to overcome our fears.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Gwemz" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/gwemz" target="_blank" title="Coding">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  Coding
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是FreeMarker"><span class="nav-number">1.</span> <span class="nav-text">什么是FreeMarker?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前端设计师和程序员的学习侧重点"><span class="nav-number">2.</span> <span class="nav-text">前端设计师和程序员的学习侧重点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何开始？"><span class="nav-number">3.</span> <span class="nav-text">如何开始？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#maven构建FreeMarker项目"><span class="nav-number">3.0.1.</span> <span class="nav-text">maven构建FreeMarker项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#maven构建freemarker项目代码实战"><span class="nav-number">3.0.2.</span> <span class="nav-text">maven构建freemarker项目代码实战</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小例子：列表demo展示"><span class="nav-number">3.0.3.</span> <span class="nav-text">小例子：列表demo展示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#补充：springboot集成FreeMarker"><span class="nav-number">3.0.4.</span> <span class="nav-text">补充：springboot集成FreeMarker</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础技能"><span class="nav-number">4.</span> <span class="nav-text">基础技能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#FreeMarker取值章节简介"><span class="nav-number">4.0.1.</span> <span class="nav-text">FreeMarker取值章节简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java数据模型、freemarker取值"><span class="nav-number">4.0.2.</span> <span class="nav-text">Java数据模型、freemarker取值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FreeMarker取java基本数据模型的值"><span class="nav-number">4.0.3.</span> <span class="nav-text">FreeMarker取java基本数据模型的值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#boolean类型值的format"><span class="nav-number">4.0.4.</span> <span class="nav-text">boolean类型值的format</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#date类型值的format"><span class="nav-number">4.0.5.</span> <span class="nav-text">date类型值的format</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null或者不存在的变量取值"><span class="nav-number">4.0.6.</span> <span class="nav-text">null或者不存在的变量取值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技能进阶"><span class="nav-number">5.</span> <span class="nav-text">技能进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#变量的定义、赋值、运算"><span class="nav-number">5.0.1.</span> <span class="nav-text">变量的定义、赋值、运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义对象User变量的取值"><span class="nav-number">5.0.2.</span> <span class="nav-text">自定义对象User变量的取值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#集合List的遍历"><span class="nav-number">5.0.3.</span> <span class="nav-text">集合List的遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#集合Map的遍历"><span class="nav-number">5.0.4.</span> <span class="nav-text">集合Map的遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#if语法"><span class="nav-number">5.0.5.</span> <span class="nav-text">if语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#switch语法"><span class="nav-number">5.0.6.</span> <span class="nav-text">switch语法</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">winter</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2139708"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("zrWfpR4RvFok6hW2p6mmj5PF-gzGzoHsz", "4er8qgeqe0KtvldK3HYyGSB0");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
