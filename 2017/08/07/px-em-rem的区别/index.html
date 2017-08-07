@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="java,eclipse," />
+  <meta name="keywords" content="css3," />
 
 
 
@@ -93,23 +93,17 @@
 
 
 
-<meta name="description" content="1. MVCModel-View-Controller(模型-视图-控制器)是最常见的软件架构之一，业界有着广泛应用。  视图（View）：用户界面 控制器（Controller）：业务逻辑 模型（Model）：数据保存  各部分之间的通信如下：   View传送指令到Controller Controller完成业务之后要求Model改变状态 Model将新的数据发送到View，用户得到反馈">
-<meta name="keywords" content="java,eclipse">
+<meta name="description" content="在移动端布局的过程中使用rem进行布局，一直以来的思路是浏览器监测屏幕宽度的大小，通过计算改变html中不同的font-size的值，来改变rem的相对值，但其实发现对其中的原理并不是很清楚，索性写篇文章做个整理，尽量将三者的关系区分开 有何区别？ px在缩放页面时无法调整哪些使用它作为单位的字体、按钮等的大小 em的值不是固定的，会继承父级元素的字体大小，代表倍数 rem的值并不是固定的，始终是">
+<meta name="keywords" content="css3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端框架MVC、MVVM、MVP介绍">
-<meta property="og:url" content="http://yoursite.com/2017/04/24/MVC以及MVVM MVP介绍/index.html">
+<meta property="og:title" content="px&#x2F;em&#x2F;rem的区别">
+<meta property="og:url" content="http://yoursite.com/2017/08/07/px-em-rem的区别/index.html">
 <meta property="og:site_name" content="winter blog">
-<meta property="og:description" content="1. MVCModel-View-Controller(模型-视图-控制器)是最常见的软件架构之一，业界有着广泛应用。  视图（View）：用户界面 控制器（Controller）：业务逻辑 模型（Model）：数据保存  各部分之间的通信如下：   View传送指令到Controller Controller完成业务之后要求Model改变状态 Model将新的数据发送到View，用户得到反馈">
-<meta property="og:image" content="http://yoursite.com/images/13-c871edca.png">
-<meta property="og:image" content="http://yoursite.com/images/13-807024f4.png">
-<meta property="og:image" content="http://yoursite.com/images/13-f18acc87.png">
-<meta property="og:image" content="http://yoursite.com/images/13-355c3d4d.png">
-<meta property="og:image" content="http://yoursite.com/images/13-64e9b98a.png">
-<meta property="og:updated_time" content="2017-06-02T17:22:42.291Z">
+<meta property="og:description" content="在移动端布局的过程中使用rem进行布局，一直以来的思路是浏览器监测屏幕宽度的大小，通过计算改变html中不同的font-size的值，来改变rem的相对值，但其实发现对其中的原理并不是很清楚，索性写篇文章做个整理，尽量将三者的关系区分开 有何区别？ px在缩放页面时无法调整哪些使用它作为单位的字体、按钮等的大小 em的值不是固定的，会继承父级元素的字体大小，代表倍数 rem的值并不是固定的，始终是">
+<meta property="og:updated_time" content="2017-08-07T13:36:32.740Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端框架MVC、MVVM、MVP介绍">
-<meta name="twitter:description" content="1. MVCModel-View-Controller(模型-视图-控制器)是最常见的软件架构之一，业界有着广泛应用。  视图（View）：用户界面 控制器（Controller）：业务逻辑 模型（Model）：数据保存  各部分之间的通信如下：   View传送指令到Controller Controller完成业务之后要求Model改变状态 Model将新的数据发送到View，用户得到反馈">
-<meta name="twitter:image" content="http://yoursite.com/images/13-c871edca.png">
+<meta name="twitter:title" content="px&#x2F;em&#x2F;rem的区别">
+<meta name="twitter:description" content="在移动端布局的过程中使用rem进行布局，一直以来的思路是浏览器监测屏幕宽度的大小，通过计算改变html中不同的font-size的值，来改变rem的相对值，但其实发现对其中的原理并不是很清楚，索性写篇文章做个整理，尽量将三者的关系区分开 有何区别？ px在缩放页面时无法调整哪些使用它作为单位的字体、按钮等的大小 em的值不是固定的，会继承父级元素的字体大小，代表倍数 rem的值并不是固定的，始终是">
 
 
 
@@ -137,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/24/MVC以及MVVM MVP介绍/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/07/px-em-rem的区别/"/>
 
 
 
 
 
-  <title>前端框架MVC、MVVM、MVP介绍 | winter blog</title>
+  <title>px/em/rem的区别 | winter blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -273,7 +267,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/24/MVC以及MVVM MVP介绍/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/07/px-em-rem的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="winter">
@@ -290,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">前端框架MVC、MVVM、MVP介绍</h1>
+          <h1 class="post-title" itemprop="name headline">px/em/rem的区别</h1>
         
 
         <div class="post-meta">
@@ -302,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-24T19:40:41+08:00">
-                2017-04-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-07T20:42:43+08:00">
+                2017-08-07
               </time>
             
 
@@ -320,7 +314,7 @@
 
           
           
-             <span id="/2017/04/24/MVC以及MVVM MVP介绍/" class="leancloud_visitors" data-flag-title="前端框架MVC、MVVM、MVP介绍">
+             <span id="/2017/08/07/px-em-rem的区别/" class="leancloud_visitors" data-flag-title="px/em/rem的区别">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -348,32 +342,24 @@
       
 
       
-        <h3 id="1-MVC"><a href="#1-MVC" class="headerlink" title="1. MVC"></a>1. MVC</h3><p>Model-View-Controller(模型-视图-控制器)是最常见的软件架构之一，业界有着广泛应用。</p>
-<ul>
-<li>视图（View）：用户界面</li>
-<li>控制器（Controller）：业务逻辑</li>
-<li>模型（Model）：数据保存</li>
+        <p>在移动端布局的过程中使用rem进行布局，一直以来的思路是浏览器监测屏幕宽度的大小，通过计算改变html中不同的font-size的值，来改变rem的相对值，但其实发现对其中的原理并不是很清楚，索性写篇文章做个整理，尽量将三者的关系区分开</p>
+<h2 id="有何区别？"><a href="#有何区别？" class="headerlink" title="有何区别？"></a>有何区别？</h2><ul>
+<li>px在缩放页面时无法调整哪些使用它作为单位的字体、按钮等的大小</li>
+<li>em的值不是固定的，会继承父级元素的字体大小，代表倍数</li>
+<li>rem的值并不是固定的，始终是基于根元素<html>的，也代表倍数</html></li>
 </ul>
-<p>各部分之间的通信如下：</p>
-<p><img src="/images/13-c871edca.png" alt=""></p>
-<ol>
-<li>View传送指令到Controller</li>
-<li>Controller完成业务之后要求Model改变状态</li>
-<li>Model将新的数据发送到View，用户得到反馈</li>
-</ol>
-<h4 id="接受用户指令时，MVC的两种方式：（互动模式）"><a href="#接受用户指令时，MVC的两种方式：（互动模式）" class="headerlink" title="接受用户指令时，MVC的两种方式：（互动模式）"></a>接受用户指令时，MVC的两种方式：（互动模式）</h4><p><img src="/images/13-807024f4.png" alt=""></p>
-<p><em>另一种是直接通过Controller接受指令</em></p>
-<p><img src="/images/13-f18acc87.png" alt=""></p>
-<h3 id="2-MVP"><a href="#2-MVP" class="headerlink" title="2. MVP"></a>2. MVP</h3><p><strong>MVP模式将Controller改名为Presenter，同时改变了通信方向</strong></p>
-<p><img src="/images/13-355c3d4d.png" alt=""></p>
-<ol>
-<li>各部分之间的通信，都是双向的</li>
-<li>View与Model不发生联系，都是通过Presenter传递</li>
-<li>View非常薄，不部署任何业务逻辑，称为“被动视图”（Passive View）,即没有任何主动性，而Presenter非常厚，所有逻辑都部署在那里</li>
-</ol>
-<h3 id="3-MVVM"><a href="#3-MVVM" class="headerlink" title="3. MVVM"></a>3. MVVM</h3><p><strong>MVVM模式将Presenter改名为ViewModel，基本上与MVP模式完全一致</strong></p>
-<p><img src="/images/13-64e9b98a.png" alt=""></p>
-<p>唯一的区别是，它采用<strong>双向数据绑定</strong>（data-binding）:View的变动自动反映在ViewModel，反之亦然。Angular和Ember都采用这种模式</p>
+<h4 id="em"><a href="#em" class="headerlink" title="em"></a>em</h4><p>em的使用是相对于其父级元素的大小的，即倍数。浏览器的默认字体高都是16px，未经调整的浏览器显示1em=16px.但是有一个问题，如果设置1.2em则变成19.2px，问题是px表示大小时会忽略掉小数位的(你想象不出来半个像素吧).而且1em=16px的关系并不好转，因此，常常人为的使1em = 10px.这里要借助字体的%来作为桥梁。</p>
+<p>因为默认时字体16px = 100%,则有10px = 62.5%。所以首先在body中全局声明font-size=62.5%=10px,也就是定义了网页body默认字体大小为10px。由于em有继承父级元素大小的特性，如果某元素的父级没有设定字体大小，那么它就继承了body默认字体大小1em = 10px;</p>
+<p>但是由于em是相对于其父级字体的倍数的，当出现有多重嵌套内容时，使用em分别给他们设置字体的大小往往要重新计算。比如说你在父级元素中声明了字体大小为1.2em,那么在声明子元素的字体大小时设置1em才能和父级元素内容大小一致，而不是1.2em(避免1.2*1.2=1.44em),因为此em非彼em。</p>
+<p>example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;span&gt;Outer &lt;span&gt;inner&lt;/span&gt; Outer&lt;/span&gt;</div><div class="line"></div><div class="line">body&#123;font-size:62.5%;&#125;</div><div class="line">span&#123;font-size:1.6em;&#125;</div></pre></td></tr></table></figure></p>
+<p>结果，外层<span>为body字体10px的1.6倍=16px,内层<span>字体为外层内容字体16px的1.6倍25px(或26px，不同浏览器取舍小数不同)。</span></span></p>
+<p>明显的，内部<span>内的文字受到了外父级<span>元素的影响。基于这点，在实际中给我们的计算带来了很大的不方便。</span></span></p>
+<h4 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h4><p>rem的出现再也不用担心还要根据父级元素的font-size计算em的值了，因为它始终是基于根元素(<html>)的。</html></p>
+<p>比如默认的html font-size:16px,那么想要设置12px文字就是：12/16 = 0.75rem;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">html&#123;font-size:62.5%;&#125;   (16px -&gt; 100% 1rem -&gt; 10px -&gt; 62.5%)</div><div class="line"></div><div class="line">span&#123;font-size:16px;font-size:1.6rem;&#125;</div></pre></td></tr></table></figure>
+<p>结果：内外的<span>的字体大小均为16px;</span></p>
+<p>想要注意的是，为了兼容不支持rem的浏览器，我们需要在各个使用了rem地方前面写上对应px的值，这样不支持的浏览器可以优雅降级。</p>
+<p>最后，选择什么样的字体单位由你的项目来决定，如果你的用户群都使用最新的浏览器，那推荐使用rem，如果要考虑兼容性，那就使用px，或者两者同时使用。</p>
 
       
     </div>
@@ -387,7 +373,7 @@
           </li>
           <li class="post-copyright-link">
             <strong>本文链接：</strong>
-            <a href="/2017/04/24/MVC以及MVVM MVP介绍/" title="前端框架MVC、MVVM、MVP介绍">http://gwem.tk/2017/04/24/MVC以及MVVM MVP介绍/</a>
+            <a href="/2017/08/07/px-em-rem的区别/" title="px/em/rem的区别">http://gwem.tk/2017/08/07/px-em-rem的区别/</a>
           </li>
           <li class="post-copyright-license">
             <strong>版权声明： </strong>
@@ -443,9 +429,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag"># java</a>
-          
-            <a href="/tags/eclipse/" rel="tag"># eclipse</a>
+            <a href="/tags/css3/" rel="tag"># css3</a>
           
         </div>
       
@@ -458,8 +442,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/24/wampserver端口号被占用/" rel="next" title="解决WampServer 80端口号被占用的问题">
-                <i class="fa fa-chevron-left"></i> 解决WampServer 80端口号被占用的问题
+              <a href="/2017/08/01/Java模板引擎FreeMarker/" rel="next" title="Java模板引擎FreeMarker">
+                <i class="fa fa-chevron-left"></i> Java模板引擎FreeMarker
               </a>
             
           </div>
@@ -467,10 +451,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/24/phpcms的安装使用/" rel="prev" title="PHPCMS的安装流程">
-                PHPCMS的安装流程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -649,7 +629,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-MVC"><span class="nav-number">1.</span> <span class="nav-text">1. MVC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#接受用户指令时，MVC的两种方式：（互动模式）"><span class="nav-number">1.1.</span> <span class="nav-text">接受用户指令时，MVC的两种方式：（互动模式）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-MVP"><span class="nav-number">2.</span> <span class="nav-text">2. MVP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-MVVM"><span class="nav-number">3.</span> <span class="nav-text">3. MVVM</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#有何区别？"><span class="nav-number">1.</span> <span class="nav-text">有何区别？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#em"><span class="nav-number">1.0.1.</span> <span class="nav-text">em</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rem"><span class="nav-number">1.0.2.</span> <span class="nav-text">rem</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
