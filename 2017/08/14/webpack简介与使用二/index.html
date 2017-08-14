@@ -1,0 +1,958 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="webpack," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="前言之前总结了一篇文章，简单介绍了webpack及其相关知识点，但觉得有些地方还是不够详细，实践性不强，故而今天再次对其做个总结，争取一目了然。 webpack安装全局安装淘宝镜像：1npm install -g cnpm --registry=https://registry.npm.taobao.org 我们通过cnpm的方式来安装webpack，命令行执行：1cnpm install web">
+<meta name="keywords" content="webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack简介与使用二">
+<meta property="og:url" content="http://yoursite.com/2017/08/14/webpack简介与使用二/index.html">
+<meta property="og:site_name" content="winter blog">
+<meta property="og:description" content="前言之前总结了一篇文章，简单介绍了webpack及其相关知识点，但觉得有些地方还是不够详细，实践性不强，故而今天再次对其做个总结，争取一目了然。 webpack安装全局安装淘宝镜像：1npm install -g cnpm --registry=https://registry.npm.taobao.org 我们通过cnpm的方式来安装webpack，命令行执行：1cnpm install web">
+<meta property="og:updated_time" content="2017-08-14T11:47:27.529Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack简介与使用二">
+<meta name="twitter:description" content="前言之前总结了一篇文章，简单介绍了webpack及其相关知识点，但觉得有些地方还是不够详细，实践性不强，故而今天再次对其做个总结，争取一目了然。 webpack安装全局安装淘宝镜像：1npm install -g cnpm --registry=https://registry.npm.taobao.org 我们通过cnpm的方式来安装webpack，命令行执行：1cnpm install web">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/08/14/webpack简介与使用二/"/>
+
+
+
+
+
+  <title>webpack简介与使用二 | winter blog</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">winter blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/14/webpack简介与使用二/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="winter">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="winter blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">webpack简介与使用二</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-14T19:22:15+08:00">
+                2017-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/08/14/webpack简介与使用二/" class="leancloud_visitors" data-flag-title="webpack简介与使用二">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>之前总结了一篇文章，简单介绍了webpack及其相关知识点，但觉得有些地方还是不够详细，实践性不强，故而今天再次对其做个总结，争取一目了然。</p>
+<h4 id="webpack安装"><a href="#webpack安装" class="headerlink" title="webpack安装"></a>webpack安装</h4><p>全局安装淘宝镜像：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</div></pre></td></tr></table></figure></p>
+<p>我们通过cnpm的方式来安装webpack，命令行执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cnpm install webpack -g</div></pre></td></tr></table></figure></p>
+<h4 id="使用webpack"><a href="#使用webpack" class="headerlink" title="使用webpack"></a>使用webpack</h4><p>接下来我们通过一个简单的例子来演示使用webpack首先，创建一个index.html文件，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line"> &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</div><div class="line"> &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</div><div class="line"> &lt;title&gt;Document&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"> &lt;p&gt;webpack demo&lt;/p&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;script type=&apos;text/javascript&apos; src=&apos;bundle.js&apos;&gt;&lt;/script&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>说明：这里bundle.js就是我们打包以后得到的js文件。<br>然后再创建一个js文件，命名为entry.js,这个问津通常通过webpack打包为bundle.js。如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.write(&apos;this is a demo which show how to use webpack&apos;);</div></pre></td></tr></table></figure></p>
+<p>至此我们的目录有两个文件entry.js和index.html。下面通过webpack将js文件打包。执行下面命令行：<br>webpack ./entry.js bundle.js<br>如果没有出错的话，目录中就会生成了bundle.js文件，是打包以后的文件。现在，在浏览器中打开index.html,可以看出页面中显示了this is a demo which show how to use webpack。<br>目前前端开发中，我们通常采用的是组件化开发方式，这样就会对应很多歌js文件，而打包工具的出现则是为了正确处理这些js文件的依赖关系，并生成一个最终的文件，这样，我们最后只需要加载打包以后的文件就可以了，而无需加载许多danger的js文件。接下来我们就试着下多个js文件的打包。<br>新建一个content.js文件，文件内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.write(&apos;this is content&apos;);</div></pre></td></tr></table></figure></p>
+<p>将entry.js文件修改如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.write(require(&apos;./content.js&apos;));</div></pre></td></tr></table></figure></p>
+<p>打包，执行webpack ./entry.js bundle.js<br>刷新index.html页面，可以看到此时其内容已变成this is content<br>可以看到，webpack以entry.js文件为入口，而entry.js文件又依赖了content.js,这时webpack就会去加载content.js最生成bundle.js</p>
+<h4 id="使用loader"><a href="#使用loader" class="headerlink" title="使用loader"></a>使用loader</h4><p>上面的例子中可以看到webpack可以对js文件进行很好的处理，然而我们的项目中通常需要用到一些css文件对样式进行调整。那如何使用webpack对样式文件进行打包呢，就需要用上loader。<br>我们首先需要将css文件以js模块的方式加载进来，然后将这些样式用到dom上。这两个过程对应两个加载器：css-loader和style-loader。这两个模块可以通过npm进行安装，注意安装到当前的目录即可，不要加-g<br>npm install css-loader style-loader<br>举例：<br>step1：新建一个css文件，style.css<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">body&#123;</div><div class="line">  background:yellow</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>step2:修改entry.js如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">require(&apos;!style-loader!css-loader!./style.css&apos;);</div><div class="line">document.write(require(&apos;./content.js&apos;));</div></pre></td></tr></table></figure></p>
+<p>step3:打包<br>webpack ./entry.js bundle.js<br>刷新页面，可以看到背景变为黄色。<br>!style-loader!css-loader!./style.css指对style.css文件先使用css-loader进行处理，再通过style-loader进行处理。css-loader将css文件进项处理，使其可以作为一个js modules被处理；style-loader则解析当前的样式，并应用到demo上。<br>以上步骤略显繁杂，每次打包需要指定入口文件和生成文件，并且使用加载器时也需要手动配置，很不方便。为了解决这个问题我们可以使用配置文件来解决，配置文件其实就是说明让webpack来做什么的。</p>
+<h4 id="webpack-config-js"><a href="#webpack-config-js" class="headerlink" title="webpack.config.js"></a>webpack.config.js</h4><p>这个文件设定了打包的配置，webpack会自动根据该文件来打包。一个基本的配置文件如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">module.exports=&#123;</div><div class="line">  entry:&apos;./entry.js&apos;,</div><div class="line">  output:&#123;</div><div class="line">    path:__dirname,</div><div class="line">    filename:&apos;bundle.js&apos;</div><div class="line">  &#125;,</div><div class="line">  module:&#123;</div><div class="line">    loaders:[</div><div class="line">      &#123;</div><div class="line">        test:/\.css$/,</div><div class="line">        loader:&quot;style-loader!css-loader&quot;</div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>这里指定了三个参数，包括entry，output，module，分别对应了入口文件entry.js,打包生成的文件bundle。js，以及模块加载器。有了配置文件，则可以直接打包：<br>webpack</p>
+<h4 id="dev-server"><a href="#dev-server" class="headerlink" title="dev server"></a>dev server</h4><p>webpack还为我们提供了webpack-dev-server,它是一个小型的基于node的express服务利器。利用webpack-dev-server我们可以轻松地启动服务。且webpack-dev-server默认采用的是watch模式，也就是说它会自动监测文件的变化，并在页面做出实时的更新，我们不需要每次都重新编译。</p>
+<h4 id="安装webpack-dev-server"><a href="#安装webpack-dev-server" class="headerlink" title="安装webpack-dev-server"></a>安装webpack-dev-server</h4><p>为了方便子啊命令行中使用，同样全局安装。<br>npm install webpack-dev-server -g</p>
+<h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><p>命令行：webpack-dev-server<br>默认端口号为8080。<br>在浏览器中打开<a href="http://localhost:8080/webpack-dev-server" target="_blank" rel="external">http://localhost:8080/webpack-dev-server</a> 可以看到index.html页面。<br>修改content.js文件的内容，可以看到index.html页面文件自动刷新了。</p>
+<h4 id="关于webpack-config-js"><a href="#关于webpack-config-js" class="headerlink" title="关于webpack.config.js"></a>关于webpack.config.js</h4><p>我们是以最简单的项目结构来演示，如下：<br>myPro<br>-css<br>-src<br>-dist<br>-index.html<br>-webpack.config.js<br>这样我们的项目结构就很清晰了。css文件夹中存放样式文件，src文件中存放js文件，node_modules中是我们用到的各种包，dist文件存放打包生成的文件。现在做一下两点：<br>1、css使用less编写<br>2、打包文件到dist目录下<br>第一步：在css文件夹中创建以下两个文件<br>index.less<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@import &apos;demo.less&apos;;</div></pre></td></tr></table></figure></p>
+<p>demo.less:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">body&#123;</div><div class="line">  background:yellow;</div><div class="line">  .main&#123;</div><div class="line">    width:200px;</div><div class="line">    height:200px;</div><div class="line">    border:10px solid red;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>第二步，在src文件夹中：content.js:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">module.exports=&apos;it is from content.js&apos;;</div></pre></td></tr></table></figure></p>
+<p>enrty.js:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">require(&apos;../css/index.less&apos;);</div><div class="line">let content=require(&apos;./content.js&apos;);</div><div class="line">alert(content);</div></pre></td></tr></table></figure></p>
+<p>第三部：修改index.html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;!doctype html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;meta charset=&quot;utf-8&quot;&gt;</div><div class="line">        &lt;title&gt;webpack demo&lt;/title&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;div class=&quot;main&quot; id=&quot;main&quot;&gt;</div><div class="line">            &lt;p&gt;webpack demo&lt;/p&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">    &lt;script type=&quot;text/javascript&quot; src=&quot;./dist/bundle.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="配置less-loader"><a href="#配置less-loader" class="headerlink" title="配置less-loader"></a>配置less-loader</h4><p>需要安装less-loader,而less-loader依赖于less，因此需要安装：<br>npm install less-loader less<br>然后再config文件中配置对less文件的处理，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">module: &#123;</div><div class="line">    loaders: [</div><div class="line">        &#123;</div><div class="line">            test: /\.css$/,</div><div class="line">            loader: &quot;style!css&quot;</div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">            test: /\.less$/,</div><div class="line">            loader: &quot;style-loader!css-loader!less-loader&quot;</div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这里加入了对less文件的处理，需要注意loader的顺序，为style-loader！css-loader!less-loader意为先使用less加载器处理，解析为普通的css文件，再处理css文件，最后处理样式，类似于pipe的概念。</p>
+<h4 id="设置output"><a href="#设置output" class="headerlink" title="设置output"></a>设置output</h4><p>在上篇文章中，我们提到了webpack.config.js文件中可以设置output，作为打包的出口参数。如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">output: &#123;</div><div class="line">   path: __dirname,</div><div class="line">   filename: &quot;bundle.js&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这里设置了两项：path和filename<br>这里我们希望将文件打包到dist目录下，则可以通过配置path来实现，完整配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">let path = require(&apos;path&apos;);</div><div class="line">module.exports = &#123;</div><div class="line">   entry: &quot;./src/entry.js&quot;,</div><div class="line">   output: &#123;</div><div class="line">       path: path.join( __dirname, &apos;/dist&apos;), //这里配置打包路径</div><div class="line">       filename: &quot;bundle.js&quot;</div><div class="line">   &#125;,</div><div class="line">   module: &#123;</div><div class="line">       loaders: [</div><div class="line">           &#123;</div><div class="line">               test: /\.css$/,</div><div class="line">               loader: &quot;style!css&quot;</div><div class="line">           &#125;,</div><div class="line">           &#123;</div><div class="line">               test: /\.less$/,</div><div class="line">               loader: &quot;style-loader!css-loader!less-loder&quot;</div><div class="line">           &#125;</div><div class="line">       ]</div><div class="line">   &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>执行：webpack</p>
+<h4 id="进一步了解webpack-dev-server"><a href="#进一步了解webpack-dev-server" class="headerlink" title="进一步了解webpack-dev-server"></a>进一步了解webpack-dev-server</h4><p>上篇文章提到，webpack-dev-server为我们提供了一个小型的基于node的express服务器，使我们可以通过<a href="http://localhost:8080/webpack-dev-server/来访问页面，并且它可以监测文件的变化并在页面中实时显示出来。现在我们再来试下：" target="_blank" rel="external">http://localhost:8080/webpack-dev-server/来访问页面，并且它可以监测文件的变化并在页面中实时显示出来。现在我们再来试下：</a><br>启动webpack-dev-server<br>访问<a href="http://localhost:8080/webpack-dev-server/" target="_blank" rel="external">http://localhost:8080/webpack-dev-server/</a><br>修改content.js文件如下：<br>可以看到，页面自动进行了刷新，但是alert的内容却没有变。这说明监测到了文件的变化，但是我们的index.html加载的js文件并没有变。<br>那问题出在哪里？</p>
+<h4 id="webpack-dev-server原理"><a href="#webpack-dev-server原理" class="headerlink" title="webpack-dev-server原理"></a>webpack-dev-server原理</h4><p>webpack-dev-server通过sockjs实现实时变化监测，当文件变化时，服务器就会向客户端发送通知，客户端重新渲染。<br>每次文件变化都会触发webpack-dev-server对文件进行重新编译，但是这个编译后的文件并不会每次都保存到我们的dist目录下，而是存放在内存中，默认情况下，这个文件的路径为当前路径。也就是说，每次文件变化后，内存中的bundle.js做出了实时的变化，而output中配置的文件其实并没有变。也就是说，如果我们在index.html中使用./bundle.js则能够实现页面内容的实时更新。<br>那么，如何配置可以使其支持我们当前的写法./dist/bunlde.js呢？就需要用到publicPath这个属性。</p>
+<h4 id="output的publicPath属性"><a href="#output的publicPath属性" class="headerlink" title="output的publicPath属性"></a>output的publicPath属性</h4><p>webpack-dev-server默认支持文件路径为当前的路径，可以通过在output中配置publicPath属性对其进行更改，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">output: &#123;</div><div class="line">   path: path.join( __dirname, &apos;/dist&apos;),</div><div class="line">   publicPath: &apos;/dist/&apos;,</div><div class="line">   filename: &quot;bundle.js&quot;</div><div class="line">&#125;</div><div class="line"> ```  </div><div class="line"> 这样设置我们就可以通过./dist/bundle.js路径访问到内存中的文件，在当前路径下已经存在同名文件的情况下，webpack-dev-server会优先使用内存中的文件。  </div><div class="line">至此，我们实现了：  </div><div class="line">1、使用less编写样式文件    </div><div class="line">2、将文件打包到指定目录  </div><div class="line">3、监测文件变化并实时展示  </div><div class="line">看到，现在我们还是采用的commonJS的规范来实现模块化， 而es6为我们提供了export和import语法来支持模块化，如果想要在项目中使用es6，同样可以通过webpack来配置实现。  </div><div class="line">## webpack支持es6</div><div class="line">使webpack支持es6需要用到babel，它可以帮助我们将es6语法转化为es5的格式，首先，需要安装babel  </div><div class="line">npm install babel-loader babel-core  </div><div class="line">安装babel-preset  </div><div class="line"> npm install babel-preset-es2015  </div><div class="line"> 然后，配置webpack.config.js，如下：  </div><div class="line"> ```javascript</div><div class="line"> module: &#123;</div><div class="line"> loaders: [</div><div class="line">   &#123; test: /\.js$/, exclude: /node_modules/, loader: &quot;babel-loader&quot; &#125;</div><div class="line"> ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>最后还需要加上babel的配置文件，在项目的根目录下创建文件.babelrc<br>{ “presets”: [“es2015”] }<br>这样，我们的webpack就支持通过es6的export和import实现模块化了。<br>修改content.js内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var content = &apos;it is the origin content from content.js&apos;;</div><div class="line">export &#123;content&#125;;</div></pre></td></tr></table></figure></p>
+<p>修改entry.js内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">require(&apos;../css/index.less&apos;);</div><div class="line">import &#123;content&#125; from &apos;./content&apos;;</div><div class="line">let div = document.getElementById(&apos;main&apos;);</div><div class="line">div.innerHTML = content;</div></pre></td></tr></table></figure></p>
+<p>可以看到，我们现在通过es6的import和export实现js的模块化，打包：<br>$ webpack</p>
+<h4 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h4><p>本篇文章转载于<code>北方雪</code>博客，<a href="https://asiazdx.github.io/2017/03/30/webpack%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/" target="_blank" rel="external">原文地址</a></p>
+
+      
+    </div>
+
+    <div>    
+     
+     
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+              <strong>本文作者：</strong>winter
+          </li>
+          <li class="post-copyright-link">
+            <strong>本文链接：</strong>
+            <a href="/2017/08/14/webpack简介与使用二/" title="webpack简介与使用二">http://gwem.tk/2017/08/14/webpack简介与使用二/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>版权声明： </strong>
+            本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+          </li>
+        </ul>
+      
+    </div>  
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat.png" alt="winter WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/ali.jpg" alt="winter Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/webpack/" rel="tag"># webpack</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/09/IntelliJ-IDEA中自动压缩js-css文件/" rel="next" title="IntelliJ IDEA中自动压缩js,css文件">
+                <i class="fa fa-chevron-left"></i> IntelliJ IDEA中自动压缩js,css文件
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/touxiang.jpg"
+               alt="winter" />
+          <p class="site-author-name" itemprop="name">winter</p>
+           
+              <p class="site-description motion-element" itemprop="description">Some things are so important that they force us to overcome our fears.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Gwemz" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/gwemz" target="_blank" title="Coding">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  Coding
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#webpack安装"><span class="nav-number">2.</span> <span class="nav-text">webpack安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用webpack"><span class="nav-number">3.</span> <span class="nav-text">使用webpack</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用loader"><span class="nav-number">4.</span> <span class="nav-text">使用loader</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#webpack-config-js"><span class="nav-number">5.</span> <span class="nav-text">webpack.config.js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dev-server"><span class="nav-number">6.</span> <span class="nav-text">dev server</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装webpack-dev-server"><span class="nav-number">7.</span> <span class="nav-text">安装webpack-dev-server</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动"><span class="nav-number">8.</span> <span class="nav-text">启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于webpack-config-js"><span class="nav-number">9.</span> <span class="nav-text">关于webpack.config.js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置less-loader"><span class="nav-number">10.</span> <span class="nav-text">配置less-loader</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置output"><span class="nav-number">11.</span> <span class="nav-text">设置output</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进一步了解webpack-dev-server"><span class="nav-number">12.</span> <span class="nav-text">进一步了解webpack-dev-server</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#webpack-dev-server原理"><span class="nav-number">13.</span> <span class="nav-text">webpack-dev-server原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#output的publicPath属性"><span class="nav-number">14.</span> <span class="nav-text">output的publicPath属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结语"><span class="nav-number">15.</span> <span class="nav-text">结语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">winter</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2139708"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("zrWfpR4RvFok6hW2p6mmj5PF-gzGzoHsz", "4er8qgeqe0KtvldK3HYyGSB0");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
