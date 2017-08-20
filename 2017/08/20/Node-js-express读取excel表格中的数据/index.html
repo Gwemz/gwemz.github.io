@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="杂文," />
+  <meta name="keywords" content="node," />
 
 
 
@@ -93,17 +93,20 @@
 
 
 
-<meta name="description" content="有人告我说，说在大城市找不到工作，生活很困难，要混不下去了，准备回老家发展、找工作去。 不知道有多少人有这样的想法，起码现在的我就有，但是我想告诉你们的是，无论如何，请务必在大城市再坚持下。 没有去过大城市的人，第一印象对大城市的印象是，房价高的离谱，消费高的吓人，节奏快，压力大，心里不理解那些在大城市为了房子打拼一辈子的房奴到底是哪根筋搭错了。没错，在没来上海之前以上也是我心里对大城市的看法，">
-<meta name="keywords" content="杂文">
+<meta name="description" content="两周前看到一个excel表格，突然想了一个需求，能否将其中的数据通过某种语言读取出来？然后返回json格式的数据，渲染到html页面中？于是便开始了百度、谷歌的道路，最终选择利用Node.js这一门比较亲近的后台语言来实现，通过express来实现页面路由以及监听端口，利用node-xlsx这一包来实现读取 .xlsxexcel格式文件数据读取这一核心功能。 文件目录结构：  node_modul">
+<meta name="keywords" content="node">
 <meta property="og:type" content="article">
-<meta property="og:title" content="无论如何请再坚持下">
-<meta property="og:url" content="http://yoursite.com/2017/04/24/无论如何请再坚持下/index.html">
+<meta property="og:title" content="Node.js+express读取excel表格中的数据">
+<meta property="og:url" content="http://yoursite.com/2017/08/20/Node-js-express读取excel表格中的数据/index.html">
 <meta property="og:site_name" content="winter blog">
-<meta property="og:description" content="有人告我说，说在大城市找不到工作，生活很困难，要混不下去了，准备回老家发展、找工作去。 不知道有多少人有这样的想法，起码现在的我就有，但是我想告诉你们的是，无论如何，请务必在大城市再坚持下。 没有去过大城市的人，第一印象对大城市的印象是，房价高的离谱，消费高的吓人，节奏快，压力大，心里不理解那些在大城市为了房子打拼一辈子的房奴到底是哪根筋搭错了。没错，在没来上海之前以上也是我心里对大城市的看法，">
-<meta property="og:updated_time" content="2017-06-02T17:06:59.712Z">
+<meta property="og:description" content="两周前看到一个excel表格，突然想了一个需求，能否将其中的数据通过某种语言读取出来？然后返回json格式的数据，渲染到html页面中？于是便开始了百度、谷歌的道路，最终选择利用Node.js这一门比较亲近的后台语言来实现，通过express来实现页面路由以及监听端口，利用node-xlsx这一包来实现读取 .xlsxexcel格式文件数据读取这一核心功能。 文件目录结构：  node_modul">
+<meta property="og:image" content="http://yoursite.com/images/2017-8-20-1.png">
+<meta property="og:image" content="http://yoursite.com/images/2017-8-20-2.png">
+<meta property="og:updated_time" content="2017-08-20T08:48:35.194Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="无论如何请再坚持下">
-<meta name="twitter:description" content="有人告我说，说在大城市找不到工作，生活很困难，要混不下去了，准备回老家发展、找工作去。 不知道有多少人有这样的想法，起码现在的我就有，但是我想告诉你们的是，无论如何，请务必在大城市再坚持下。 没有去过大城市的人，第一印象对大城市的印象是，房价高的离谱，消费高的吓人，节奏快，压力大，心里不理解那些在大城市为了房子打拼一辈子的房奴到底是哪根筋搭错了。没错，在没来上海之前以上也是我心里对大城市的看法，">
+<meta name="twitter:title" content="Node.js+express读取excel表格中的数据">
+<meta name="twitter:description" content="两周前看到一个excel表格，突然想了一个需求，能否将其中的数据通过某种语言读取出来？然后返回json格式的数据，渲染到html页面中？于是便开始了百度、谷歌的道路，最终选择利用Node.js这一门比较亲近的后台语言来实现，通过express来实现页面路由以及监听端口，利用node-xlsx这一包来实现读取 .xlsxexcel格式文件数据读取这一核心功能。 文件目录结构：  node_modul">
+<meta name="twitter:image" content="http://yoursite.com/images/2017-8-20-1.png">
 
 
 
@@ -131,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/24/无论如何请再坚持下/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/20/Node-js-express读取excel表格中的数据/"/>
 
 
 
 
 
-  <title>无论如何请再坚持下 | winter blog</title>
+  <title>Node.js+express读取excel表格中的数据 | winter blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -267,7 +270,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/24/无论如何请再坚持下/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/20/Node-js-express读取excel表格中的数据/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="winter">
@@ -284,7 +287,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">无论如何请再坚持下</h1>
+          <h1 class="post-title" itemprop="name headline">Node.js+express读取excel表格中的数据</h1>
         
 
         <div class="post-meta">
@@ -296,8 +299,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-24T19:40:41+08:00">
-                2017-04-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-20T16:03:17+08:00">
+                2017-08-20
               </time>
             
 
@@ -314,7 +317,7 @@
 
           
           
-             <span id="/2017/04/24/无论如何请再坚持下/" class="leancloud_visitors" data-flag-title="无论如何请再坚持下">
+             <span id="/2017/08/20/Node-js-express读取excel表格中的数据/" class="leancloud_visitors" data-flag-title="Node.js+express读取excel表格中的数据">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -342,21 +345,22 @@
       
 
       
-        <p><img src="" alt="想要配一张支付宝大楼的图片,但是因为图片太大,markdown编辑图片大小不方便,所以不放图了"></p>
-<p>有人告我说，说在大城市找不到工作，生活很困难，要混不下去了，准备回老家发展、找工作去。</p>
-<p>不知道有多少人有这样的想法，起码现在的我就有，但是我想告诉你们的是，无论如何，请务必在大城市再坚持下。</p>
-<p>没有去过大城市的人，第一印象对大城市的印象是，房价高的离谱，消费高的吓人，节奏快，压力大，心里不理解那些在大城市为了房子打拼一辈子的房奴到底是哪根筋搭错了。没错，在没来上海之前以上也是我心里对大城市的看法，我还心想，估计这辈子都不太可能会在大城市待下去，人活着怎么都是一辈子，为何不能活的潇洒些呢？</p>
-<p>然而，我来到上海之后，包括这些年自己的亲身经历，让我重新认识了我眼中的大城市。</p>
-<h4 id="不得不承认，大城市是残酷的。"><a href="#不得不承认，大城市是残酷的。" class="headerlink" title="不得不承认，大城市是残酷的。"></a>不得不承认，大城市是残酷的。</h4><p>在这里，你没有亲人，甚至没有朋友，你没有任何人可以依靠，生存全靠自己，脱离了家人亲戚的照顾，你从来不会知道生活有多么困难，现在的时代，无论你家里再怎么贫穷，但是在家里呆着，解决温饱绝对没问题。然而在大城市，不工作是真的是会饿死人的，这里干什么都需要钱，没有钱寸步难行，在大城市，你首先考虑的绝不是生活条件的问题，而是生存的问题，在没来上海之前，我从来没法想象租住的房子竟然会这么小，更没法想象会为了省一块钱的交通费，每天都多走将近一个小时的路程，她，就是这般的不近人情。</p>
-<h4 id="然而，大城市是公平的。"><a href="#然而，大城市是公平的。" class="headerlink" title="然而，大城市是公平的。"></a>然而，大城市是公平的。</h4><p>试想下，在老家办事是怎样的？不管是公事私事永远别想按照正常流程办事，想办成事永远都得陪着笑脸，找关系，送礼。不管你在哪个企业工作，人际关系和家族关系基本就是一切，在这里，努力算什么东西，能力算个屁。而在大城市，没人在乎你的家庭背景，人际关系，这里人人平等，你只要有能力，就能得到更多机会，得到应有的回报，再也不用陪着笑脸，在酒桌上谈生意，也许我们一无所有，但是起码我们还可以努力。在这里，即使输你都输的心服口服，因为那些比你强的人往往比你更努力，比你更有能力。</p>
-<h4 id="大城市机会更多，而且有志同道合的朋友一起奋斗。"><a href="#大城市机会更多，而且有志同道合的朋友一起奋斗。" class="headerlink" title="大城市机会更多，而且有志同道合的朋友一起奋斗。"></a>大城市机会更多，而且有志同道合的朋友一起奋斗。</h4><p>很多人觉得在大城市找不到工作，那就回家试试吧。在大城市数以万计的工作机会你都找不到，回家就能轻易找到工作了？当然也许托家里人找点关系，可能会在家里找到工作，而且很有可能是机关部门，拿着那少的可怜的工资，每天上班就是喝茶、聊天、游戏、吃饭、睡觉、上网，可能还需要没事的时候拍拍马屁，你才 20 多岁，这真的就是你想要的生活么？你想找个志同道合的人聊聊互联网，聊聊科技，在别人眼中你就是异类。然而在大城市，你周围身边有各种各样志同道合的小伙伴，他们有着共同的爱好，共同的梦想，可以一起聊互联网、聊产品、聊技术、聊创业，你在这里可以接触各种各样的机会，接触到第一手的信息与技术，身边充斥着各行各业普通的不能再普通的专业人才，无形中会逼着你去学习，去进步，甚至很有可能一起做出一番事业说不定。</p>
-<p>当然，如果我家庭条件不错，家族关系还可以，在老家买辆好车，盖栋楼房，娶个姑娘，过着无忧无虑的生活，这是谁都向往的，没有任何一个人愿意背井离乡，远离父母，孤身一人来到陌生的城市打拼，然而我没有这样的家庭条件，我想可能大部分读者都跟我一样，农村出身，家里能供自己上完大学可能就已经是倾尽全力了，我们想要出人头地，回报父母，回报家人，只有靠自己！</p>
-<p>我当然知道北上广房价高的可能一辈子都买不起，买个包子还要排老长的队，坐地铁挤得像汉堡包，买辆车还要摇号，一个破车牌 8 万多块。</p>
-<p>我也知道当你一个人遇到事情孤立无援，叫天天不应，叫地地不灵，又不忍让家里人担心，只能擦干眼泪，忍着痛楚，当做什么都没发生的无奈的坚强。</p>
-<p>我更知道那个陪你住 800 块一个月的房子，住房面积不过十平米，什么都给不了她，哪怕一句承诺都给不了的，但是依然对你不离不弃的那个女孩子本可以回家过着更好的生活。</p>
-<p>也许你现在的生活过的像条狗，也许你现在只拿着月薪 3000 甚至不够温饱的工资，但是我们还年轻，我们选择在大城市奋斗的原因是因为我们期待的是未来，未来更好的职业发展，未来更好的经济收入，未来更好的生活，以及未来无限的可能。</p>
-<p>所以，如果你在大城市感觉快要坚持不下去了，我帮不了你们，也没人能帮得了你们，我能做的就是提醒下你们请务必再坚持下，很多事情，很可能就差那多一点的坚持，仅此而已。</p>
-<p>其实大城市与小城市只是一个选择的问题而已，无关对错，只是如果你跟我一样是个农村的孩子，试图凭借自己的本事改变自己的生活，那么我建议你一定要到大城市闯闯，她不问你的出生，背景，更不会鄙视你的家庭条件，她只看你是否努力，真的。</p>
+        <p>两周前看到一个excel表格，突然想了一个需求，能否将其中的数据通过某种语言读取出来？然后返回json格式的数据，渲染到html页面中？于是便开始了百度、谷歌的道路，最终选择利用Node.js这一门比较亲近的后台语言来实现，通过express来实现页面路由以及监听端口，利用node-xlsx这一包来实现读取 <code>.xlsx</code>excel格式文件数据读取这一核心功能。</p>
+<h3 id="文件目录结构："><a href="#文件目录结构：" class="headerlink" title="文件目录结构："></a>文件目录结构：</h3><p><img src="/images/2017-8-20-1.png" alt="文件结构"></p>
+<ul>
+<li>node_modules 项目所依赖的包</li>
+<li>website 项目静态资源目录，包含index.html和index2.html文件（配置路由返回不同页面）</li>
+<li>01.xlsx excel表格，数据来源</li>
+<li>index.js 实现读取、路由配置、监听端口等核心功能</li>
+<li>package.json 项目配置文件</li>
+</ul>
+<h3 id="index-js文件："><a href="#index-js文件：" class="headerlink" title="index.js文件："></a>index.js文件：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">var express = require(&apos;express&apos;);</div><div class="line">var xlsx = require(&quot;node-xlsx&quot;);</div><div class="line">var app = express();</div><div class="line">var xlsxData=xlsx.parse(&apos;01.xlsx&apos;);</div><div class="line"></div><div class="line">// 信息获取</div><div class="line">app.get(&apos;/messages&apos;,function(req,res)&#123;</div><div class="line">    var str = JSON.stringify(xlsxData);</div><div class="line">    // charset=utf-8 解决json数据中中文乱码</div><div class="line">    res.writeHead(200, &#123; &quot;Content-Type&quot;: &quot;application/json;charset=utf-8&quot; &#125;);</div><div class="line">    res.end(str);</div><div class="line">&#125;)</div><div class="line"></div><div class="line">//对静态文件做处理</div><div class="line">app.use(express.static(__dirname+&apos;/website&apos;));</div><div class="line">app.get(&apos;/&apos;,function(req,res)&#123;</div><div class="line">    res.sendFile(__dirname+&apos;/website/index.html&apos;);</div><div class="line">&#125;)</div><div class="line">app.get(&apos;/admin&apos;,function(req,res)&#123;</div><div class="line">    res.sendFile(__dirname + &apos;/website/index2.html&apos;);</div><div class="line">&#125;)</div><div class="line"></div><div class="line">app.listen(1000,function()&#123;</div><div class="line">    console.log(&apos;监听1000端口成功！&apos;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h4 id="核心思想："><a href="#核心思想：" class="headerlink" title="核心思想："></a>核心思想：</h4><p>在本项目中，引入开发所依赖的包文件，通过’/messages’的方法来获取并返回excel中的数据，’/‘方法返回index.html静态文件，在该文件中利用ajax方法，获取接口为’/messages’的数据，’/admin’来获取另一静态页面index2.html；最后本项目通过监听listen 1000端口来启动本地服务器。</p>
+<h3 id="index-html文件："><a href="#index-html文件：" class="headerlink" title="index.html文件："></a>index.html文件：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">    &lt;div class=&quot;container&quot;&gt;</div><div class="line">        &lt;table class=&quot;table&quot;&gt;</div><div class="line">            &lt;caption&gt;&lt;/caption&gt;</div><div class="line">            &lt;thead&gt;</div><div class="line">            &lt;tr&gt;</div><div class="line">                &lt;th&gt;#&lt;/th&gt;</div><div class="line">                &lt;th&gt;姓名&lt;/th&gt;</div><div class="line">                &lt;th&gt;性别&lt;/th&gt;</div><div class="line">                &lt;th&gt;学校&lt;/th&gt;</div><div class="line">                &lt;th&gt;系别&lt;/th&gt;</div><div class="line">                &lt;th&gt;专业&lt;/th&gt;</div><div class="line">                &lt;th&gt;类别&lt;/th&gt;</div><div class="line">                &lt;th&gt;年级&lt;/th&gt;</div><div class="line">                &lt;th&gt;电话&lt;/th&gt;</div><div class="line">                &lt;th&gt;QQ&lt;/th&gt;</div><div class="line">            &lt;/tr&gt;</div><div class="line">            &lt;/thead&gt;</div><div class="line">            &lt;tbody&gt;</div><div class="line"></div><div class="line">            &lt;/tbody&gt;</div><div class="line">        &lt;/table&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    $(function () &#123;</div><div class="line">        $.ajax(&#123;</div><div class="line">            url:&apos;/messages&apos;,</div><div class="line">            dataType:&apos;json&apos;</div><div class="line">        &#125;).done(function(result)&#123;</div><div class="line">            // 渲染页面</div><div class="line">            //表格名称</div><div class="line">            $(&apos;caption&apos;).text(&apos;&apos;+result[0].name+&apos;&apos;);</div><div class="line">            //表格内容</div><div class="line">            $.each(result[0].data,function(i,v)&#123;</div><div class="line">                console.log(i,v);</div><div class="line">                $(&apos;&lt;tr&gt;&lt;/tr&gt;&lt;th scope=&quot;row&quot;&gt;&apos;+(i+1)+&apos;&lt;/th&gt;&lt;td&gt;&apos;+v[0]+&apos;&lt;/td&gt;&lt;td&gt;&apos;+v[1]+&apos;&lt;/td&gt;&lt;td&gt;&apos;+v[2]+&apos;&lt;/td&gt;&lt;td&gt;&apos;+v[3]+&apos;&lt;/td&gt;&lt;td&gt;&apos;+v[4]+&apos;&lt;/td&gt;&lt;td&gt;&apos;+v[5]+&apos;&lt;/td&gt;&lt;td&gt;&apos;+v[6]+&apos;&lt;/td&gt;&lt;td&gt;&apos;+v[7]+&apos;&lt;/td&gt;&lt;td&gt;&apos;+v[8]+&apos;&lt;/td&gt;&lt;/tr&gt;&apos;).appendTo($(&apos;tbody&apos;));</div><div class="line">            &#125;)</div><div class="line">        &#125;)</div><div class="line">    &#125;)</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h4 id="核心思想：-1"><a href="#核心思想：-1" class="headerlink" title="核心思想："></a>核心思想：</h4><p>该文件中有表格的基本结构，通过ajax调用’/messages’接口来获取json格式的数据，并将返回的数据遍历渲染到html页面中</p>
+<h3 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h3><p>运行index.js文件监听端口来启动本项目 <code>node index.js</code>  localhost:1000</p>
+<p>最终效果图：<br><img src="/images/2017-8-20-2.png" alt="效果图"></p>
+<p><a href="https://scarletsky.github.io/2016/01/30/nodejs-process-excel/" target="_blank" rel="external">参考文章</a></p>
 
       
     </div>
@@ -370,7 +374,7 @@
           </li>
           <li class="post-copyright-link">
             <strong>本文链接：</strong>
-            <a href="/2017/04/24/无论如何请再坚持下/" title="无论如何请再坚持下">http://gwem.tk/2017/04/24/无论如何请再坚持下/</a>
+            <a href="/2017/08/20/Node-js-express读取excel表格中的数据/" title="Node.js+express读取excel表格中的数据">http://gwem.tk/2017/08/20/Node-js-express读取excel表格中的数据/</a>
           </li>
           <li class="post-copyright-license">
             <strong>版权声明： </strong>
@@ -426,7 +430,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/杂文/" rel="tag"># 杂文</a>
+            <a href="/tags/node/" rel="tag"># node</a>
           
         </div>
       
@@ -439,8 +443,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/24/有思考的人/" rel="next" title="有思考的人">
-                <i class="fa fa-chevron-left"></i> 有思考的人
+              <a href="/2017/08/17/网站SEO优化/" rel="next" title="网站SEO优化">
+                <i class="fa fa-chevron-left"></i> 网站SEO优化
               </a>
             
           </div>
@@ -448,10 +452,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/24/如何脱颖而出/" rel="prev" title="如何脱颖而出">
-                如何脱颖而出 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -630,7 +630,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#不得不承认，大城市是残酷的。"><span class="nav-number">1.</span> <span class="nav-text">不得不承认，大城市是残酷的。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#然而，大城市是公平的。"><span class="nav-number">2.</span> <span class="nav-text">然而，大城市是公平的。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#大城市机会更多，而且有志同道合的朋友一起奋斗。"><span class="nav-number">3.</span> <span class="nav-text">大城市机会更多，而且有志同道合的朋友一起奋斗。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件目录结构："><span class="nav-number">1.</span> <span class="nav-text">文件目录结构：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#index-js文件："><span class="nav-number">2.</span> <span class="nav-text">index.js文件：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#核心思想："><span class="nav-number">2.1.</span> <span class="nav-text">核心思想：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#index-html文件："><span class="nav-number">3.</span> <span class="nav-text">index.html文件：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#核心思想：-1"><span class="nav-number">3.1.</span> <span class="nav-text">核心思想：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动项目"><span class="nav-number">4.</span> <span class="nav-text">启动项目</span></a></li></ol></div>
             
 
           </div>
