@@ -1,0 +1,1108 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="wap," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="概要本文档针对移动前端开发，包括 Hybrid 里面的web页面，非 Native 应用。 适用所有经验适用于：iOS6.0+, Android4.0+ 兼容性CSS伪类:active如果你想使用元素的伪类来实现 按下激活 状态，那么你需要知道以下问题：  iOS上的几乎任何浏览器，定义元素的伪类 :active 都是无效； Android上，Android Browser 和 Chrome 都支">
+<meta name="keywords" content="wap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端兼容性及部分功能设置">
+<meta property="og:url" content="http://yoursite.com/2017/09/18/移动端兼容性及部分功能设置/index.html">
+<meta property="og:site_name" content="winter blog">
+<meta property="og:description" content="概要本文档针对移动前端开发，包括 Hybrid 里面的web页面，非 Native 应用。 适用所有经验适用于：iOS6.0+, Android4.0+ 兼容性CSS伪类:active如果你想使用元素的伪类来实现 按下激活 状态，那么你需要知道以下问题：  iOS上的几乎任何浏览器，定义元素的伪类 :active 都是无效； Android上，Android Browser 和 Chrome 都支">
+<meta property="og:updated_time" content="2017-09-18T12:06:08.469Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动端兼容性及部分功能设置">
+<meta name="twitter:description" content="概要本文档针对移动前端开发，包括 Hybrid 里面的web页面，非 Native 应用。 适用所有经验适用于：iOS6.0+, Android4.0+ 兼容性CSS伪类:active如果你想使用元素的伪类来实现 按下激活 状态，那么你需要知道以下问题：  iOS上的几乎任何浏览器，定义元素的伪类 :active 都是无效； Android上，Android Browser 和 Chrome 都支">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/18/移动端兼容性及部分功能设置/"/>
+
+
+
+
+
+  <title>移动端兼容性及部分功能设置 | winter blog</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">winter blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/18/移动端兼容性及部分功能设置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="winter">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="winter blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">移动端兼容性及部分功能设置</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-18T20:01:05+08:00">
+                2017-09-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/09/18/移动端兼容性及部分功能设置/" class="leancloud_visitors" data-flag-title="移动端兼容性及部分功能设置">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h2><p>本文档针对移动前端开发，包括 <code>Hybrid</code> 里面的web页面，非 <code>Native</code> 应用。</p>
+<h2 id="适用"><a href="#适用" class="headerlink" title="适用"></a>适用</h2><p>所有经验适用于：<code>iOS6.0+</code>, <code>Android4.0+</code></p>
+<h2 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h2><h3 id="CSS伪类-active"><a href="#CSS伪类-active" class="headerlink" title="CSS伪类:active"></a>CSS伪类:active</h3><p>如果你想使用元素的伪类来实现 <code>按下激活</code> 状态，那么你需要知道以下问题：</p>
+<ul>
+<li>iOS上的几乎任何浏览器，定义元素的伪类 <code>:active</code> 都是无效；</li>
+<li>Android上，<code>Android Browser</code> 和 <code>Chrome</code> 都支持伪类 <code>:active</code> ，其它第三方浏览器有部分不支持；</li>
+<li>定义了 <code>:active</code> 并且当前浏览器环境支持，当手指在滚动或者无意间的划过时，<code>:active</code> 状态都会被激活；</li>
+</ul>
+<blockquote>
+<p>为了规避上述所有的问题，如果需要 <code>按下激活</code> 状态，推荐使用 <code>js</code> 新增一个 <code>className</code></p>
+</blockquote>
+<h3 id="清除输入框内阴影"><a href="#清除输入框内阴影" class="headerlink" title="清除输入框内阴影"></a>清除输入框内阴影</h3><p>iOS上的几乎任何浏览器输入框（input, textarea）默认有内部阴影，但无法使用 <code>box-shadow</code> 来清除，如果不需要阴影，可以这样关闭：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">input</span>,</div><div class="line"><span class="selector-tag">textarea</span> &#123;</div><div class="line">	<span class="comment">/* 方法1: 去掉边框 */</span></div><div class="line">	<span class="attribute">border</span>: <span class="number">0</span>;</div><div class="line"></div><div class="line">	<span class="comment">/* 方法2: 边框色透明 */</span></div><div class="line">	<span class="attribute">border-color</span>: transparent;</div><div class="line"></div><div class="line">	<span class="comment">/* 方法3: 重置输入框默认外观 */</span></div><div class="line">	<span class="attribute">-webkit-appearance</span>: none;</div><div class="line">	<span class="attribute">appearance</span>: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="修正iOS输入框禁用文本色"><a href="#修正iOS输入框禁用文本色" class="headerlink" title="修正iOS输入框禁用文本色"></a>修正iOS输入框禁用文本色</h3><p>在 <code>iOS</code> 上，如果将输入框 <code>disabled</code>，此时输入框内的文字颜色将比 <code>color</code> 所定义的要浅，并且无法通过给输入框的伪类 <code>:disabled</code> 定义 <code>color</code> 来修正。</p>
+<p>想解决这个问题，可以作如下设置，定义输入框的文本填充色：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:disabled</span> &#123;</div><div class="line">	<span class="attribute">-webkit-text-fill-color</span>: <span class="number">#000</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>需要注意的是，在 <code>Mac</code> 上的 <code>Safari</code> 也有同样的问题。</p>
+<h3 id="Samsung-S4圆角Bug"><a href="#Samsung-S4圆角Bug" class="headerlink" title="Samsung S4圆角Bug"></a>Samsung S4圆角Bug</h3><p><code>Samsung S4</code> 手机在 <code>Android Browser4.4.2</code> 上（其他版本未测），如果你使用了 <code>border-radius</code>，并且使用了 <code>-webkit-transform</code> 属性，当使用了 <code>translatez</code> 或者 <code>translate3d</code> 值，圆角会出现问题：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.test</span> &#123;</div><div class="line">	<span class="attribute">border</span>: <span class="number">2px</span> solid red;</div><div class="line">	<span class="attribute">width</span>: <span class="number">50px</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">50px</span>;</div><div class="line">	<span class="attribute">border-radius</span>: <span class="number">50%</span>;</div><div class="line">	<span class="attribute">background-color</span>: gray;</div><div class="line">	<span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">2px</span> <span class="number">5px</span> <span class="built_in">rgba</span>(0, 0, 0, .3);</div><div class="line">	<span class="attribute">-webkit-transform</span>: <span class="built_in">translate</span>(0, 0) <span class="built_in">translatez</span>(0);</div><div class="line">	<span class="attribute">transform</span>: <span class="built_in">translate</span>(0, 0) <span class="built_in">translatez</span>(0);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>如上代码，<code>-webkit-transform: translate(0, 0) translatez(0)</code> 将会导致圆角无法包裹住 <code>background-color</code>。</p>
+<p>当然，<code>-webkit-transform: translate3d(0, 0, 0)</code> 也是一样的，所以如果你的某个场景是这样的，那么可以直接使用 <code>-webkit-transform: translate(0, 0)</code> 来避免这个问题。</p>
+<h3 id="边框圆角致背景溢出"><a href="#边框圆角致背景溢出" class="headerlink" title="边框圆角致背景溢出"></a>边框圆角致背景溢出</h3><p>在红米和OPPO等手机某些版本的 <code>Android Webview</code> 中，如果一个元素定义了 <code>border</code> + <code>border-radius</code>，这时如果该元素有背景，那么背景将会溢出圆角之外。</p>
+<p>之所以会出现这个问题：其主要原因是因为CSS对背景裁剪（background-clip）有不同的处理方式，通常它可以是 <code>border-box | padding-box | content-box</code> 这3种方式。</p>
+<p>浏览器的默认裁减方式是 <code>border-box</code>，即溢出 <code>border</code> 之外的背景都将被裁减。</p>
+<p>对于上述无法裁减边框之外背景的手机，将值定义为 <code>padding-box | content-box</code> 都能fix这问题，不过更推荐使用 <code>padding-box</code>。因为使用 <code>content-box</code>，如果定义了 <code>padding</code> 不为 <code>0</code>，背景将无法铺满元素。</p>
+<h3 id="一个失败的圆（圆角）"><a href="#一个失败的圆（圆角）" class="headerlink" title="一个失败的圆（圆角）"></a>一个失败的圆（圆角）</h3><p>在移动平台上开发时，用CSS画一个圆很简单，只需要一句代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.circle</span> &#123;</div><div class="line">	<span class="attribute">border-radius</span>: <span class="number">50%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>不过，在 <code>Android Browser2.*</code> 上，这个定义将会失效，而显示为默认的矩形。</p>
+<p>因为 <code>Android Browser2.*</code> 不支持以 <code>百分比</code> 作为 <code>border-radius</code> 的值，所以如果你需要兼容 <code>Android Browser2.*</code>，那么你可以这样：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.circle</span> &#123;</div><div class="line">	<span class="attribute">width</span>: <span class="number">10rem</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">10rem</span>;</div><div class="line">	<span class="attribute">border-radius</span>: <span class="number">5rem</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果你觉得这样定义不够灵活，想懒一点，那么其实可以给 <code>border-radius</code> 预设一个比较大的值，比如 <code>100rem</code>，用以避免当元素的尺寸变了，圆角半径也得跟着变，除非元素的尺寸超出了你预设的阀值。</p>
+<h3 id="不要使用伪元素动画"><a href="#不要使用伪元素动画" class="headerlink" title="不要使用伪元素动画"></a>不要使用伪元素动画</h3><p>有的时候你可能会为了减少页面上的DOM数，而使用伪元素。但如果你想给伪元素增加 <code>animation</code> 或者 <code>transition</code> 动画，这时候会碰上支持性问题。</p>
+<p>如果你的项目需要支持以下系统版本，那么建议直接使用真实元素：</p>
+<ul>
+<li><code>iOS Safari6.1及以下</code></li>
+<li><code>Android Browser4.1.*及以下</code>，包括一些深度定制的系统，比如：<ul>
+<li>魅族 - Flyme OS 4.1.1.1C及以下（比这高的版本尚未测试过）- <strong>咱国产能别这么坑么（安卓版本为4.4.4的魅族MX4 pro）</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="checked与兄弟选择符一起使用的bug"><a href="#checked与兄弟选择符一起使用的bug" class="headerlink" title=":checked与兄弟选择符一起使用的bug"></a>:checked与兄弟选择符一起使用的bug</h3><p>在 <code>Android Browser4.2.*及以下</code>（可能版本稍有出入）（包括坑爹的Flyme），如果你有这样一段代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:checked</span> ~ <span class="selector-class">.test</span> &#123;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#f00</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>那么将无任何效果，如果你想使得上述代码生效，有2种方式：</p>
+<p>第一种，使用 <code>input</code> 和 <code>+</code> 进行激活：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> + <span class="selector-tag">input</span> &#123;&#125;</div><div class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:checked</span> ~ <span class="selector-class">.test</span> &#123;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#f00</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>只要存在 <code>input</code>和 <code>+</code> 选择符配合使用的选择器（空规则集也行）即可使得上述代码激活生效。</p>
+<p>第二种，直接换成 <code>+</code>：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:checked</span> + <span class="selector-class">.test</span> &#123;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#f00</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="为什么flex布局不生效"><a href="#为什么flex布局不生效" class="headerlink" title="为什么flex布局不生效"></a>为什么flex布局不生效</h3><ul>
+<li>使用<a href="http://blog.doyoe.com/2015/03/09/css/%E8%A7%86%E8%A7%89%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%A8%A1%E5%9E%8B%E4%B8%AD%E7%9A%84%E5%90%84%E7%A7%8D%E6%A1%86/#block-level-element" target="_blank" rel="external">块级元素</a>作为 <code>flex items（flex子项）</code>；</li>
+</ul>
+<blockquote>
+<p><code>Android Browser4.3及以下</code>，<code>iOS Safari6.1及以下</code> 的 <code>flex子项</code> 需要使用块级元素，在这些版本之上还可以使用行内块元素</p>
+<p>在这些版本中，如果你发现flex子项之间出现了间隙，或者在未定义换行的情况下子项自身抑或子项之间换行了，或者出现了其它不正常的情况，那么仔细看一下flex子项可能是使用了行内级元素；</p>
+</blockquote>
+<ul>
+<li>当横向布局时，给 <code>flex子项</code> 子项定义 <code>width</code> 为非 <code>auto</code> 的值</li>
+</ul>
+<blockquote>
+<p><code>Android Browser4.3及以下</code>，<code>iOS Safari6.1及以下</code> 的 <code>flex子项</code> 如果没有显式的定义 <code>width</code> 为非 <code>auto</code> 的值，那么子项分配父元素剩余空间时将会不符合标准预期；</p>
+</blockquote>
+<ul>
+<li>当纵向布局时，给 <code>flex子项</code> 子项定义 <code>height</code> 为非 <code>auto</code> 的值</li>
+</ul>
+<blockquote>
+<p><code>Android Browser4.3及以下</code>，<code>iOS Safari6.1及以下</code> 的 <code>flex子项</code> 如果没有显式的定义 <code>height</code> 为非 <code>auto</code> 的值，那么子项分配父元素剩余空间时将会不符合标准预期；</p>
+</blockquote>
+<h3 id="为什么小于12px字号不生效"><a href="#为什么小于12px字号不生效" class="headerlink" title="为什么小于12px字号不生效"></a>为什么小于12px字号不生效</h3><p>如果你是从<code>pc</code>开发转到移动平台的，或者应该记得在<code>pc</code>端，<code>Chrome</code>及后来加入Webkit阵营的<code>Opera</code>都不支持页面字号小于<code>12px</code>，当然你可以通过更改浏览器设置来改变这一情况，然后这并没有什么卵用，不是么？</p>
+<p>不幸的是，在移动端这个限制也依然存在，在<code>Android Chrome</code>上（包括部分版本上的<code>Android Browser</code>），仍然不支持小于12px的字号（测试至Android5.0.2, Chrome46），除此之外，其他浏览器包括iOS上众浏览器都能够很好的支持超小字体。</p>
+<p>所以，如果希望你的程序足够安全，尽量不要定义小于12px的字号，或者换一种方式来实现。</p>
+<blockquote>
+<p>题外话：假设你的项目使用了<code>rem</code>，那么不要使用<code>10</code>作为换算因子，原因也如上</p>
+</blockquote>
+<h3 id="chrome中body使用rem失效"><a href="#chrome中body使用rem失效" class="headerlink" title="chrome中body使用rem失效"></a>chrome中body使用rem失效</h3><p>我知道很多人已经开始使用 <code>rem</code> 作为项目中的单位了。但是遗憾的是，在 <code>Chrome</code> 和 <code>Opera</code> 上，如果我们给 <code>body</code> 元素应用了 <code>rem</code>，那么这个取值将会计算错误。</p>
+<p>假设我们有如下代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">62.5%</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">1.4rem</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>因为大部分浏览器的默认字号都是 <code>16px</code>，所以 <code>html</code> 的字号计算出来应该是 <code>16px * 62.5% = 10px</code>。此时，我们预期 <code>body</code> 的 <code>font-size</code> 为 <code>14px</code>。然而实际情况与我们想象的不太一样，最终 <code>body</code> 的计算值并不是 <code>14px</code>，它忽略了 <code>html</code> 的定义，而是直接使用了浏览器的默认字号作为参照。于是最终计算值为：<code>16px * 1.4rem = 22.4px</code>。测至 <code>chrome 45.0</code> 和 <code>Opera 33.0</code> 仍然存在这个问题，不过 <code>chrome 49.0</code> 和 <code>Opera 37.0</code> 看起来已经被修复了。</p>
+<p>为了有效的绕过这个问题，并且实现相同的效果，我们可以将代码修改如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">62.5%</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">1.4em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>由于 <code>body</code> 是 <code>html</code> 的直接子元素，所以此时对 <code>body</code> 使用 <code>em</code> 与 <code>rem</code> 的效果是相同的。</p>
+<h3 id="不要对html设置百分比字号"><a href="#不要对html设置百分比字号" class="headerlink" title="不要对html设置百分比字号"></a>不要对html设置百分比字号</h3><p>很严肃的和大家说，如果你在使用 <code>rem</code> 这项技术，那么尽可能不要对html设置百分比大小的字号。比如这样的：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">62.5%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>由于大部分浏览器的默认字号是 <code>16px</code>，所以能计算出 <code>html</code> 的字号实际为 <code>10px</code>。我们在 <a href="#user-content-12px">为什么小于12px字号不生效</a> 中说过，部分浏览器会将小于 <code>12px</code> 的字变成 <code>12px</code> 来显示。那么此时，在这些浏览器下，如果我做了这样的定义：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.demo</span> &#123;</div><div class="line">	<span class="attribute">width</span>: <span class="number">10rem</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>你预期得到 <code>10px * 10rem = 100px</code>，但实际上得到的确是 <code>12px * 10rem = 120px</code>。这是非常大的错误，我们应当尽量避免。</p>
+<p>与此同时，虽然大部分浏览器的默认字号是 <code>16px</code>，但仍然有使用其它默认值的浏览器，比如我依稀记得 <code>firefox</code> 使用了 <code>15px</code>。<strong>而且最重要的是，用户是可以改变浏览器默认字号的</strong>，所以你认为的可能并不是你认为的。</p>
+<p>所以不要对html设置百分比字号，尤其是不要对它使用计算值比 <code>12px</code> 小的字号。我推荐大家这样做：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">100px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>以 <code>100px</code> 作为因子，计算也非常方便。如果你想要设置一个元素的宽度是 <code>20px</code>，那么只需要：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.demo</span> &#123;</div><div class="line">	<span class="attribute">width</span>: .<span class="number">2rem</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="功能设置"><a href="#功能设置" class="headerlink" title="功能设置"></a>功能设置</h2><h3 id="禁止保存或拷贝图像"><a href="#禁止保存或拷贝图像" class="headerlink" title="禁止保存或拷贝图像"></a>禁止保存或拷贝图像</h3><p>通常当你在手机或者pad上长按图像 <code>img</code> ，会弹出选项 <code>存储图像</code> 或者 <code>拷贝图像</code>，如果你不想让用户这么操作，那么你可以通过以下方法来禁止：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">img</span> &#123;</div><div class="line">	<span class="attribute">-webkit-touch-callout</span>: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>需要注意的是，该方法只在 <code>iOS</code> 上有效。</p>
+</blockquote>
+<h3 id="取消touch高亮"><a href="#取消touch高亮" class="headerlink" title="取消touch高亮"></a>取消touch高亮</h3><p>在移动设备上，所有设置了伪类 <code>:active</code> 的元素，默认都会在激活状态时，显示高亮框，如果不想要这个高亮，那么你可以通过以下方法来禁止：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.xxx</span> &#123;</div><div class="line">	<span class="attribute">-webkit-tap-highlight-color</span>: <span class="built_in">rgba</span>(0, 0, 0, 0);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="禁止选中内容"><a href="#禁止选中内容" class="headerlink" title="禁止选中内容"></a>禁止选中内容</h3><p>如果你不想用户可以选中页面中的内容，那么你可以禁掉：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123;</div><div class="line">	<span class="attribute">-webkit-user-select</span>: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="快速回弹滚动"><a href="#快速回弹滚动" class="headerlink" title="快速回弹滚动"></a>快速回弹滚动</h3><ol>
+<li>早期的时候，移动端的浏览器都不支持非body元素的滚动条，所以一般都借助 iScroll;</li>
+<li>Android 3.0/iOS解决了非body元素的滚动问题，但滚动条不可见，同时iOS上只能通过2个手指进行滚动；</li>
+<li>Android 4.0解决了滚动条不可见及增加了快速回弹滚动效果，不过随后这个特性又被移除；</li>
+<li>iOS从5.0开始解决了滚动条不可见及增加了快速回弹滚动效果</li>
+</ol>
+<p>在iOS上如果你想让一个元素拥有像 Native 的滚动效果，你可以这样做：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.xxx</span> &#123;</div><div class="line">	<span class="attribute">overflow</span>: auto; <span class="comment">/* auto | scroll */</span></div><div class="line">	<span class="attribute">-webkit-overflow-scrolling</span>: touch; <span class="comment">/* 该规则可能引起iOS UIWebView崩溃 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="设置添加到主屏幕的Web-App标题"><a href="#设置添加到主屏幕的Web-App标题" class="headerlink" title="设置添加到主屏幕的Web App标题"></a>设置添加到主屏幕的Web App标题</h3><p><code>iOS Safari</code> 允许用户将一个网页添加到主屏幕然后像 <code>App</code> 一样来操作它。我们知道每个 <code>App</code> 下方都会有一个名字，<code>iOS Safari</code> 提供了一个私有的 <code>meta</code> 来定义这个名字，代码如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-title"</span> <span class="attr">content</span>=<span class="string">"Web App名称"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<p><code>Android Chrome31.0</code>，<code>Android Browser5.0</code> 也开始支持添加到主屏幕了，但并没有提供相应的定义标题的方式，所以如果你想统一 <code>iOS</code> 和 <code>Android</code> 平台定义 Web app 名称的方式，可以使用 <code>title</code> 标签来定义，代码如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Web App名称<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>但如果你想要网页标题和App名字不一样的话，那就只有iOS才行。</p>
+<h3 id="设置添加到主屏幕的Web-App图标"><a href="#设置添加到主屏幕的Web-App图标" class="headerlink" title="设置添加到主屏幕的Web App图标"></a>设置添加到主屏幕的Web App图标</h3><p>当我们将一个网页添加到主屏幕时，除了会需要设置标题之外，肯定还需要能够自定义这个App的图标，代码如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-icon"</span> <span class="attr">href</span>=<span class="string">"app.png"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<p>不过该方案，在拟物设计的 <code>iOS6及以前</code> 会自动为图标添加一层高光效果，<code>iOS7</code> 已使用了扁平化设计，所以如果使用该方案，在不同版本下得到的效果会不一致。</p>
+<p>当然，你也可以使用原图作为App的图标，用以保持各平台表现一致，代码如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-icon-precomposed"</span> <span class="attr">href</span>=<span class="string">"app.png"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<p>如果你想给不同的设备定不同的图标，可以通过 <code>sizes</code> 属性来定义，形如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-icon"</span> <span class="attr">sizes</span>=<span class="string">"76x76"</span> <span class="attr">href</span>=<span class="string">"ipad.png@1x"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-icon"</span> <span class="attr">sizes</span>=<span class="string">"120x120"</span> <span class="attr">href</span>=<span class="string">"iphone-retina@2x.png"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-icon"</span> <span class="attr">sizes</span>=<span class="string">"152x152"</span> <span class="attr">href</span>=<span class="string">"ipad-retina@2x.png"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-icon"</span> <span class="attr">sizes</span>=<span class="string">"180x180"</span> <span class="attr">href</span>=<span class="string">"iphone-retina@3x.png"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<p>规则如下：</p>
+<ul>
+<li>如果没有跟相应设备推荐尺寸一致的图标，会优先选择比推荐尺寸大并且最接近推荐尺寸的图标。</li>
+<li>如果没有比推荐尺寸大的图标，会优先选择最接近推荐尺寸的图标。</li>
+<li>如果有多个图标符合推荐尺寸，会优先选择包含关键字precomposed的图标。</li>
+</ul>
+<p>实际情况下，大部分智能手机都接近或者已经达到视网膜屏质量，所以如果想省事的话，可以分别为 <code>iPhone</code> 和 <code>iPad</code> 定义一种高质量的 <code>icon</code> 即可。</p>
+<p>该方案在 <code>iOS</code> 和 <code>Android5.0+</code> 上都通用。</p>
+<h3 id="添加到主屏幕时隐藏地址栏和状态栏（即全屏）"><a href="#添加到主屏幕时隐藏地址栏和状态栏（即全屏）" class="headerlink" title="添加到主屏幕时隐藏地址栏和状态栏（即全屏）"></a>添加到主屏幕时隐藏地址栏和状态栏（即全屏）</h3><p>当我们将一个网页添加到主屏幕时，会更希望它能有像 <code>App</code> 一样的表现，没有地址栏和状态栏全屏显示，代码如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-capable"</span> <span class="attr">content</span>=<span class="string">"yes"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<p>该方案在 <code>iOS</code> 和 <code>Android5.0+</code> 上都通用。</p>
+<h3 id="添加到主屏幕时设置系统顶栏颜色"><a href="#添加到主屏幕时设置系统顶栏颜色" class="headerlink" title="添加到主屏幕时设置系统顶栏颜色"></a>添加到主屏幕时设置系统顶栏颜色</h3><p>当我们将一个网页添加到主屏幕时，还可以对 <code>系统显示手机信号、时间、电池的顶部状态栏</code> 颜色进行设置，前提是开启了：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-capable"</span> <span class="attr">content</span>=<span class="string">"yes"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<p>有了这个前提，你可以通过下面的方式来进行定义：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-status-bar-style"</span> <span class="attr">content</span>=<span class="string">"black"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<p>content只有3个固定值可选：default | black | black-translucent</p>
+<ul>
+<li>如果设置为 <code>default</code>，状态栏将为正常的，即白色，网页从状态栏以下开始显示；</li>
+<li>如果设置为 <code>black</code>，状态栏将为黑色，网页从状态栏以下开始显示；</li>
+<li>如果设置为 <code>black-translucent</code>，状态栏将为灰色半透明，网页将充满整个屏幕，状态栏会盖在网页之上；</li>
+</ul>
+<p>该设置只在 <code>iOS</code> 上有效。</p>
+<h3 id="电话号码识别"><a href="#电话号码识别" class="headerlink" title="电话号码识别"></a>电话号码识别</h3><p>在 <code>iOS Safari</code> （其他浏览器和Android均不会）上会对那些看起来像是电话号码的数字处理为电话链接，比如：</p>
+<ul>
+<li>7位数字，形如：1234567</li>
+<li>带括号及加号的数字，形如：(+86)123456789</li>
+<li>双连接线的数字，形如：00-00-00111</li>
+<li>11位数字，形如：13800138000</li>
+</ul>
+<p>可能还有其他类型的数字也会被识别，但在具体的业务场景中，有些时候这是不必须的，所以你可以关闭电话自动识别，然后在需要拨号的地方，开启电话呼出和短信功能。</p>
+<ol>
+<li>关闭电话号码识别：</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"format-detection"</span> <span class="attr">content</span>=<span class="string">"telephone=no"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<ol>
+<li>开启拨打电话功能：</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"tel:123456"</span>&gt;</span>123456<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<ol>
+<li>开启发送短信功能：</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"sms:123456"</span>&gt;</span>123456<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="邮箱地址识别"><a href="#邮箱地址识别" class="headerlink" title="邮箱地址识别"></a>邮箱地址识别</h3><p>在 <code>Android</code> （iOS不会）上，浏览器会自动识别看起来像邮箱地址的字符串，不论有你没有加上邮箱链接，当你在这个字符串上长按，会弹出发邮件的提示。</p>
+<ol>
+<li>关闭邮箱地址识别：</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"format-detection"</span> <span class="attr">content</span>=<span class="string">"email=no"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<ol>
+<li>开启邮件发送：</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"mailto:dooyoe@gmail.com"</span>&gt;</span>dooyoe@gmail.com<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>如果想同时关闭电话和邮箱识别，可以把它们写到一条 meta 内，代码如下：</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"format-detection"</span> <span class="attr">content</span>=<span class="string">"telephone=no,email=no"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="关闭iOS键盘首字母自动大写"><a href="#关闭iOS键盘首字母自动大写" class="headerlink" title="关闭iOS键盘首字母自动大写"></a>关闭iOS键盘首字母自动大写</h3><p>在iOS中，默认情况下键盘是开启首字母大写的功能的，如果业务不想出现首字母大写，可以这样：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">autocapitalize</span>=<span class="string">"off"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="关闭iOS输入自动修正"><a href="#关闭iOS输入自动修正" class="headerlink" title="关闭iOS输入自动修正"></a>关闭iOS输入自动修正</h3><p>在iOS中，默认输入法会开启自动修正输入内容的功能，如果不需要的话，可以这样：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">autocorrect</span>=<span class="string">"off"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="禁止文本缩放"><a href="#禁止文本缩放" class="headerlink" title="禁止文本缩放"></a>禁止文本缩放</h3><p>当移动设备横竖屏切换时，文本的大小会重新计算，进行相应的缩放，当我们不需要这种情况时，可以选择禁止：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123;</div><div class="line">	<span class="attribute">-webkit-text-size-adjust</span>: <span class="number">100%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>需要注意的是，PC端的该属性已经被移除，该属性在移动端要生效，必须设置 `meta viewport’</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>    
+     
+     
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+              <strong>本文作者：</strong>winter
+          </li>
+          <li class="post-copyright-link">
+            <strong>本文链接：</strong>
+            <a href="/2017/09/18/移动端兼容性及部分功能设置/" title="移动端兼容性及部分功能设置">http://gwem.tk/2017/09/18/移动端兼容性及部分功能设置/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>版权声明： </strong>
+            本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+          </li>
+        </ul>
+      
+    </div>  
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat.png" alt="winter WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/ali.jpg" alt="winter Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/wap/" rel="tag"># wap</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/02/Travel-2/" rel="next" title="Travel-2">
+                <i class="fa fa-chevron-left"></i> Travel-2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/touxiang.jpg"
+               alt="winter" />
+          <p class="site-author-name" itemprop="name">winter</p>
+           
+              <p class="site-description motion-element" itemprop="description">Some things are so important that they force us to overcome our fears.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">38</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Gwemz" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/gwemz" target="_blank" title="Coding">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  Coding
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概要"><span class="nav-number">1.</span> <span class="nav-text">概要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#适用"><span class="nav-number">2.</span> <span class="nav-text">适用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#兼容性"><span class="nav-number">3.</span> <span class="nav-text">兼容性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS伪类-active"><span class="nav-number">3.1.</span> <span class="nav-text">CSS伪类:active</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清除输入框内阴影"><span class="nav-number">3.2.</span> <span class="nav-text">清除输入框内阴影</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修正iOS输入框禁用文本色"><span class="nav-number">3.3.</span> <span class="nav-text">修正iOS输入框禁用文本色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Samsung-S4圆角Bug"><span class="nav-number">3.4.</span> <span class="nav-text">Samsung S4圆角Bug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#边框圆角致背景溢出"><span class="nav-number">3.5.</span> <span class="nav-text">边框圆角致背景溢出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一个失败的圆（圆角）"><span class="nav-number">3.6.</span> <span class="nav-text">一个失败的圆（圆角）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不要使用伪元素动画"><span class="nav-number">3.7.</span> <span class="nav-text">不要使用伪元素动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#checked与兄弟选择符一起使用的bug"><span class="nav-number">3.8.</span> <span class="nav-text">:checked与兄弟选择符一起使用的bug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么flex布局不生效"><span class="nav-number">3.9.</span> <span class="nav-text">为什么flex布局不生效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么小于12px字号不生效"><span class="nav-number">3.10.</span> <span class="nav-text">为什么小于12px字号不生效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chrome中body使用rem失效"><span class="nav-number">3.11.</span> <span class="nav-text">chrome中body使用rem失效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不要对html设置百分比字号"><span class="nav-number">3.12.</span> <span class="nav-text">不要对html设置百分比字号</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#功能设置"><span class="nav-number">4.</span> <span class="nav-text">功能设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#禁止保存或拷贝图像"><span class="nav-number">4.1.</span> <span class="nav-text">禁止保存或拷贝图像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#取消touch高亮"><span class="nav-number">4.2.</span> <span class="nav-text">取消touch高亮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#禁止选中内容"><span class="nav-number">4.3.</span> <span class="nav-text">禁止选中内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速回弹滚动"><span class="nav-number">4.4.</span> <span class="nav-text">快速回弹滚动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置添加到主屏幕的Web-App标题"><span class="nav-number">4.5.</span> <span class="nav-text">设置添加到主屏幕的Web App标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置添加到主屏幕的Web-App图标"><span class="nav-number">4.6.</span> <span class="nav-text">设置添加到主屏幕的Web App图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加到主屏幕时隐藏地址栏和状态栏（即全屏）"><span class="nav-number">4.7.</span> <span class="nav-text">添加到主屏幕时隐藏地址栏和状态栏（即全屏）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加到主屏幕时设置系统顶栏颜色"><span class="nav-number">4.8.</span> <span class="nav-text">添加到主屏幕时设置系统顶栏颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#电话号码识别"><span class="nav-number">4.9.</span> <span class="nav-text">电话号码识别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#邮箱地址识别"><span class="nav-number">4.10.</span> <span class="nav-text">邮箱地址识别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭iOS键盘首字母自动大写"><span class="nav-number">4.11.</span> <span class="nav-text">关闭iOS键盘首字母自动大写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭iOS输入自动修正"><span class="nav-number">4.12.</span> <span class="nav-text">关闭iOS输入自动修正</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#禁止文本缩放"><span class="nav-number">4.13.</span> <span class="nav-text">禁止文本缩放</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">winter</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2139708"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("zrWfpR4RvFok6hW2p6mmj5PF-gzGzoHsz", "4er8qgeqe0KtvldK3HYyGSB0");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
