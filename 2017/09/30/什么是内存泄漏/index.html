@@ -1,0 +1,985 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="javascript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="前言明天就是国庆节，各位小伙伴是不是很兴奋？尤其对程序员而言，能够有一段时间不需要考虑项目bug，想想都觉得不错。近来项目比较赶，加班加点码代码，改需求，但是不可避免的还是码出了新的bug，先就最近一段时间的工作谈谈自己的一些体会…… 在项目评审阶段，产品提出了需要做A、B测试？What?什么是A、B测试，好吧，其实就是一个功能的两种不同版本，需求是希望用户能够随机的切换两种不同版本，进而对不同版">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么是内存泄漏?">
+<meta property="og:url" content="http://yoursite.com/2017/09/30/什么是内存泄漏/index.html">
+<meta property="og:site_name" content="winter blog">
+<meta property="og:description" content="前言明天就是国庆节，各位小伙伴是不是很兴奋？尤其对程序员而言，能够有一段时间不需要考虑项目bug，想想都觉得不错。近来项目比较赶，加班加点码代码，改需求，但是不可避免的还是码出了新的bug，先就最近一段时间的工作谈谈自己的一些体会…… 在项目评审阶段，产品提出了需要做A、B测试？What?什么是A、B测试，好吧，其实就是一个功能的两种不同版本，需求是希望用户能够随机的切换两种不同版本，进而对不同版">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2017/bg2017041701-1.png">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2017/bg2017041703.png">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2017/bg2017041704.png">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2017/bg2017041705.png">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2017/bg2017041706.png">
+<meta property="og:updated_time" content="2017-09-29T17:33:55.683Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="什么是内存泄漏?">
+<meta name="twitter:description" content="前言明天就是国庆节，各位小伙伴是不是很兴奋？尤其对程序员而言，能够有一段时间不需要考虑项目bug，想想都觉得不错。近来项目比较赶，加班加点码代码，改需求，但是不可避免的还是码出了新的bug，先就最近一段时间的工作谈谈自己的一些体会…… 在项目评审阶段，产品提出了需要做A、B测试？What?什么是A、B测试，好吧，其实就是一个功能的两种不同版本，需求是希望用户能够随机的切换两种不同版本，进而对不同版">
+<meta name="twitter:image" content="http://www.ruanyifeng.com/blogimg/asset/2017/bg2017041701-1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/30/什么是内存泄漏/"/>
+
+
+
+
+
+  <title>什么是内存泄漏? | winter blog</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7117e1fef39f18ac2431859dffdda945";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">winter blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/30/什么是内存泄漏/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="winter">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="winter blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">什么是内存泄漏?</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-30T00:18:18+08:00">
+                2017-09-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/09/30/什么是内存泄漏/" class="leancloud_visitors" data-flag-title="什么是内存泄漏?">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>明天就是国庆节，各位小伙伴是不是很兴奋？尤其对程序员而言，能够有一段时间不需要考虑项目bug，想想都觉得不错。近来项目比较赶，加班加点码代码，改需求，但是不可避免的还是码出了新的bug，先就最近一段时间的工作谈谈自己的一些体会……</p>
+<p>在项目评审阶段，产品提出了需要做A、B测试？What?什么是A、B测试，好吧，其实就是一个功能的两种不同版本，需求是希望用户能够随机的切换两种不同版本，进而对不同版本的数据做统计。于是考虑再三之后选择了通过cookie来实现两种不同版本的切换，实现思路：判断客户端是否存在对应类型的cookie，若存在，则通过存在类型的cookie值来显示相应的版本，若不存在，则随机生成一个cookie:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">if($.cookie(&apos;class&apos;))&#123;</div><div class="line"></div><div class="line">&#125;else&#123;</div><div class="line">  if(Math.random()&lt;0.5)&#123;</div><div class="line">         $.cookie(&apos;class&apos;,&apos;A&apos;);</div><div class="line">     &#125;else&#123;</div><div class="line">        $.cookie(&apos;class&apos;,&apos;B&apos;);</div><div class="line">     &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">if($.cookie(&apos;class&apos;) == &apos;A&apos;)&#123;</div><div class="line">   展示A版本信息</div><div class="line">&#125;else&#123;</div><div class="line">   展示B版本信息</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>紧接着，有一个需求是希望能够实现PC和移动端拖拽进度条的功能(PC端需要兼容到IE7)，我们所知道PC端鼠标拖拽用到了<code>onmousedown</code>、<code>onmousemove</code>和<code>onmouseup</code>事件，而移动端显然无法用相同的事件，最后选择了利用Html5的触摸事件，<code>ontouchstart</code>、<code>ontouchmove</code>、<code>ontouchend</code>，<code>PC</code>和<code>WAP</code>端的实现思路：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">PC 端：</div><div class="line">var scale = function (btn,bar,title)&#123;</div><div class="line">    this.btn=document.getElementById(btn);</div><div class="line">    this.bar=document.getElementById(bar);</div><div class="line">    this.title=document.getElementById(title);</div><div class="line">    this.step=this.bar.getElementsByTagName(&quot;div&quot;)[0];</div><div class="line">    this.init();</div><div class="line">&#125;;</div><div class="line">scale.prototype=&#123;</div><div class="line">    init:function ()&#123;</div><div class="line">        var f=this,g=document,b=window,m=Math;</div><div class="line">        f.btn.onmousedown=function (e)&#123;</div><div class="line">            var x=(e||b.event).clientX;</div><div class="line">            var l=this.offsetLeft;</div><div class="line">            var max=f.bar.offsetWidth-this.offsetWidth;</div><div class="line">            g.onmousemove=function (e)&#123;</div><div class="line">                var thisX=(e||b.event).clientX;</div><div class="line">                var to=m.min(max,m.max(0,l+(thisX-x)));</div><div class="line">                f.btn.style.left=to+&apos;px&apos;;</div><div class="line">                f.ondrag(m.round(m.max(0,to/max)*100),to);</div><div class="line">                b.getSelection ? b.getSelection().removeAllRanges() : g.selection.empty();</div><div class="line">            &#125;;</div><div class="line">            g.onmouseup=new Function(&apos;this.onmousemove=null&apos;);</div><div class="line">        &#125;;</div><div class="line">    &#125;,</div><div class="line">    ondrag:function (pos,x)&#123;</div><div class="line">        this.step.style.width=(Math.max(0,x)+15)+&apos;px&apos;;</div><div class="line">        this.title.innerHTML=pos+&apos;%&apos;;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">new scale(&apos;btn&apos;,&apos;progress&apos;,&apos;title&apos;);</div><div class="line"></div><div class="line">Wap端：</div><div class="line">var start,end,s,btn1_width;</div><div class="line">btn1_width = $(&apos;.btn1&apos;).width()/2;</div><div class="line">$(&apos;.btn1&apos;).on(&apos;touchstart&apos;, function (e) &#123;</div><div class="line">    var start = parseInt(e.originalEvent.changedTouches[0].pageX);</div><div class="line">    s = parseInt($(this).css(&quot;left&quot;));</div><div class="line">    $(document).on(&quot;touchmove&quot;, function (e) &#123;</div><div class="line">        end = parseInt(e.originalEvent.changedTouches[0].pageX);</div><div class="line">        var width = $(&apos;.progress1&apos;).width();</div><div class="line">        var move = end - start;</div><div class="line">        localStorage.progress = s + move;</div><div class="line">        if ((s + move) &gt; 0 &amp;&amp; (s + move) &lt; width) &#123;</div><div class="line">            $(&apos;.btn1&apos;).css(&#123;left: s + move  + &quot;px&quot;&#125;);</div><div class="line">            $(&quot;.pro_act1&quot;).css(&#123;width: s + move + btn1_width + &apos;px&apos;&#125;);</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">$(&quot;.btn1&quot;).on(&quot;touchend&quot;, function (e) &#123;</div><div class="line">    $(this).off(&quot;touchmove&quot;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>当然，实现这样的业务代码，无论如何都有前人的方法可以去借鉴，那么在开发过程中，其实比起业务逻辑更为麻烦的事我认为是在前人的基础上做开发，不知不觉就码出了新的bug，因为你所修改的内容有些深层次的含义你没办法面面俱到的都想到，不知不觉就制造出了新的bug，然后就开始了改bug的’美好时光’……</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>书归正传，什么是内存泄漏？我们该如何解决内存泄漏？这个在我们码代码的过程中可能不知不觉就会产生的问题？</p>
+<h3 id="什么是内存泄漏？"><a href="#什么是内存泄漏？" class="headerlink" title="什么是内存泄漏？"></a>什么是内存泄漏？</h3><p>程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。</p>
+<p>对于持续运行的服务进程（daemon），必须及时释放不再用到的内存。否则，内存占用越来越高，轻则影响系统性能，重则导致进程崩溃。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2017/bg2017041701-1.png" alt=""></p>
+<p>不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）。</p>
+<p>大多数语言提供自动内存管理，减轻程序员的负担，这被称为”垃圾回收机制”（garbage collector）</p>
+<h3 id="垃圾回收机制"><a href="#垃圾回收机制" class="headerlink" title="垃圾回收机制"></a>垃圾回收机制</h3><p>垃圾回收机制怎么知道，哪些内存不再需要呢？</p>
+<p>最常使用的方法叫做”引用计数”（reference counting）：语言引擎有一张”引用表”，保存了内存里面所有的资源（通常是各种值）的引用次数。如果一个值的引用次数是0，就表示这个值不再用到了，因此可以将这块内存释放。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2017/bg2017041703.png" alt=""></p>
+<p>上图中，左下角的两个值，没有任何引用，所以可以释放。</p>
+<p>如果一个值不再需要了，引用数却不为0，垃圾回收机制无法释放这块内存，从而导致内存泄漏。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">const arr = [1, 2, 3, 4];</div><div class="line">console.log(&apos;hello world&apos;);</div></pre></td></tr></table></figure>
+<p>上面代码中，数组[1, 2, 3, 4]是一个值，会占用内存。变量arr是仅有的对这个值的引用，因此引用次数为1。尽管后面的代码没有用到arr，它还是会持续占用内存。</p>
+<p>如果增加一行代码，解除arr对[1, 2, 3, 4]引用，这块内存就可以被垃圾回收机制释放了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let arr = [1, 2, 3, 4];</div><div class="line">console.log(&apos;hello world&apos;);</div><div class="line">arr = null;</div></pre></td></tr></table></figure>
+<p>上面代码中，arr重置为null，就解除了对[1, 2, 3, 4]的引用，引用次数变成了0，内存就可以释放出来了。</p>
+<p>因此，并不是说有了垃圾回收机制，程序员就轻松了。你还是需要关注内存占用：那些很占空间的值，一旦不再用到，你必须检查是否还存在对它们的引用。如果是的话，就必须手动解除引用。</p>
+<h3 id="内存泄漏的识别方法"><a href="#内存泄漏的识别方法" class="headerlink" title="内存泄漏的识别方法"></a>内存泄漏的识别方法</h3><p>怎样可以观察到内存泄漏呢？</p>
+<p>经验法则是，如果连续五次垃圾回收之后，内存占用一次比一次大，就有内存泄漏。这就要求实时查看内存占用。</p>
+<h4 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h4><p>Chrome 浏览器查看内存占用，按照以下步骤操作。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2017/bg2017041704.png" alt=""></p>
+<ul>
+<li>打开开发者工具，选择 Timeline 面板</li>
+<li>在顶部的Capture字段里面勾选 Memory</li>
+<li>点击左上角的录制按钮。</li>
+<li>在页面上进行各种操作，模拟用户的使用情况。</li>
+<li>一段时间后，点击对话框的 stop 按钮，面板上就会显示这段时间的内存占用情况。</li>
+</ul>
+<p>如果内存占用基本平稳，接近水平，就说明不存在内存泄漏。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2017/bg2017041705.png" alt=""></p>
+<p>反之，就是内存泄漏了。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2017/bg2017041706.png" alt=""></p>
+<h3 id="WeakMap"><a href="#WeakMap" class="headerlink" title="WeakMap"></a>WeakMap</h3><p>前面说过，及时清除引用非常重要。但是，你不可能记得那么多，有时候一疏忽就忘了，所以才有那么多内存泄漏。</p>
+<p>最好能有一种方法，在新建引用的时候就声明，哪些引用必须手动清除，哪些引用可以忽略不计，当其他引用消失以后，垃圾回收机制就可以释放内存。这样就能大大减轻程序员的负担，你只要清除主要引用就可以了。</p>
+<p>ES6 考虑到了这一点，推出了两种新的数据结构：WeakSet 和 WeakMap。它们对于值的引用都是不计入垃圾回收机制的，所以名字里面才会有一个”Weak”，表示这是弱引用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">const wm = new WeakMap();</div><div class="line"></div><div class="line">const element = document.getElementById(&apos;example&apos;);</div><div class="line"></div><div class="line">wm.set(element, &apos;some information&apos;);</div><div class="line">wm.get(element) // &quot;some information&quot;</div></pre></td></tr></table></figure>
+<p>上面代码中，先新建一个 Weakmap 实例。然后，将一个 DOM 节点作为键名存入该实例，并将一些附加信息作为键值，一起存放在 WeakMap 里面。这时，WeakMap 里面对element的引用就是弱引用，不会被计入垃圾回收机制。</p>
+<p>也就是说，DOM 节点对象的引用计数是1，而不是2。这时，一旦消除对该节点的引用，它占用的内存就会被垃圾回收机制释放。Weakmap 保存的这个键值对，也会自动消失。</p>
+<p>基本上，如果你要往对象上添加数据，又不想干扰垃圾回收机制，就可以使用 WeakMap。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>生命不息，改bug不止…<br><a href="http://www.ruanyifeng.com/blog/2017/04/memory-leak.html" target="_blank" rel="external">参考文章：JavaScript 内存泄漏教程 - 阮一峰的网络日志</a></p>
+
+      
+    </div>
+
+    <div>    
+     
+     
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+              <strong>本文作者：</strong>winter
+          </li>
+          <li class="post-copyright-link">
+            <strong>本文链接：</strong>
+            <a href="/2017/09/30/什么是内存泄漏/" title="什么是内存泄漏?">http://gwem.tk/2017/09/30/什么是内存泄漏/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>版权声明： </strong>
+            本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+          </li>
+        </ul>
+      
+    </div>  
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat.png" alt="winter WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/ali.jpg" alt="winter Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/18/移动端兼容性及部分功能设置/" rel="next" title="移动端兼容性及部分功能设置">
+                <i class="fa fa-chevron-left"></i> 移动端兼容性及部分功能设置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/touxiang.jpg"
+               alt="winter" />
+          <p class="site-author-name" itemprop="name">winter</p>
+           
+              <p class="site-description motion-element" itemprop="description">Some things are so important that they force us to overcome our fears.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Gwemz" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/gwemz" target="_blank" title="Coding">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  Coding
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是内存泄漏？"><span class="nav-number">2.1.</span> <span class="nav-text">什么是内存泄漏？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#垃圾回收机制"><span class="nav-number">2.2.</span> <span class="nav-text">垃圾回收机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存泄漏的识别方法"><span class="nav-number">2.3.</span> <span class="nav-text">内存泄漏的识别方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器"><span class="nav-number">2.3.1.</span> <span class="nav-text">浏览器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WeakMap"><span class="nav-number">2.4.</span> <span class="nav-text">WeakMap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">3.</span> <span class="nav-text">结语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">winter</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2139708"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("zrWfpR4RvFok6hW2p6mmj5PF-gzGzoHsz", "4er8qgeqe0KtvldK3HYyGSB0");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
