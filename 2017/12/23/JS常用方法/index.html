@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/12/23/JS常用方法/index.html">
 <meta property="og:site_name" content="winter blog">
 <meta property="og:description" content="前言看过不少技术博客文章，总能看到一句话，输出便是最好的输入。要想更好的掌握一门语言，要学会不断地去输出东西，这样才会增加更多的记忆点。当然这个过程可能比较耗费时间。 既然标签是javascript，那我就顺带提提这门语言，由最初的一门脚本语言，但现在越来越多领域应用到了它，未来可能一个应用全部由javascript构建完成。很多人疯狂的游走于各个语言的学习之中，但是否真正掌握了一门语言？听过一句">
-<meta property="og:updated_time" content="2017-12-23T15:32:45.932Z">
+<meta property="og:updated_time" content="2017-12-24T08:55:11.504Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS常用方法">
 <meta name="twitter:description" content="前言看过不少技术博客文章，总能看到一句话，输出便是最好的输入。要想更好的掌握一门语言，要学会不断地去输出东西，这样才会增加更多的记忆点。当然这个过程可能比较耗费时间。 既然标签是javascript，那我就顺带提提这门语言，由最初的一门脚本语言，但现在越来越多领域应用到了它，未来可能一个应用全部由javascript构建完成。很多人疯狂的游走于各个语言的学习之中，但是否真正掌握了一门语言？听过一句">
@@ -354,7 +354,42 @@
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>看过不少技术博客文章，总能看到一句话，输出便是最好的输入。要想更好的掌握一门语言，要学会不断地去输出东西，这样才会增加更多的记忆点。当然这个过程可能比较耗费时间。</p>
 <p>既然标签是javascript，那我就顺带提提这门语言，由最初的一门脚本语言，但现在越来越多领域应用到了它，未来可能一个应用全部由javascript构建完成。很多人疯狂的游走于各个语言的学习之中，但是否真正掌握了一门语言？听过一句话，如果连一门语言也写不好的话，那么其他语言你一定写不好，我们在拓展广度的同时是否真正对它进行了深度的扩展？</p>
-<p>近来项目比较紧张，一个接一个</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h4 id="JavaScript数据强制转换"><a href="#JavaScript数据强制转换" class="headerlink" title="JavaScript数据强制转换"></a>JavaScript数据强制转换</h4><ul>
+<li><code>Number()</code>   转换成数值类型</li>
+<li><code>String()</code>   转换成字符串类型</li>
+<li><code>Boolean()</code>  转换成布尔类型</li>
+<li><code>parseInt()</code> 将字符型转换为整形</li>
+<li><code>parseFloat()</code>  转换为浮点型</li>
+</ul>
+<h4 id="JavaScript数组对象"><a href="#JavaScript数组对象" class="headerlink" title="JavaScript数组对象"></a>JavaScript数组对象</h4><ul>
+<li><code>arr.push(数组元素...)</code>  向数组的末尾添加新的元素，返回值是新数组的长度。可以一次添加多个元素。</li>
+<li><code>arr.unshift(数组元素...)</code>  向数组的开头添加新的元素，返回值是新数组的长度。可以一次添加多个元素。</li>
+<li><code>arr.pop()</code>  删除数组的最后一个元素，返回删除的元素。</li>
+<li><code>arr.shift()</code>  删除数组的第一个元素，返回删除的元素。</li>
+<li><code>arr.splice(index,数量,添加的元素...)</code>  index：从何处开始添加/删除   数量：规定删除的个数，如果是0，则不删除  需要添加的元素，可以当做替换的元素  若从arr中删除了元素，则返回的是含有被删除元素的数组。</li>
+<li><code>arr.split()</code>   字符串分割为数组</li>
+<li><code>arr.join([分隔符])</code>  把数组元素按照指定分隔符组合成一个字符串，如果没有指定分隔符，默认是用’,’</li>
+<li><code>arr.slice()</code>  从截取指定的开始位置，到结束位置(不包括)的元素。如果不指定结束位置，则从指定的开始位置截取到结尾。 支持负数(-1)，返回新数组。</li>
+<li><code>arr.concat()</code>  数组的连接，连接两个或更多的数组，并返回新数组，但是对原数组没有任何影响。</li>
+<li><code>arr.sort(fun)</code>  数组的排序，默认是按照字符编码的顺序进行排序。如果要实现其它排序规则，则要传入一个参数。(a<b,a>b,a=b) 后续研究下</b,a></li>
+</ul>
+<h4 id="JavaScript字符串对象"><a href="#JavaScript字符串对象" class="headerlink" title="JavaScript字符串对象"></a>JavaScript字符串对象</h4><ul>
+<li><code>str.charAt(num)</code>  返回在指定位置的字符</li>
+<li><code>str.charCodeAt(num)</code>   返回指定位置字符的Unicode编码</li>
+<li><code>str.fromCharCode()</code>  接收一个或多个指定的Unicode值，然后返回一个或多个字符串(var n = String.fromCharCode(99);)</li>
+<li><code>str.indexOf(&quot;&quot;)</code>   返回某个指定字符串，在字符串中首次出现的位置</li>
+<li><code>str.lastIndexOf(&quot;&quot;)</code>  返回指定的字符串最后出现的位置</li>
+<li><code>str.match()</code>  在字符串中检索指定的值，返回的值就是指定的值</li>
+<li><code>str.search()</code>  只能用于正则</li>
+<li><code>str.replace()</code>  将字符串中的一些字符替换为另外一些字符。</li>
+<li><code>str.slice()</code>   从指定的开始位置，到结束位置(不包括)的所有字符串。如果不指定结束位置，则从指定的开始位置，取到结尾。slice参数可以是负数</li>
+<li><code>str.substring(start,end)</code>   从指定的开始位置，到结束位置(不包括)的所有字符串。如果不指定结束位置，则从 指定的开始位置，取到结尾</li>
+<li><code>str.substr(start,length)</code>   从指定的位置开始取指定长度的字符串。如果没有指定长度，从指定开始的位置取到结尾。</li>
+<li><code>str.split(&quot;分割位置&quot;,[指定的长度])</code>  将一个字符串分割成数组</li>
+<li><code>str.toLowerCase()</code>    用于把字符串转换为小写</li>
+<li><code>str.toUpperCase()</code>    用于把字符串换位大写</li>
+</ul>
+<h4 id="JavaScript-Math对象"><a href="#JavaScript-Math对象" class="headerlink" title="JavaScript　Math对象"></a>JavaScript　Math对象</h4><h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>很多方法比较常用，但是在学的时候并没有太多感触，所以，应用是最好的学习方式。<br>未完待续…</p>
 
       
     </div>
@@ -628,7 +663,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript数据强制转换"><span class="nav-number">2.0.1.</span> <span class="nav-text">JavaScript数据强制转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript数组对象"><span class="nav-number">2.0.2.</span> <span class="nav-text">JavaScript数组对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript字符串对象"><span class="nav-number">2.0.3.</span> <span class="nav-text">JavaScript字符串对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript-Math对象"><span class="nav-number">2.0.4.</span> <span class="nav-text">JavaScript　Math对象</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结尾"><span class="nav-number">3.</span> <span class="nav-text">结尾</span></a></li></ol></div>
             
 
           </div>
