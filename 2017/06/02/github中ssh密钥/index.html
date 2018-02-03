@@ -93,22 +93,22 @@
 
 
 
-<meta name="description" content="github中ssh密钥的生成（如何不用输密码同github交互）使用git Bash  by winter on 2017/5/21 1. 查看SSH keys是否存在打开git Brash界面–》输入 ssh 如果出现如下界面，代表SSH keys存在  2. 生成新的ssh key在命令行中输入ssh-keygen -t rsa -C &amp;quot;3396543978@qq.com&amp;quot">
+<meta name="description" content="github中ssh密钥的生成（如何不用输密码同github交互）使用git Bash  by winter on 2017/5/21 1. 查看SSH keys是否存在打开git Brash界面–》输入 ssh 如果出现如下界面，代表SSH keys存在  2. 设置 username 和 email，添加远程地址 3. 生成新的ssh key在命令行中输入ssh-keygen -t rsa -">
 <meta name="keywords" content="ssh">
 <meta property="og:type" content="article">
 <meta property="og:title" content="github中ssh密钥的生成">
 <meta property="og:url" content="http://yoursite.com/2017/06/02/github中ssh密钥/index.html">
 <meta property="og:site_name" content="winter blog">
-<meta property="og:description" content="github中ssh密钥的生成（如何不用输密码同github交互）使用git Bash  by winter on 2017/5/21 1. 查看SSH keys是否存在打开git Brash界面–》输入 ssh 如果出现如下界面，代表SSH keys存在  2. 生成新的ssh key在命令行中输入ssh-keygen -t rsa -C &amp;quot;3396543978@qq.com&amp;quot">
+<meta property="og:description" content="github中ssh密钥的生成（如何不用输密码同github交互）使用git Bash  by winter on 2017/5/21 1. 查看SSH keys是否存在打开git Brash界面–》输入 ssh 如果出现如下界面，代表SSH keys存在  2. 设置 username 和 email，添加远程地址 3. 生成新的ssh key在命令行中输入ssh-keygen -t rsa -">
 <meta property="og:image" content="http://yoursite.com/images/010-e55e0343.png">
+<meta property="og:image" content="http://yoursite.com/images/010-980277aa.png">
 <meta property="og:image" content="http://yoursite.com/images/010-b7565b9a.png">
 <meta property="og:image" content="http://yoursite.com/images/010-81e4590a.png">
-<meta property="og:image" content="http://yoursite.com/images/010-980277aa.png">
 <meta property="og:image" content="http://yoursite.com/images/010-26d69fab.png">
-<meta property="og:updated_time" content="2017-06-02T17:22:42.422Z">
+<meta property="og:updated_time" content="2018-02-03T06:03:55.584Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="github中ssh密钥的生成">
-<meta name="twitter:description" content="github中ssh密钥的生成（如何不用输密码同github交互）使用git Bash  by winter on 2017/5/21 1. 查看SSH keys是否存在打开git Brash界面–》输入 ssh 如果出现如下界面，代表SSH keys存在  2. 生成新的ssh key在命令行中输入ssh-keygen -t rsa -C &amp;quot;3396543978@qq.com&amp;quot">
+<meta name="twitter:description" content="github中ssh密钥的生成（如何不用输密码同github交互）使用git Bash  by winter on 2017/5/21 1. 查看SSH keys是否存在打开git Brash界面–》输入 ssh 如果出现如下界面，代表SSH keys存在  2. 设置 username 和 email，添加远程地址 3. 生成新的ssh key在命令行中输入ssh-keygen -t rsa -">
 <meta name="twitter:image" content="http://yoursite.com/images/010-e55e0343.png">
 
 
@@ -396,15 +396,14 @@
 <h3 id="1-查看SSH-keys是否存在"><a href="#1-查看SSH-keys是否存在" class="headerlink" title="1. 查看SSH keys是否存在"></a>1. 查看SSH keys是否存在</h3><p>打开git Brash界面–》输入 ssh</p>
 <p>如果出现如下界面，代表SSH keys存在</p>
 <p><img src="/images/010-e55e0343.png" alt=""></p>
-<h3 id="2-生成新的ssh-key"><a href="#2-生成新的ssh-key" class="headerlink" title="2. 生成新的ssh key"></a>2. 生成新的ssh key</h3><p>在命令行中输入<code>ssh-keygen -t rsa -C &quot;3396543978@qq.com&quot;</code></p>
+<h3 id="2-设置-username-和-email，添加远程地址"><a href="#2-设置-username-和-email，添加远程地址" class="headerlink" title="2. 设置 username 和 email，添加远程地址"></a>2. 设置 username 和 email，添加远程地址</h3><p><img src="/images/010-980277aa.png" alt=""></p>
+<h3 id="3-生成新的ssh-key"><a href="#3-生成新的ssh-key" class="headerlink" title="3. 生成新的ssh key"></a>3. 生成新的ssh key</h3><p>在命令行中输入<code>ssh-keygen -t rsa -C &quot;3396543978@qq.com&quot;</code></p>
 <p>输入passphrase（本步骤可以跳过）不输入则表示没有密码</p>
 <p>将新生成的key添加到ssh-agent中:</p>
 <p><img src="/images/010-b7565b9a.png" alt=""></p>
 <p>如果出现如下界面，则创建成功</p>
 <p><img src="/images/010-81e4590a.png" alt=""></p>
-<h3 id="3-将ssh-key添加到Github中"><a href="#3-将ssh-key添加到Github中" class="headerlink" title="3. 将ssh key添加到Github中"></a>3. 将ssh key添加到Github中</h3><p>用自己喜欢的文本编辑器打开id_rsa.pub文件，里面的信息即为SSH key，将这些信息复制到GitHub的Add SSH key页面即可</p>
-<h3 id="4-设置-username-和-email，添加远程地址"><a href="#4-设置-username-和-email，添加远程地址" class="headerlink" title="4. 设置 username 和 email，添加远程地址"></a>4. 设置 username 和 email，添加远程地址</h3><p><img src="/images/010-980277aa.png" alt=""></p>
-<p>remote: Permission to Gwemz/git.git denied to winterGuo.<br>fatal: unable to access ‘<a href="https://github.com/Gwemz/git.git/" target="_blank" rel="external">https://github.com/Gwemz/git.git/</a>‘: The requested URL returned error: 403</p>
+<h3 id="4-将ssh-key添加到Github中"><a href="#4-将ssh-key添加到Github中" class="headerlink" title="4. 将ssh key添加到Github中"></a>4. 将ssh key添加到Github中</h3><p>用自己喜欢的文本编辑器打开id_rsa.pub文件，里面的信息即为SSH key，将这些信息复制到GitHub的Add SSH key页面即可</p>
 <p>参考文章： <a href="http://www.jianshu.com/p/12badb7e6c10" target="_blank" rel="external">Git 最著名报错 “ERROR: Permission to XXX.git denied to user”终极解决方案</a></p>
 <h3 id="多个GITHUB帐号的SSH-KEY切换"><a href="#多个GITHUB帐号的SSH-KEY切换" class="headerlink" title="多个GITHUB帐号的SSH KEY切换"></a>多个GITHUB帐号的SSH KEY切换</h3><p><a href="http://stormzhang.com/other/2013/10/16/github-multiply-ssh-key/" target="_blank" rel="external">参考文章</a></p>
 <p>winter@DESKTOP-43SLAF5 MINGW64 ~/Desktop<br>$ ssh-add ~/.ssh/id_rsa<br>Identity added: /c/Users/winter/.ssh/id_rsa (/c/Users/winter/.ssh/id_rsa)</p>
@@ -509,8 +508,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/05/ReactNative/" rel="prev" title="React Native研究">
-                React Native研究 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/06/02/hexo你的博客/" rel="prev" title="hexo你的博客">
+                hexo你的博客 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -694,7 +693,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#github中ssh密钥的生成（如何不用输密码同github交互）"><span class="nav-number">1.</span> <span class="nav-text">github中ssh密钥的生成（如何不用输密码同github交互）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-查看SSH-keys是否存在"><span class="nav-number">1.1.</span> <span class="nav-text">1. 查看SSH keys是否存在</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-生成新的ssh-key"><span class="nav-number">1.2.</span> <span class="nav-text">2. 生成新的ssh key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-将ssh-key添加到Github中"><span class="nav-number">1.3.</span> <span class="nav-text">3. 将ssh key添加到Github中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-设置-username-和-email，添加远程地址"><span class="nav-number">1.4.</span> <span class="nav-text">4. 设置 username 和 email，添加远程地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多个GITHUB帐号的SSH-KEY切换"><span class="nav-number">1.5.</span> <span class="nav-text">多个GITHUB帐号的SSH KEY切换</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#github中ssh密钥的生成（如何不用输密码同github交互）"><span class="nav-number">1.</span> <span class="nav-text">github中ssh密钥的生成（如何不用输密码同github交互）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-查看SSH-keys是否存在"><span class="nav-number">1.1.</span> <span class="nav-text">1. 查看SSH keys是否存在</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-设置-username-和-email，添加远程地址"><span class="nav-number">1.2.</span> <span class="nav-text">2. 设置 username 和 email，添加远程地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-生成新的ssh-key"><span class="nav-number">1.3.</span> <span class="nav-text">3. 生成新的ssh key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-将ssh-key添加到Github中"><span class="nav-number">1.4.</span> <span class="nav-text">4. 将ssh key添加到Github中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多个GITHUB帐号的SSH-KEY切换"><span class="nav-number">1.5.</span> <span class="nav-text">多个GITHUB帐号的SSH KEY切换</span></a></li></ol></li></ol></div>
             
 
           </div>
