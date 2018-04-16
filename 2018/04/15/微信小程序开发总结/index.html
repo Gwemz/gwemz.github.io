@@ -99,7 +99,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/04/15/微信小程序开发总结/index.html">
 <meta property="og:site_name" content="winter blog">
 <meta property="og:description" content="近半个月在做微信小程序项目，记录一些开发过程中遇到的问题，做个记录。 微信小程序开发模式相比传统开发模式更加便捷，因为其封装了许多实用的api，开发过程中只需要按照他提供的框架进行开发，对于基本的业务需求都可以实现。 微信分享开发中需要做小程序分享功能，当然，它提供了API，比如你分享的bintap=”share”,则需要在share函数中执行分享代码值得一提的是，如果页面中有多个分享按钮，且分享">
-<meta property="og:updated_time" content="2018-04-15T13:40:03.094Z">
+<meta property="og:updated_time" content="2018-04-16T12:27:42.874Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序开发总结">
 <meta name="twitter:description" content="近半个月在做微信小程序项目，记录一些开发过程中遇到的问题，做个记录。 微信小程序开发模式相比传统开发模式更加便捷，因为其封装了许多实用的api，开发过程中只需要按照他提供的框架进行开发，对于基本的业务需求都可以实现。 微信分享开发中需要做小程序分享功能，当然，它提供了API，比如你分享的bintap=”share”,则需要在share函数中执行分享代码值得一提的是，如果页面中有多个分享按钮，且分享">
@@ -398,6 +398,8 @@
 <h2 id="图片处理"><a href="#图片处理" class="headerlink" title="图片处理"></a>图片处理</h2><p>比较大一些的背景图放到了公司服务器目录下，小一些icon图则放到了小程序的开发目录中，因为小程序对文件大小的要求是小于2M，故而较大的图片不建议放到开发目录中</p>
 <h2 id="组件化开发"><a href="#组件化开发" class="headerlink" title="组件化开发"></a>组件化开发</h2><p>对于业务中公用的模块可以选择拆分为一个单独的组件，这样，日后在维护和复用方面都非常方便。</p>
 <h2 id="小程序审核"><a href="#小程序审核" class="headerlink" title="小程序审核"></a>小程序审核</h2><p>这次审核从前一天下午到第二天中午审核便通过了，因为代码在上传编译后出了一些问题，便在后台管理系统中回退到之前的版本。</p>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p>微信小程序开发工具不太友好，同chrome相比，优劣势可见一斑。</p>
+<p>小程序项目发布之前，都需要微信审核通过之后才可发布，这个过程往往比较耗时，虽然快点几个小时便可审核通过，但始终没有发布到自己的服务器上方面方便，如果项目出现bug，并不能及时修改发布。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>小程序开发总体上来说还是很便捷的，前后端分离的开发模式，采用了类似于MVVM的框架进行数据渲染，flex布局+rpx适配，对大部分css属性的支持，真机调试也非常的快捷，提供了预览、远程调试两种方式，可以更加快速定位问题，唯一的问题便是，开发工具比较坑，和chrome控制台相比，真是。。。在这次开发中代码编辑没有自带的工具，而是选择了vscode，安装了插件<code>vscode-wechat</code>可以对微信小程序的一些语法进行支持，感兴趣的可以试试。</p>
 <p>小程序开发中，官方提供了一个框架，<code>wepy</code>，看到github上活跃度也是非常高，可以试试，以及美团开源的<code>mpvue</code>框架，据说可以一份代码实现移动端、小程序两方面的功能，都可以研究研究，做个参考。</p>
 
@@ -667,7 +669,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#微信分享"><span class="nav-number">1.</span> <span class="nav-text">微信分享</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下拉加载"><span class="nav-number">2.</span> <span class="nav-text">下拉加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样式处理"><span class="nav-number">3.</span> <span class="nav-text">样式处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片处理"><span class="nav-number">4.</span> <span class="nav-text">图片处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件化开发"><span class="nav-number">5.</span> <span class="nav-text">组件化开发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小程序审核"><span class="nav-number">6.</span> <span class="nav-text">小程序审核</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#微信分享"><span class="nav-number">1.</span> <span class="nav-text">微信分享</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下拉加载"><span class="nav-number">2.</span> <span class="nav-text">下拉加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样式处理"><span class="nav-number">3.</span> <span class="nav-text">样式处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片处理"><span class="nav-number">4.</span> <span class="nav-text">图片处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件化开发"><span class="nav-number">5.</span> <span class="nav-text">组件化开发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小程序审核"><span class="nav-number">6.</span> <span class="nav-text">小程序审核</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺点"><span class="nav-number">7.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
