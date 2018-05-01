@@ -96,7 +96,7 @@
 <meta name="description" content="Some things are so important that they force us to overcome our fears.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="winter blog">
-<meta property="og:url" content="http://yoursite.com/tags/javascript/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/JavaScript/index.html">
 <meta property="og:site_name" content="winter blog">
 <meta property="og:description" content="Some things are so important that they force us to overcome our fears.">
 <meta name="twitter:card" content="summary">
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/javascript/"/>
+  <link rel="canonical" href="http://yoursite.com/tags/JavaScript/"/>
 
 
 
 
 
-  <title>标签: javascript | winter blog</title>
+  <title>标签: JavaScript | winter blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -301,7 +301,7 @@
 
   <div id="posts" class="posts-collapse">
     <div class="collection-title">
-      <h1>javascript<small>标签</small>
+      <h1>JavaScript<small>标签</small>
       </h1>
     </div>
 
@@ -313,37 +313,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/12/23/JS常用方法/" itemprop="url">
+            <a class="post-title-link" href="/2017/07/21/Js中Date和new-Date的区别/" itemprop="url">
               
-                <span itemprop="name">JS常用方法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-23T20:27:52+08:00"
-              content="2017-12-23" >
-          12-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/30/什么是内存泄漏/" itemprop="url">
-              
-                <span itemprop="name">什么是内存泄漏?</span>
+                <span itemprop="name">Js中Date和new Date的区别</span>
               
             </a>
         
@@ -351,9 +323,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-30T00:18:18+08:00"
-              content="2017-09-30" >
-          09-30
+              datetime="2017-07-21T10:28:22+08:00"
+              content="2017-07-21" >
+          07-21
         </time>
       </div>
 
@@ -407,7 +379,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">49</span>
+                <span class="site-state-item-count">50</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1068,6 +1040,44 @@
               success: function(newcounter) {
                 var $element = $(document.getElementById(url));
                 $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+nt').text(newcounter.get('time'));
               },
               error: function(newcounter, error) {
                 console.log('Failed to create');
