@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="小程序," />
 
 
 
@@ -93,15 +93,17 @@
 
 
 
-<meta name="description" content="Some things are so important that they force us to overcome our fears.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="winter blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/09/index.html">
+<meta name="description" content="这一年又只剩了3个月左右，匆匆而逝。在和朋友聊天时也在谈论，这一年做了些什么？想想好像我的记忆都是跟着项目的版本号了，每个月至少一个版本的更新，从年初到现今，不知不觉，已经做了整整九个版本的小程序项目。从最初版本的几个简陋页面，到如今60多个页面的大小，几乎把网站核心功能都已经过了一遍，有的版本折磨的要死，有的版本飞快上线。 对比前端正常开发和小程序开发，小程序有优势也有劣势，最大优势便是基于微信">
+<meta name="keywords" content="小程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于小程序wxml页面处理js逻辑">
+<meta property="og:url" content="http://yoursite.com/2018/10/30/关于小程序wxml页面处理js逻辑/index.html">
 <meta property="og:site_name" content="winter blog">
-<meta property="og:description" content="Some things are so important that they force us to overcome our fears.">
+<meta property="og:description" content="这一年又只剩了3个月左右，匆匆而逝。在和朋友聊天时也在谈论，这一年做了些什么？想想好像我的记忆都是跟着项目的版本号了，每个月至少一个版本的更新，从年初到现今，不知不觉，已经做了整整九个版本的小程序项目。从最初版本的几个简陋页面，到如今60多个页面的大小，几乎把网站核心功能都已经过了一遍，有的版本折磨的要死，有的版本飞快上线。 对比前端正常开发和小程序开发，小程序有优势也有劣势，最大优势便是基于微信">
+<meta property="og:updated_time" content="2018-10-30T14:20:46.302Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="winter blog">
-<meta name="twitter:description" content="Some things are so important that they force us to overcome our fears.">
+<meta name="twitter:title" content="关于小程序wxml页面处理js逻辑">
+<meta name="twitter:description" content="这一年又只剩了3个月左右，匆匆而逝。在和朋友聊天时也在谈论，这一年做了些什么？想想好像我的记忆都是跟着项目的版本号了，每个月至少一个版本的更新，从年初到现今，不知不觉，已经做了整整九个版本的小程序项目。从最初版本的几个简陋页面，到如今60多个页面的大小，几乎把网站核心功能都已经过了一遍，有的版本折磨的要死，有的版本飞快上线。 对比前端正常开发和小程序开发，小程序有优势也有劣势，最大优势便是基于微信">
 
 
 
@@ -129,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/09/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/30/关于小程序wxml页面处理js逻辑/"/>
 
 
 
 
 
-  <title>归档 | winter blog</title>
+  <title>关于小程序wxml页面处理js逻辑 | winter blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -171,7 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -299,65 +301,246 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-    <span class="archive-page-counter">
-      
-      
-       
-        
-      好! 目前共计 56 篇日志。 继续努力。
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/30/关于小程序wxml页面处理js逻辑/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="winter">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="winter blog">
     </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">关于小程序wxml页面处理js逻辑</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-30T21:18:44+08:00">
+                2018-10-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/10/30/关于小程序wxml页面处理js逻辑/" class="leancloud_visitors" data-flag-title="关于小程序wxml页面处理js逻辑">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
-      
 
+      
+        <p>这一年又只剩了3个月左右，匆匆而逝。在和朋友聊天时也在谈论，这一年做了些什么？想想好像我的记忆都是跟着项目的版本号了，每个月至少一个版本的更新，从年初到现今，不知不觉，已经做了整整九个版本的小程序项目。从最初版本的几个简陋页面，到如今60多个页面的大小，几乎把网站核心功能都已经过了一遍，有的版本折磨的要死，有的版本飞快上线。</p>
+<p>对比前端正常开发和小程序开发，小程序有优势也有劣势，最大优势便是基于微信这个平台做开发，分享，插件兼容什么的几乎可以不用去考虑，几乎所有常用的业务公用模块都提供了相应的API，“上拉刷新、下拉加载、轮播、弹窗封装，日期组件、不同状态的加载效果处理等等”，诸如写个swiper轮播，在小程序内部可能10分钟搞定，包括点击展示图片弹层，基础样式处理，而且你压根不需要考虑滑动问题。而如果想要在wap端实现这个功能，我可能需要先找一个swiper插件，引用一堆css/js文件，然后函数调用，完了还需要再单独考虑这个图片弹层该怎么实现？因为swiper好像还不能直接把它写出来，就这样，一小时过去了。。。领导拿着狼牙棒在你旁边直勾勾盯着你看。而在我看来它的劣势也便是它的优势，所有的东西都封装好，没法做个性化开发。</p>
+<p>好了，言归正传，在之前八个版本的小程序开发时都或多或少遇到一个问题，页面中没法处理一些深入的业务逻辑，比如取整、时间戳转换日期、返回对象的JSON.parse处理，但是小程序页面wxml没有提供的一些方法。</p>
+<p>先聊聊之前的处理方式，诸如处理时间戳：（不推荐）</p>
+<p>外部引入时间日期处理公用JS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;!-- xx.js --&gt;</div><div class="line">//时间日期处理方法（不详述）</div></pre></td></tr></table></figure></p>
+<p>当前页面JS文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">fetchData()&#123;</div><div class="line">    wx.request(&#123;</div><div class="line">        url:&apos;/ajax/test.json&apos;,</div><div class="line">        data:&#123;</div><div class="line"></div><div class="line">        &#125;,</div><div class="line">        method: &apos;GET&apos;,</div><div class="line">        success:function(res)&#123;</div><div class="line">            if(res.data.message == &apos;success&apos;)&#123;</div><div class="line">                let resList = res.data.resList;</div><div class="line">                for(let i in resList)&#123;</div><div class="line">                    resList[i].createTime = time.format(resList[i].createTime)</div><div class="line">                &#125;</div><div class="line">                temp.setData(&#123;</div><div class="line">                    resList: resList</div><div class="line">                &#125;)</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这样处理其实问题很突出，需要在每次返回代码中额外加入一段遍历的操作，浪费性能，而且代码没法复用，下一个页面如果再遇到这样的问题，还需要重新再处理一番。</p>
+<p>小程序官方也对类似的问题提供了解决方案，只怪自己眼瞎，没看到。直到某一日看到一篇文章，才恍然大悟。</p>
+<p><code>开发目录中可以创建.wxs后缀的文件，WXS（WeiXin Script）是小程序的一套脚本语言，结合 WXML，可以构建出页面的结构。</code></p>
+<h4 id="wxs基础概念"><a href="#wxs基础概念" class="headerlink" title="wxs基础概念"></a>wxs基础概念</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;!--wxml--&gt;</div><div class="line">&lt;wxs module=&quot;m1&quot;&gt;</div><div class="line">var msg = &quot;hello world&quot;;</div><div class="line"></div><div class="line">module.exports.message = msg;</div><div class="line">&lt;/wxs&gt;</div><div class="line"></div><div class="line">&lt;view&gt; &#123;&#123;m1.message&#125;&#125; &lt;/view&gt;</div></pre></td></tr></table></figure>
+<p>数据处理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// page.js</div><div class="line">Page(&#123;</div><div class="line">  data: &#123;</div><div class="line">    array: [1, 2, 3, 4, 5, 1, 2, 3, 4]</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h4 id="wxml中添加-wxs逻辑"><a href="#wxml中添加-wxs逻辑" class="headerlink" title="wxml中添加.wxs逻辑"></a>wxml中添加.wxs逻辑</h4><!--wxml-->
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 下面的 getMax 函数，接受一个数组，且返回数组中最大的元素的值 --&gt;</div><div class="line">&lt;wxs module=&quot;m1&quot;&gt;</div><div class="line">var getMax = function(array) &#123;</div><div class="line">  var max = undefined;</div><div class="line">  for (var i = 0; i &lt; array.length; ++i) &#123;</div><div class="line">    max = max === undefined ? </div><div class="line">      array[i] : </div><div class="line">      (max &gt;= array[i] ? max : array[i]);</div><div class="line">  &#125;</div><div class="line">  return max;</div><div class="line">&#125;</div><div class="line"></div><div class="line">module.exports.getMax = getMax;</div><div class="line">&lt;/wxs&gt;</div><div class="line"></div><div class="line">&lt;!-- 调用 wxs 里面的 getMax 函数，参数为 page.js 里面的 array --&gt;</div><div class="line">&lt;view&gt; &#123;&#123;m1.getMax(array)&#125;&#125; &lt;/view&gt;</div></pre></td></tr></table></figure>
+<h4 id="wxml中引入-wxs文件"><a href="#wxml中引入-wxs文件" class="headerlink" title="wxml中引入.wxs文件"></a>wxml中引入.wxs文件</h4><!-- tools.wxs -->
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var filters = &#123;</div><div class="line">  toFix: function (value) &#123;</div><div class="line">    return value.toFixed(1)     //此处1为保留一位小数</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">module.exports = &#123;</div><div class="line">  toFix: filters.toFix</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<!-- wxml -->
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;wxs module=&quot;filters&quot; src=&quot;../tools.wxs&quot;&gt;&lt;/wxs&gt;</div><div class="line"></div><div class="line">&lt;view class=&quot;box&quot;&gt;&#123;&#123;filters.toFix(item.value)&#125;&#125;&lt;/view&gt;</div></pre></td></tr></table></figure>
+<p>OK，完美解决！再也不用去写重复的一堆恶心代码…</p>
+<h4 id="红点规则"><a href="#红点规则" class="headerlink" title="红点规则"></a>红点规则</h4><p>为 tabBar 某一项的右上角添加文本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">wx.setTabBarBadge(&#123;</div><div class="line">  index: 0,</div><div class="line">  text: &apos;1&apos;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>移除taBar数量显示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">wx.removeTabBarBadge(&#123;</div><div class="line">    index: 1,</div><div class="line">    success:function()&#123;</div><div class="line">        </div><div class="line">    &#125;,</div><div class="line">    fail:function()&#123;</div><div class="line"></div><div class="line">    &#125;,</div><div class="line">    complete:function()&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>红点处理思路：在列表页访问时，将该列表最大ID记录下来，保存到缓存中。在小程序启动时，app.js中的onLaunch函数，走一遍列表接口，获取到列表的最大ID，通过ID数值差来判断用户有多少条数据未读，从而展示到对应的tabBar上，列表更新后，把该消息移除。</p>
+<h4 id="scroll-view无法横向滚动问题"><a href="#scroll-view无法横向滚动问题" class="headerlink" title="scroll-view无法横向滚动问题"></a>scroll-view无法横向滚动问题</h4><p>搞了快半小时，结果发现是scroll-view少加一个css属性，导致无法滑动。。。on shit~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.scroll-content&#123;</div><div class="line">    white-space: nowrap;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="数据未加载完成不展示页面结构"><a href="#数据未加载完成不展示页面结构" class="headerlink" title="数据未加载完成不展示页面结构"></a>数据未加载完成不展示页面结构</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">wxml:</div><div class="line">&lt;view class=&quot;container&quot;  hidden=&quot;&#123;&#123;!loading&#125;&#125;&quot;&gt;</div><div class="line"></div><div class="line">&lt;loading hidden=&quot;&#123;&#123;loading&#125;&#125;&quot;&gt;加载中...&lt;/loading&gt;</div><div class="line"></div><div class="line">JS:</div><div class="line">Page(&#123;</div><div class="line">    data:&#123;</div><div class="line">        loading: true</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>    
+     
+     
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+              <strong>本文作者：</strong>winter
+          </li>
+          <li class="post-copyright-link">
+            <strong>本文链接：</strong>
+            <a href="/2018/10/30/关于小程序wxml页面处理js逻辑/" title="关于小程序wxml页面处理js逻辑">http://gwem.tk/2018/10/30/关于小程序wxml页面处理js逻辑/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>版权声明： </strong>
+            本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+          </li>
+        </ul>
+      
+    </div>  
+
+    <div>
       
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2018">2018</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat.png" alt="winter WeChat Pay"/>
+          <p>微信打赏</p>
         </div>
       
       
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/ali.jpg" alt="winter Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
+    </div>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
+    <div>
+      
         
-            <a class="post-title-link" href="/2018/09/02/小程序字母导航/" itemprop="url">
-              
-                <span itemprop="name">小程序字母导航</span>
-              
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-02T22:55:40+08:00"
-              content="2018-09-02" >
-          09-02
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/小程序/" rel="tag"># 小程序</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/02/小程序字母导航/" rel="next" title="小程序字母导航">
+                <i class="fa fa-chevron-left"></i> 小程序字母导航
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
 
-    
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
 
-  </section>
-
-  
-
+      
+    </div>
+  </div>
 
 
           </div>
@@ -365,6 +548,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -384,8 +571,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/touxiang.jpg"
@@ -476,6 +672,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#wxs基础概念"><span class="nav-number">1.</span> <span class="nav-text">wxs基础概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wxml中添加-wxs逻辑"><span class="nav-number">2.</span> <span class="nav-text">wxml中添加.wxs逻辑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wxml中引入-wxs文件"><span class="nav-number">3.</span> <span class="nav-text">wxml中引入.wxs文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#红点规则"><span class="nav-number">4.</span> <span class="nav-text">红点规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#scroll-view无法横向滚动问题"><span class="nav-number">5.</span> <span class="nav-text">scroll-view无法横向滚动问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据未加载完成不展示页面结构"><span class="nav-number">6.</span> <span class="nav-text">数据未加载完成不展示页面结构</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -605,11 +817,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   
